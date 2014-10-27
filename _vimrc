@@ -280,7 +280,7 @@ imap <F5> <ESC>:call PHP()<CR>
 " Chrome浏览器路径
 let s:Chrome = "C:/\Program Files (x86)/\Google/\Chrome/\Application/\chrome.exe"
 fun! PHP()
-    if expand("%:e") == "PHP" || expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "HTML" || expand("%:e") == "HTM" || expand("%:e") == "htm"  
+    if expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "htm"  
     exe ":!start " . s:Chrome . " 127.0.0.1\/" . "%:r" . "." . "%:e"
     endif
 endfunc
