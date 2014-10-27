@@ -274,6 +274,17 @@ endif
 " -----------------------------------------------------------------------------
 " 以下只做了 C、C++ 的单文件配置，其它语言可以参考以下配置增加
 
+" 以下是PHP的F5运行
+map <F5> :call PHP()<CR>
+imap <F5> <ESC>:call PHP()<CR>
+" Chrome浏览器路径
+let s:Chrome = "C:/\Program Files (x86)/\Google/\Chrome/\Application/\chrome.exe"
+fun! PHP()
+    if expand("%:e") == "PHP" || expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "HTML" || expand("%:e") == "HTM" || expand("%:e") == "htm"  
+    exe ":!start " . s:Chrome . " 127.0.0.1\/" . "%:r" . "." . "%:e"
+    endif
+endfunc
+
 " F9 一键保存、编译、连接存并运行
 map <F9> :call Run()<CR>
 imap <F9> <ESC>:call Run()<CR>
