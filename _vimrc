@@ -275,30 +275,46 @@ endif
 " -----------------------------------------------------------------------------
 " 以下只做了 C、C++ 的单文件配置，其它语言可以参考以下配置增加
 
-" 以下是PHP的F5运行 F5--Chrome  F6--Firefox  
-map <F5> :call PHP("Chrome")<CR>
-imap <F5> <ESC>:call PHP("Chrome")<CR>
+" 以下是PHP的F5运行 F5--Chrome  F6--Firefox  F7--IE 
+map <F5> :call Browser("Chrome")<CR>
+imap <F5> <ESC>:call Browser("Chrome")<CR>
 
-map <F6> :call PHP("Firefox")<CR>
-imap <F6> <ESC>:call PHP("Firefox")<CR>
+map <F6> :call Browser("Firefox")<CR>
+imap <F6> <ESC>:call Browser("Firefox")<CR>
 
-map <F7> :call PHP("IE")<CR>
-imap <F7> <ESC>:call PHP("IE")<CR>
+map <F7> :call Browser("IE")<CR>
+imap <F7> <ESC>:call Browser("IE")<CR>
 
-" Chrome浏览器路径
-let b:Chrome  = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
-" Firefox浏览器路径
-let b:Firefox = "D:/Firefox/firefox.exe"
-" IE浏览器路径
-let b:IE      = "C:/Program Files/Internet Explorer/iexplore.exe"
+fun! Browser(browser)
+    " Chrome浏览器路径
+    let b:Chrome  = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+    " Firefox浏览器路径
+    let b:Firefox = "D:/Firefox/firefox.exe"
+    " IE浏览器路径
+    let b:IE      = "C:/Program Files/Internet Explorer/iexplore.exe"
+    
+    let s:Directory  = getcwd() 
+    "let s:PHP        = "X:\\AppServ\\www"
+    let s:PHP        = "E:\\GitHub\\PHP"
+    let s:Place      = stridx(s:Directory,s:PHP)
+    if  s:Place == -1
+        if expand("%:e") == "html" || expand("%:e") == "htm"
+            let s:Directory = substitute(s:Directory,"\\\\","/","g")
+            let s:FILE   = " file:///" . s:Directory ."/". "%"
+        endif
+    else
+        let s:PATHS      =  strpart(getcwd(),strlen(s:PHP))
+        if (strlen(s:PATHS) > 0)
+            let s:FILE   = " http://localhost".s:PATHS."/"."%"
+        else
+            let s:FILE   = " http://localhost/%"
+        endif
+    endif
+    echo s:Place
+    echo s:Directory
+    echo s:PHP
+    echo s:FILE
 
-let s:PHP    = strpart(getcwd(),14)
-if (strlen(s:PHP) > 0)
-    let s:FILE   = " http://localhost/".s:PHP."/"."%"
-else
-    let s:FILE   = " http://localhost/%"
-endif    
-fun! PHP(browser)
     if expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "htm" 
         if a:browser == "Chrome" 
             exe ":!start " . b:Chrome . s:FILE
@@ -307,8 +323,8 @@ fun! PHP(browser)
         elseif a:browser == "IE" 
             exe ":!start " . b:IE . s:FILE
         endif
-endif
-endfunc
+    endif
+ endfunc
 
 " F9 一键保存、编译、连接存并运行
 map <F9> :call Run()<CR>
