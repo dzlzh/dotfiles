@@ -275,15 +275,39 @@ endif
 " -----------------------------------------------------------------------------
 " 以下只做了 C、C++ 的单文件配置，其它语言可以参考以下配置增加
 
-" 以下是PHP的F5运行
-map <F5> :call PHP()<CR>
-imap <F5> <ESC>:call PHP()<CR>
+" 以下是PHP的F5运行 F5--Chrome  F6--Firefox  
+map <F5> :call PHP("Chrome")<CR>
+imap <F5> <ESC>:call PHP("Chrome")<CR>
+
+map <F6> :call PHP("Firefox")<CR>
+imap <F6> <ESC>:call PHP("Firefox")<CR>
+
+map <F7> :call PHP("IE")<CR>
+imap <F7> <ESC>:call PHP("IE")<CR>
+
 " Chrome浏览器路径
-let s:Chrome = "C:/\Program Files (x86)/\Google/\Chrome/\Application/\chrome.exe"
-fun! PHP()
-    if expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "htm"  
-    exe ":!start " . s:Chrome . " 127.0.0.1\/" ."%:p:t:r" . "\/" . "%:r" . "." . "%:e"
-    endif
+let b:Chrome  = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+" Firefox浏览器路径
+let b:Firefox = "D:/Firefox/firefox.exe"
+" IE浏览器路径
+let b:IE      = "C:/Program Files/Internet Explorer/iexplore.exe"
+
+let s:PHP    = strpart(getcwd(),14)
+if (strlen(s:PHP) > 0)
+    let s:FILE   = " http://localhost/".s:PHP."/"."%"
+else
+    let s:FILE   = " http://localhost/%"
+endif    
+fun! PHP(browser)
+    if expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "htm" 
+        if a:browser == "Chrome" 
+            exe ":!start " . b:Chrome . s:FILE
+        elseif a:browser == "Firefox" 
+            exe ":!start " . b:Firefox . s:FILE
+        elseif a:browser == "IE" 
+            exe ":!start " . b:IE . s:FILE
+        endif
+endif
 endfunc
 
 " F9 一键保存、编译、连接存并运行
