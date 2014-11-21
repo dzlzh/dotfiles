@@ -300,10 +300,11 @@ fun! Browser(browser)
     if  s:Place == -1
         if expand("%:e") == "html" || expand("%:e") == "htm"
             let s:Directory = substitute(s:Directory,"\\\\","/","g")
-            let s:FILE   = " file:///" . s:Directory ."/". "%"
+            let s:FILE   = " file:///" . s:Directory . "%"
         endif
     else
         let s:PATHS      =  strpart(getcwd(),strlen(s:PHP))
+        let s:PATHS      =  substitute(s:PATHS,"\\\\","/","g")
         if (strlen(s:PATHS) > 0)
             let s:FILE   = " http://localhost".s:PATHS."/"."%"
         else
