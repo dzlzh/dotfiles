@@ -232,7 +232,8 @@ set laststatus=2                                      "启用状态栏信息
 set cmdheight=2                                       "设置命令行的高度为2，默认为1
 set cursorline                                        "突出显示当前行
 " set guifont=YaHei_Consolas_Hybrid:h10               "设置字体:字号（字体名称空格用下划线代替）
-set guifont=Inconsolata:h12                           "设置字体:字号（字体名称空格用下划线代替）
+" set guifont=Inconsolata:h12                           "设置字体:字号（字体名称空格用下划线代替）
+set guifont=Source_Code_Pro_Semibold:h11                           "设置字体:字号（字体名称空格用下划线代替）
 set nowrap                                            "设置不自动换行
 set shortmess=atI                                     "去掉欢迎界面
 
@@ -281,7 +282,7 @@ imap <F5> <ESC>:call PHP()<CR>
 let s:Chrome = "C:/\Program Files (x86)/\Google/\Chrome/\Application/\chrome.exe"
 fun! PHP()
     if expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "htm"  
-    exe ":!start " . s:Chrome . " 127.0.0.1\/" . "%:r" . "." . "%:e"
+    exe ":!start " . s:Chrome . " 127.0.0.1\/" ."%:p:t:r" . "\/" . "%:r" . "." . "%:e"
     endif
 endfunc
 
