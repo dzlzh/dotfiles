@@ -273,7 +273,6 @@ endif
 " -----------------------------------------------------------------------------
 "  < 单文件编译、连接、运行配置 >
 " -----------------------------------------------------------------------------
-" 以下只做了 C、C++ 的单文件配置，其它语言可以参考以下配置增加
 
 " 以下是PHP的F5运行 F5--Chrome  F6--Firefox  F7--IE 
 map <F5> :call Browser("Chrome")<CR>
@@ -311,10 +310,7 @@ fun! Browser(browser)
             let s:FILE   = " http://localhost/%"
         endif
     endif
-    echo s:Place
-    echo s:Directory
-    echo s:PHP
-    echo s:FILE
+   
 
     if expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "htm" 
         if a:browser == "Chrome" 
@@ -327,6 +323,8 @@ fun! Browser(browser)
     endif
  endfunc
 
+
+" 以下只做了 C、C++ 的单文件配置，其它语言可以参考以下配置增加
 " F9 一键保存、编译、连接存并运行
 map <F9> :call Run()<CR>
 imap <F9> <ESC>:call Run()<CR>
