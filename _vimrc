@@ -273,6 +273,7 @@ endif
 " -----------------------------------------------------------------------------
 "  < 单文件编译、连接、运行配置 >
 " -----------------------------------------------------------------------------
+" 以下只做了 C、C++ 的单文件配置，其它语言可以参考以下配置增加
 
 " 以下是PHP的F5运行 F5--Chrome  F6--Firefox  F7--IE 
 map <F5> :call Browser("Chrome")<CR>
@@ -295,22 +296,30 @@ fun! Browser(browser)
     let s:Directory  = getcwd() 
     "let s:PHP        = "X:\\AppServ\\www"
     let s:PHP        = "E:\\GitHub\\PHP"
-    let s:Place      = stridx(s:Directory,s:PHP)
-    if  s:Place == -1
-        if expand("%:e") == "html" || expand("%:e") == "htm"
-            let s:Directory = substitute(s:Directory,"\\\\","/","g")
-            let s:FILE   = " file:///" . s:Directory . "%"
+    let s:TEST       = "\\\\TEST\\duanzhilei\\vhost"
+    let l:PHP_location  = stridx(s:Directory,s:PHP)
+    let l:TEST_location = stridx(s:Directory,s:TEST)
+    if  l:PHP_location == -1 && l:TEST_location == -1
+        if expand("%:e") == "html" || expand("%:e") == "htm" 
+            let s:PATHS = substitute(s:Directory,"\\","/","g")
+            let s:FILE   = " file:///" . s:PATHS ."/"."%"
         endif
     else
-        let s:PATHS      =  strpart(getcwd(),strlen(s:PHP))
-        let s:PATHS      =  substitute(s:PATHS,"\\\\","/","g")
-        if (strlen(s:PATHS) > 0)
-            let s:FILE   = " http://localhost".s:PATHS."/"."%"
-        else
-            let s:FILE   = " http://localhost/%"
+        if l:PHP_location != -1
+            let s:PATHS      =  strpart(s:Directory,strlen(s:PHP))
+            let s:PATHS      =  substitute(s:PATHS,"\\","/","g")
+            let s:FILE       =  " http://localhost".s:PATHS."/"."%"
+        elseif l:TEST_location != -1
+            let l:org        =  stridx(s:Directory,"org") + 4
+            let l:PUBLIC_HTML=  stridx(s:Directory,"\\public_html")
+            let s:HTML       =  strpart(s:Directory,l:org,l:PUBLIC_HTML-l:org)
+            let l:PATHS      =  l:PUBLIC_HTML+12
+            let s:PATHS      =  strpart(s:Directory,l:PATHS)
+            let s:PATHS      =  substitute(s:PATHS,"\\","/","g")
+            let s:FILE       =  " http://".s:HTML.".hb/".s:PATHS."/"."%"
         endif
     endif
-   
+    
 
     if expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "htm" 
         if a:browser == "Chrome" 
@@ -323,8 +332,6 @@ fun! Browser(browser)
     endif
  endfunc
 
-
-" 以下只做了 C、C++ 的单文件配置，其它语言可以参考以下配置增加
 " F9 一键保存、编译、连接存并运行
 map <F9> :call Run()<CR>
 imap <F9> <ESC>:call Run()<CR>
