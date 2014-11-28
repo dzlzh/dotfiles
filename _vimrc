@@ -313,10 +313,11 @@ fun! Browser(browser)
             let l:org        =  stridx(s:Directory,"org") + 4
             let l:PUBLIC_HTML=  stridx(s:Directory,"\\public_html")
             let s:HTML       =  strpart(s:Directory,l:org,l:PUBLIC_HTML-l:org)
-            let l:PATHS      =  l:PUBLIC_HTML+12
-            let s:PATHS      =  strpart(s:Directory,l:PATHS)
-            let s:PATHS      =  substitute(s:PATHS,"\\","/","g")
-            let s:FILE       =  " http://".s:HTML.".hb/".s:PATHS."/"."%"
+            "let l:PATHS      =  l:PUBLIC_HTML+12
+            "let s:PATHS      =  strpart(s:Directory,l:PATHS)
+            "let s:PATHS      =  substitute(s:PATHS,"\\","/","g")
+            "let s:FILE       =  " http://".s:HTML.".hb/".s:PATHS."/"."%"
+            let s:FILE       =  " http://".s:HTML.".hb"
         endif
     endif
     
