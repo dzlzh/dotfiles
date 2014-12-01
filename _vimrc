@@ -310,9 +310,17 @@ fun! Browser(browser)
             let s:PATHS      =  substitute(s:PATHS,"\\","/","g")
             let s:FILE       =  " http://localhost".s:PATHS."/"."%"
         elseif l:TEST_location != -1
-            let l:org        =  stridx(s:Directory,"org") + 4
+            let l:org        =  stridx(s:Directory,"org") 
+            let l:gov_cn     =  stridx(s:Directory,"gov.cn") 
+            if l:org != -1
+                let l:Domain = l:org + 4
+            elseif l:gov_cn != -1
+                let l:Domain = l:gov_cn + 7
+            else
+                let l:Domain = -1
+            endif
             let l:PUBLIC_HTML=  stridx(s:Directory,"\\public_html")
-            let s:HTML       =  strpart(s:Directory,l:org,l:PUBLIC_HTML-l:org)
+            let s:HTML       =  strpart(s:Directory,l:Domain,l:PUBLIC_HTML-l:Domain)
             "let l:PATHS      =  l:PUBLIC_HTML+12
             "let s:PATHS      =  strpart(s:Directory,l:PATHS)
             "let s:PATHS      =  substitute(s:PATHS,"\\","/","g")
