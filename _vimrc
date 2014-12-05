@@ -876,3 +876,49 @@ au BufRead,BufNewFile,BufEnter * cd %:p:h
 " 注：上面配置中的"<Leader>"在本软件中设置为"\"键（引号里的反斜杠），如<Leader>t
 " 指在常规模式下按"\"键加"t"键，这里不是同时按，而是先按"\"键后按"t"键，间隔在一
 " 秒内，而<Leader>cs是先按"\"键再按"c"又再按"s"键
+
+
+
+
+"作者信息<F4>
+map <F4> ms:call TitleDet()<cr>'s
+"信息格式输出
+func! AddTitle()
+    call append(0 , "/*")
+    call append(1 , " * +--------------------------------------------------------------")
+    call append(2 , " * | Copyright (c) ".strftime("%Y")." http://duanzhilei.tk All rights reserved.")
+    call append(3 , " * +--------------------------------------------------------------")
+    call append(4 , " * | Author: zhilei.duan <zhilei.duan@gmail.com>")
+    call append(5 , " * +--------------------------------------------------------------")
+    call append(6 , " * | Filename: ".expand("%:t"))
+    call append(7 , " * +--------------------------------------------------------------")
+    call append(8 , " * | Last modified: ".strftime("%Y-%m-%d %H:%M"))
+    call append(9 , " * +--------------------------------------------------------------")
+    call append(10, " * | Description: ")
+    call append(11, " * +--------------------------------------------------------------")
+    call append(12, " */")
+endfunc
+
+"更新最近修改时间和文件名
+func! UpdateTitle()
+    normal m'
+    execute '/ * | Last modified: /s@:.*$@\=": ".strftime("%Y-%m-%d %H:%M")@'
+    normal ''
+    normal mk
+    execute '/ * | Filename: /s@:.*$@\=": ".expand("%:t")@'
+    execute "noh"
+    normal 'k
+endfunc
+
+func! TitleDet()
+    let n = 0
+    while n < 13
+        let line = getline(n)
+        if line =~ '^\s*\*\s*\|\s*\S*Last\smodified:\S*.*$'
+            call UpdateTitle()
+            return
+        endif
+        let n = n + 1
+    endwhile
+    call AddTitle()
+endfunc
