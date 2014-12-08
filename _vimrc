@@ -884,19 +884,24 @@ au BufRead,BufNewFile,BufEnter * cd %:p:h
 map <F4> ms:call TitleDet()<cr>'s
 "信息格式输出
 func! AddTitle()
-    call append(0 , "/*")
-    call append(1 , " * +--------------------------------------------------------------")
-    call append(2 , " * | Copyright (c) ".strftime("%Y")." http://duanzhilei.tk All rights reserved.")
-    call append(3 , " * +--------------------------------------------------------------")
-    call append(4 , " * | Author: zhilei.duan <zhilei.duan@gmail.com>")
-    call append(5 , " * +--------------------------------------------------------------")
-    call append(6 , " * | Filename: ".expand("%:t"))
-    call append(7 , " * +--------------------------------------------------------------")
-    call append(8 , " * | Last modified: ".strftime("%Y-%m-%d %H:%M"))
-    call append(9 , " * +--------------------------------------------------------------")
-    call append(10, " * | Description: ")
-    call append(11, " * +--------------------------------------------------------------")
-    call append(12, " */")
+    if expand("%:e") == "php"
+        call append(0 ,"<?PHP")
+    endif
+    call append(1 , "/*")
+    call append(2 , " * +--------------------------------------------------------------")
+    call append(3 , " * | Copyright (c) ".strftime("%Y")." http://duanzhilei.tk All rights reserved.")
+    call append(4 , " * +--------------------------------------------------------------")
+    call append(5 , " * | Author: zhilei.duan <zhilei.duan@gmail.com>")
+    call append(6 , " * +--------------------------------------------------------------")
+    call append(7 , " * | Filename: ".expand("%:t"))
+    call append(8 , " * +--------------------------------------------------------------")
+    call append(9 , " * | Last modified: ".strftime("%Y-%m-%d %H:%M"))
+    call append(10, " * +--------------------------------------------------------------")
+    call append(11, " * | Description: ")
+    call append(12, " * +--------------------------------------------------------------")
+    call append(13, " */")
+    call append(14, "")
+    call append(15, "")
 endfunc
 
 "更新最近修改时间和文件名
