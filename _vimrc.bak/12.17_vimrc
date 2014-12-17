@@ -156,7 +156,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'taglist.vim'
 Bundle 'TxtBrowser'
 Bundle 'ZoomWin'
-Bundle 'mattn/emmet-vim'
+Bundle 'emmet-vim'
 " -----------------------------------------------------------------------------
 "  < 编码配置 >
 " -----------------------------------------------------------------------------
@@ -835,12 +835,12 @@ endif
 " -----------------------------------------------------------------------------
 "let g:user_emmet_mode='n'    "只启用普通模式的功能。
 "let g:user_emmet_mode='inv'  "使所有的功能，它等于
-"let g:user_emmet_mode='a'    "能在所有模式下的所有功能。
+let g:user_emmet_mode='a'    "能在所有模式下的所有功能。
 
-"let g:user_emmet_install_global = 0   "只在php、html和css文件中起作用
-"autocmd FileType html,css,php,md EmmetInstal
+let g:user_emmet_install_global = 0   "只在php、html和css文件中起作用
+autocmd FileType html,css,php,md EmmetInstal
 
-"let g:user_emmet_leader_key='<C-Y>'
+let g:user_emmet_leader_key='<C-Y>'
 
 " =============================================================================
 "                          << 以下为常用自动命令配置 >>
