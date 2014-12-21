@@ -111,22 +111,31 @@ endif
 " -----------------------------------------------------------------------------
 " 用于更方便的管理vim插件，具体用法参考 :h vundle 帮助
 " 安装方法为在终端输入如下命令
-" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " 如果想在 windows 安装就必需先安装 "git for window"，可查阅网上资料
+" :BundleList 列出已经安装的插件
+
+" :BundleInstall 安装所有配置文件中的插件
+
+" :BundleInstall! 更新所有插件
+
+" :BundleSearch 搜索插件
+
+" :BundleClean! 根据配置文件删除插件
 
 set nocompatible                                      "禁用 Vi 兼容模式
 filetype off                                          "禁用文件类型侦测
 
 if g:islinux
-    set rtp+=~/.vim/bundle/vundle/
+    set rtp+=~/.vim/bundle/vundle.vim/
     call vundle#rc()
 else
-    set rtp+=$VIM/vimfiles/bundle/vundle/
+    set rtp+=$VIM/vimfiles/bundle/vundle.vim/
     call vundle#rc('$VIM/vimfiles/bundle/')
 endif
 
 " 使用Vundle来管理Vundle，这个必须要有。
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/vundle.vim'
 
 " 以下为要安装或更新的插件，不同仓库都有（具体书写规范请参考帮助）
 Bundle 'a.vim'
@@ -136,10 +145,7 @@ Bundle 'bufexplorer.zip'
 Bundle 'ccvext.vim'
 Bundle 'cSyntaxAfter'
 Bundle 'Yggdroot/indentLine'
-" Bundle 'javacomplete'
-" Bundle 'vim-javacompleteex'               "更好的 Java 补全插件
 Bundle 'Mark--Karkat'
-" Bundle 'fholgado/minibufexpl.vim'         "好像与 Vundle 插件有一些冲突
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -148,7 +154,6 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'repeat.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'wesleyche/SrcExpl'
-" Bundle 'ervandew/supertab'                "有时与 snipmate 插件冲突
 Bundle 'std_c.zip'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
@@ -157,6 +162,8 @@ Bundle 'taglist.vim'
 Bundle 'TxtBrowser'
 Bundle 'ZoomWin'
 Bundle 'mattn/emmet-vim'
+
+filetype plugin indent on    " required
 " -----------------------------------------------------------------------------
 "  < 编码配置 >
 " -----------------------------------------------------------------------------
