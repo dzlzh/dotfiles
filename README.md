@@ -1,6 +1,4 @@
-Vim
-===
+#Vim
 
-windows
-
-Linux
+ - windows
+ - Linux
