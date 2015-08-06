@@ -136,19 +136,14 @@ Bundle 'bufexplorer.zip'
 Bundle 'ccvext.vim'
 Bundle 'cSyntaxAfter'
 Bundle 'Yggdroot/indentLine'
-" Bundle 'javacomplete'
-" Bundle 'vim-javacompleteex'               "更好的 Java 补全插件
 Bundle 'Mark--Karkat'
-" Bundle 'fholgado/minibufexpl.vim'         "好像与 Vundle 插件有一些冲突
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'OmniCppComplete'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'repeat.vim'
-" Bundle 'msanders/snipmate.vim'
 Bundle 'wesleyche/SrcExpl'
-" Bundle 'ervandew/supertab'                "有时与 snipmate 插件冲突
 Bundle 'std_c.zip'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
@@ -157,8 +152,8 @@ Bundle 'taglist.vim'
 Bundle 'TxtBrowser'
 Bundle 'ZoomWin'
 Bundle 'mattn/emmet-vim'
-" Bundle 'Valloric/YouCompleteMe'
 Bundle 'UltiSnips'
+Bundle 'VimTweak'
 Bundle 'honza/vim-snippets'
 " -----------------------------------------------------------------------------
 "  < 编码配置 >
@@ -198,6 +193,7 @@ set smarttab                                          "指定按一次backspace�
 set foldenable                                        "启用折叠
 set foldmethod=indent                                 "indent 折叠方式
 " set foldmethod=marker                                "marker 折叠方式
+set foldlevelstart=99                                 " 打开文件是默认不折叠代码
 
 " 用空格键来开关折叠
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
@@ -237,23 +233,26 @@ set number                                            "显示行号
 set laststatus=2                                      "启用状态栏信息
 set cmdheight=2                                       "设置命令行的高度为2，默认为1
 set cursorline                                        "突出显示当前行
-" set guifont=YaHei_Consolas_Hybrid:h10               "设置字体:字号（字体名称空格用下划线代替）
+" set guifont=YaHei_Consolas_Hybrid:h10                 "设置字体:字号（字体名称空格用下划线代替）
 " set guifont=Inconsolata:h12                           "设置字体:字号（字体名称空格用下划线代替）
-set guifont=Source_Code_Pro_Semibold:h11                           "设置字体:字号（字体名称空格用下划线代替）
-"set wrap                                             "设置自动折行
-set nowrap                                           "设置不自动折行
+set guifont=Source_Code_Pro_Semibold:h11              "设置字体:字号（字体名称空格用下划线代替）
+" set wrap                                              "设置自动折行
+set nowrap                                            "设置不自动折行
 set shortmess=atI                                     "去掉欢迎界面
 
 " 设置 gVim 窗口初始位置及大小
 if g:isGUI
     " au GUIEnter * simalt ~x                           "窗口启动时自动最大化
-    winpos 100 10                                     "指定窗口出现的位置，坐标原点在屏幕左上角
+    winpos 400 80                                     "指定窗口出现的位置，坐标原点在屏幕左上角
     set lines=38 columns=120                          "指定窗口大小，lines为高度，columns为宽度
 endif
 
 " 设置代码配色方案
+" 安装配色方案 https://github.com/altercation/vim-colors-solarized
+syntax enable
+set background=dark
 if g:isGUI
-    colorscheme monokai               "Gvim配色方案
+    colorscheme solarized               "Gvim配色方案
 else
     colorscheme Tomorrow-Night-Eighties               "终端配色方案
 endif
@@ -296,7 +295,7 @@ fun! Browser(browser)
     " Chrome浏览器路径
     let b:Chrome  = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
     " Firefox浏览器路径
-    let b:Firefox = "D:/Mozilla Firefox/firefox.exe"
+    let b:Firefox = "D:/Firefox/firefox.exe"
     " IE浏览器路径
     let b:IE      = "C:/Program Files/Internet Explorer/iexplore.exe"
     
@@ -801,7 +800,7 @@ if (g:iswindows && g:isGUI)
 endif
 
 " -----------------------------------------------------------------------------
-"  < vimtweak 工具配置 > 请确保以已装了工具
+"  < vitweak 工具配置 > 请确保以已装了工具
 " -----------------------------------------------------------------------------
 " 这里只用于窗口透明与置顶
 " 常规模式下 Ctrl + Up（上方向键） 增加不透明度，Ctrl + Down（下方向键） 减少不透明度，<Leader>t 窗口置顶与否切换
@@ -824,7 +823,7 @@ if (g:iswindows && g:isGUI)
     endfunc
     func! Top_window()
         if  g:Top_Most == 0
-            call libcallnr("vimtweak.dll","EnableTopMost",1)
+            call libcallnr("vimtweak.dll","EnableMaximize",1)
             let g:Top_Most = 1
         else
             call libcallnr("vimtweak.dll","EnableTopMost",0)
@@ -851,39 +850,12 @@ endif
 "let g:user_emmet_leader_key='<C-Y>'
 
 "" -----------------------------------------------------------------------------
-"  < youcompleteme 工具配置 > 
-" -----------------------------------------------------------------------------
-"let g:ycm_global_ycm_extra_conf = 'your path to .ycm_extra_conf.py'
-"补全功能在注释中同样有效  
-"let g:ycm_complete_in_comments=1  
-" 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示  
-"let g:ycm_confirm_extra_conf=0  
-" 开启 YCM 基于标签引擎  
-"let g:ycm_collect_identifiers_from_tags_files=1  
-" 引入 C++ 标准库tags，这个没有也没关系，只要.ycm_extra_conf.py文件中指定了正确的标准库路径  
-"set tags+=/data/misc/software/misc./vim/stdcpp.tags  
-" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键  
-"inoremap <leader>; <C-x><C-o>  
-" 补全内容不以分割子窗口形式出现，只显示补全列表  
-"set completeopt-=preview  
-" 从第一个键入字符就开始罗列匹配项  
-"let g:ycm_min_num_of_chars_for_completion=1  
-" 禁止缓存匹配项，每次都重新生成匹配项  
-"let g:ycm_cache_omnifunc=0  
-" 语法关键字补全              
-"let g:ycm_seed_identifiers_with_syntax=1  
-" 修改对C函数的补全快捷键，默认是CTRL + space，修改为ALT + ;  
-"let g:ycm_key_invoke_completion = '<M-;>'  
-" 设置转到定义处的快捷键为ALT + G，这个功能非常赞  
-"nmap <M-g> :YcmCompleter GoToDefinitionElseDeclaration <C-R>=expand("<cword>")<CR><CR>  
-
-"" -----------------------------------------------------------------------------
 "  < UltiSnips 工具配置 > 
 " -----------------------------------------------------------------------------
 
 " NeoBundle 'SirVer/ultisnips'
 let g:UltiSnipsSnippetDirectories=['UltiSnips']
-let g:UltiSnipsSnippetsDir = 'D:/gVimPortable_7.4/vimfiles/bundle/vim-snippets/UltiSnips'
+let g:UltiSnipsSnippetsDir = '$VIM/vimfiles/bundle/vim-snippets/UltiSnips'
 let g:UltiSnipsExpandTrigger = '<Tab>'
 let g:UltiSnipsListSnippets = '<C-Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
@@ -910,7 +882,7 @@ au BufRead,BufNewFile,BufEnter * cd %:p:h
 "     function QfMakeConv()
 "         let qflist = getqflist()
 "         for i in qflist
-"            let i.text = iconv(i.text, "cp936", "utf-8")
+"            let i.text = iconv(i.text, "cp936", "Utf-8")
 "         endfor
 "         call setqflist(qflist)
 "      endfunction
@@ -939,7 +911,7 @@ func! AddTitle()
     call append(2 , " *  +--------------------------------------------------------------")
     call append(3 , " *  | Copyright (c) ".strftime("%Y")." http://duanzhilei.tk All rights reserved.")
     call append(4 , " *  +--------------------------------------------------------------")
-    call append(5 , " *  | Author: zhilei.duan <zhilei.duan@gmail.com>")
+    call append(5 , " *  | Author: zhilei.duan <duanzhileizh@gmail.com>")
     call append(6 , " *  +--------------------------------------------------------------")
     call append(7 , " *  | Filename: ".expand("%:t"))
     call append(8 , " *  +--------------------------------------------------------------")
