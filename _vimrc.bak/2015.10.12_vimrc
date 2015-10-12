@@ -118,44 +118,44 @@ set nocompatible                                      "禁用 Vi 兼容模式
 filetype off                                          "禁用文件类型侦测
 
 if g:islinux
-    set rtp+=~/.vim/bundle/Vundle.vim/
+    set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
 else
-    set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
+    set rtp+=$VIM/vimfiles/bundle/vundle/
     call vundle#rc('$VIM/vimfiles/bundle/')
 endif
+
 " 使用Vundle来管理Vundle，这个必须要有。
-Plugin 'VundleVim/Vundle.vim'
+Bundle 'gmarik/vundle'
 
 " 以下为要安装或更新的插件，不同仓库都有（具体书写规范请参考帮助）
-Plugin 'a.vim'
-Plugin 'Align'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'bufexplorer.zip'
-Plugin 'ccvext.vim'
-Plugin 'cSyntaxAfter'
-Plugin 'Yggdroot/indentLine'
-Plugin 'Mark--Karkat'
-Plugin 'Shougo/neocomplcache.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'OmniCppComplete'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'repeat.vim'
-Plugin 'wesleyche/SrcExpl'
-Plugin 'std_c.zip'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/syntastic'
-Plugin 'majutsushi/tagbar'
-Plugin 'taglist.vim'
-Plugin 'TxtBrowser'
-Plugin 'ZoomWin'
-Plugin 'mattn/emmet-vim'
-Plugin 'UltiSnips'
-Plugin 'VimTweak'
-Plugin 'honza/vim-snippets'
-Plugin 'vimwiki'
-filetype plugin indent on    " required
+Bundle 'a.vim'
+Bundle 'Align'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'bufexplorer.zip'
+Bundle 'ccvext.vim'
+Bundle 'cSyntaxAfter'
+Bundle 'Yggdroot/indentLine'
+Bundle 'Mark--Karkat'
+Bundle 'Shougo/neocomplcache.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'OmniCppComplete'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'repeat.vim'
+Bundle 'wesleyche/SrcExpl'
+Bundle 'std_c.zip'
+Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
+Bundle 'taglist.vim'
+Bundle 'TxtBrowser'
+Bundle 'ZoomWin'
+Bundle 'mattn/emmet-vim'
+Bundle 'UltiSnips'
+Bundle 'VimTweak'
+Bundle 'honza/vim-snippets'
+Bundle 'vimwiki'
 " -----------------------------------------------------------------------------
 "  < 编码配置 >
 " -----------------------------------------------------------------------------
@@ -234,6 +234,8 @@ set number                                            "显示行号
 set laststatus=2                                      "启用状态栏信息
 set cmdheight=2                                       "设置命令行的高度为2，默认为1
 set cursorline                                        "突出显示当前行
+" set guifont=YaHei_Consolas_Hybrid:h10                 "设置字体:字号（字体名称空格用下划线代替）
+" set guifont=Inconsolata:h12                           "设置字体:字号（字体名称空格用下划线代替）
 set guifont=Source_Code_Pro_Semibold:h11              "设置字体:字号（字体名称空格用下划线代替）
 " set wrap                                              "设置自动折行
 set nowrap                                            "设置不自动折行
@@ -241,6 +243,7 @@ set shortmess=atI                                     "去掉欢迎界面
 
 " 设置 gVim 窗口初始位置及大小
 if g:isGUI
+    " au GUIEnter * simalt ~x                           "窗口启动时自动最大化
     winpos 400 80                                     "指定窗口出现的位置，坐标原点在屏幕左上角
     set lines=38 columns=120                          "指定窗口大小，lines为高度，columns为宽度
 endif
@@ -650,10 +653,6 @@ let NERDSpaceDelims = 1                     "在左注释符之后，右注释�
 " 常规模式下输入 F2 调用插件
 nmap <F2> :NERDTreeToggle<CR>
 
-
-
-
-
 " -----------------------------------------------------------------------------
 "  < omnicppcomplete 插件配置 >
 " -----------------------------------------------------------------------------
@@ -797,9 +796,9 @@ set tags=./tags;                            "向上级目录递归查找tags文�
 " -----------------------------------------------------------------------------
 " 用于 Windows Gvim 全屏窗口，可用 F11 切换
 " 全屏后再隐藏菜单栏、工具栏、滚动条效果更好
-" if (g:iswindows && g:isGUI)
-"     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
-" endif
+if (g:iswindows && g:isGUI)
+    map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+endif
 
 " -----------------------------------------------------------------------------
 "  < vitweak 工具配置 > 请确保以已装了工具
@@ -972,9 +971,3 @@ func! AddFunction()
     call append(line + 6 , "")
 endfunc
 
-
-map <F12> :call VHOST() <CR>
-func! VHOST()
-    exe ':cd Z:\vhost\'
-    exe ':NERDTreeToggle'
-endfunc 
