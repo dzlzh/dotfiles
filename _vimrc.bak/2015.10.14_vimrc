@@ -203,7 +203,7 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 set autoread
 
 " 常规模式下输入 cS 清除行尾空格
-nmap \s :%s/\s\+$//g<CR>:noh<CR>
+nmap cS :%s/\s\+$//g<CR>:noh<CR>
 
 " 常规模式下输入 cM 清除行尾 ^M 符号
 nmap cM :%s/\r$//g<CR>:noh<CR>
@@ -279,7 +279,7 @@ endif
 " -----------------------------------------------------------------------------
 " 以下只做了 C、C++ 的单文件配置，其它语言可以参考以下配置增加
 
-" 以下是PHP的F5运行 F5--Chrome  F6--Firefox  F7--IE
+" 以下是PHP的F5运行 F5--Chrome  F6--Firefox  F7--IE 
 map <F5> :call Browser("Chrome")<CR>
 imap <F5> <ESC>:call Browser("Chrome")<CR>
 
@@ -296,8 +296,8 @@ fun! Browser(browser)
     let b:Firefox = "D:/Firefox/firefox.exe"
     " IE浏览器路径
     let b:IE      = "C:/Program Files/Internet Explorer/iexplore.exe"
-
-    let s:Directory  = getcwd()
+    
+    let s:Directory  = getcwd() 
     "let s:PHP        = "X:\\AppServ\\www"
     let s:PHP        = "E:\\GitHub\\PHP"
     "let s:TEST       = "\\\\TEST\\duanzhilei\\vhost"
@@ -305,7 +305,7 @@ fun! Browser(browser)
     let l:PHP_location  = stridx(s:Directory,s:PHP)
     let l:TEST_location = stridx(s:Directory,s:TEST)
     if  l:PHP_location == -1 && l:TEST_location == -1
-        if expand("%:e") == "html" || expand("%:e") == "htm"
+        if expand("%:e") == "html" || expand("%:e") == "htm" 
             let s:PATHS = substitute(s:Directory,"\\","/","g")
             let s:FILE   = " file:///" . s:PATHS ."/"."%"
         endif
@@ -315,8 +315,8 @@ fun! Browser(browser)
             let s:PATHS      =  substitute(s:PATHS,"\\","/","g")
             let s:FILE       =  " http://localhost".s:PATHS."/"."%"
         elseif l:TEST_location != -1
-            let l:org        =  stridx(s:Directory,"org")
-            let l:gov_cn     =  stridx(s:Directory,"gov.cn")
+            let l:org        =  stridx(s:Directory,"org") 
+            let l:gov_cn     =  stridx(s:Directory,"gov.cn") 
             if l:org != -1
                 let l:Domain = l:org + 4
             elseif l:gov_cn != -1
@@ -333,14 +333,14 @@ fun! Browser(browser)
             let s:FILE       =  " http://".s:HTML.".hb"
         endif
     endif
+    
 
-
-    if expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "htm"
-        if a:browser == "Chrome"
+    if expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "htm" 
+        if a:browser == "Chrome" 
             exe ":!start " . b:Chrome . s:FILE
-        elseif a:browser == "Firefox"
+        elseif a:browser == "Firefox" 
             exe ":!start " . b:Firefox . s:FILE
-        elseif a:browser == "IE"
+        elseif a:browser == "IE" 
             exe ":!start " . b:IE . s:FILE
         endif
     endif
@@ -840,7 +840,7 @@ if (g:iswindows && g:isGUI)
 endif
 
 " -----------------------------------------------------------------------------
-"  < emmet-vim 工具配置 >
+"  < emmet-vim 工具配置 > 
 " -----------------------------------------------------------------------------
 "let g:user_emmet_mode='n'    "只启用普通模式的功能。
 "let g:user_emmet_mode='inv'  "使所有的功能，它等于
@@ -852,7 +852,7 @@ endif
 "let g:user_emmet_leader_key='<C-Y>'
 
 "" -----------------------------------------------------------------------------
-"  < UltiSnips 工具配置 >
+"  < UltiSnips 工具配置 > 
 " -----------------------------------------------------------------------------
 
 " NeoBundle 'SirVer/ultisnips'
@@ -864,7 +864,7 @@ let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 "" -----------------------------------------------------------------------------
-"  < vimwiki >
+"  < vimwiki > 
 " -----------------------------------------------------------------------------
 
 let g:vimwiki_menu = ''
@@ -977,4 +977,4 @@ map <F12> :call VHOST() <CR>
 func! VHOST()
     exe ':cd Z:\vhost\'
     exe ':NERDTreeToggle'
-endfunc
+endfunc 
