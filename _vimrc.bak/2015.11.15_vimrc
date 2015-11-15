@@ -154,8 +154,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'UltiSnips'
 Plugin 'VimTweak'
 Plugin 'honza/vim-snippets'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'vimwiki'
 filetype plugin indent on    " required
 " -----------------------------------------------------------------------------
@@ -204,8 +202,8 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " 当文件在外部被修改，自动更新该文件
 set autoread
 
-" 常规模式下输入 S 清除行尾空格
-nmap <Leader>s :%s/\s\+$//g<CR>:noh<CR>
+" 常规模式下输入 cS 清除行尾空格
+nmap \s :%s/\s\+$//g<CR>:noh<CR>
 
 " 常规模式下输入 cM 清除行尾 ^M 符号
 nmap cM :%s/\r$//g<CR>:noh<CR>
@@ -227,7 +225,7 @@ imap <c-h> <Left>
 imap <c-l> <Right>
 
 " 启用每行超过80列的字符提示（字体变蓝并加下划线），不启用就注释掉
-au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 120 . 'v.\+', -1)
+au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 200 . 'v.\+', -1)
 
 " -----------------------------------------------------------------------------
 "  < 界面配置 >
@@ -288,8 +286,8 @@ imap <F5> <ESC>:call Browser("Chrome")<CR>
 map <F6> :call Browser("Firefox")<CR>
 imap <F6> <ESC>:call Browser("Firefox")<CR>
 
-" map <F7> :call Browser("IE")<CR>
-" imap <F7> <ESC>:call Browser("IE")<CR>
+map <F7> :call Browser("IE")<CR>
+imap <F7> <ESC>:call Browser("IE")<CR>
 
 fun! Browser(browser)
     " Chrome浏览器路径
@@ -307,7 +305,7 @@ fun! Browser(browser)
     let l:PHP_location  = stridx(s:Directory,s:PHP)
     let l:TEST_location = stridx(s:Directory,s:TEST)
     if  l:PHP_location == -1 && l:TEST_location == -1
-        if expand("%:e") == "html" || expand("%:e") == "htm" || expand("%:e") == "md"
+        if expand("%:e") == "html" || expand("%:e") == "htm"
             let s:PATHS = substitute(s:Directory,"\\","/","g")
             let s:FILE   = " file:///" . s:PATHS ."/"."%"
         endif
@@ -337,7 +335,7 @@ fun! Browser(browser)
     endif
 
 
-    if expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "htm" || expand("%:e") == "md"
+    if expand("%:e") == "php" || expand("%:e") == "html" || expand("%:e") == "htm"
         if a:browser == "Chrome"
             exe ":!start " . b:Chrome . s:FILE
         elseif a:browser == "Firefox"
@@ -853,7 +851,7 @@ endif
 
 "let g:user_emmet_leader_key='<C-Y>'
 
-" -----------------------------------------------------------------------------
+"" -----------------------------------------------------------------------------
 "  < UltiSnips 工具配置 >
 " -----------------------------------------------------------------------------
 
@@ -865,29 +863,13 @@ let g:UltiSnipsListSnippets = '<C-Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
-" -----------------------------------------------------------------------------
+"" -----------------------------------------------------------------------------
 "  < vimwiki >
 " -----------------------------------------------------------------------------
 
-map <S-F7> :VimwikiAll2HTML<cr>
-map <F7> :Vimwiki2HTML<cr>
-
-let g:vimwiki_list = [{'path': 'E:/GitHub/vimwiki/',
-\ 'path_html': 'E:/GitHub/vimwiki/vimwiki_html/',
-\ 'diary_link_count': 5}]
-" 对中文用户来说，我们并不怎么需要驼峰英文成为维基词条
-let g:vimwiki_camel_case = 0
-" 标记为完成的 checklist 项目会有特别的颜色
-let g:vimwiki_hl_cb_checked = 1
-" 我的 vim 是没有菜单的，加一个 vimwiki 菜单项也没有意义
 let g:vimwiki_menu = ''
 " 是否在计算字串长度时用特别考虑中文字符
 let g:vimwiki_CJK_length = 1
-
-" -----------------------------------------------------------------------------
-"  < vim-markdown >
-" -----------------------------------------------------------------------------
-let g:vim_markdown_folding_disabled=1
 
 " =============================================================================
 "                          << 以下为常用自动命令配置 >>
@@ -981,12 +963,13 @@ map <F8> ms:call AddFunction()<cr>'s
 func! AddFunction()
     let line = line(".")
     call append(line - 1, "")
-    call append(line + 0 , "\/**")
-    call append(line + 1 , " *  ")
+    call append(line + 0 , "/**")
+    call append(line + 1 , " * ")
     call append(line + 2 , " * ")
     call append(line + 3 , " *  @param ")
     call append(line + 4 , " *  @return ")
     call append(line + 5 , " */ ")
+    call append(line + 6 , "")
 endfunc
 
 
