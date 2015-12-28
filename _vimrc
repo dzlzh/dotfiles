@@ -147,16 +147,16 @@ Plugin 'std_c.zip'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
-Plugin 'taglist.vim'
-Plugin 'TxtBrowser'
-Plugin 'ZoomWin'
 Plugin 'mattn/emmet-vim'
 Plugin 'UltiSnips'
 Plugin 'VimTweak'
 Plugin 'honza/vim-snippets'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'vimwiki'
+" Plugin 'taglist.vim'
+" Plugin 'TxtBrowser'
+" Plugin 'ZoomWin'
+" Plugin 'godlygeek/tabular'
+" Plugin 'plasticboy/vim-markdown'
+" Plugin 'vimwiki'
 filetype plugin indent on    " required
 " -----------------------------------------------------------------------------
 "  < 编码配置 >
@@ -236,7 +236,7 @@ set number                                            "显示行号
 set laststatus=2                                      "启用状态栏信息
 set cmdheight=2                                       "设置命令行的高度为2，默认为1
 set cursorline                                        "突出显示当前行
-set guifont=Source_Code_Pro_Semibold:h11              "设置字体:字号（字体名称空格用下划线代替）
+set guifont=Source_Code_Pro_Semibold:h14              "设置字体:字号（字体名称空格用下划线代替）
 " set wrap                                              "设置自动折行
 set nowrap                                            "设置不自动折行
 set shortmess=atI                                     "去掉欢迎界面
@@ -301,7 +301,7 @@ fun! Browser(browser)
 
     let s:Directory  = getcwd()
     "let s:PHP        = "X:\\AppServ\\www"
-    let s:PHP        = "E:\\GitHub\\PHP"
+    let s:PHP        = "E:\\GitHub\\PHP\\ubuntu"
     "let s:TEST       = "\\\\TEST\\duanzhilei\\vhost"
     let s:TEST       = "Z:\\vhost"
     let l:PHP_location  = stridx(s:Directory,s:PHP)
@@ -605,17 +605,17 @@ let g:indentLine_color_term = 239
 " -----------------------------------------------------------------------------
 " 给不同的单词高亮，表明不同的变量时很有用，详细帮助见 :h mark.txt
 
-" " -----------------------------------------------------------------------------
-" "  < MiniBufExplorer 插件配置 >
-" " -----------------------------------------------------------------------------
-" " 快速浏览和操作Buffer
-" " 主要用于同时打开多个文件并相与切换
+" -----------------------------------------------------------------------------
+"  < MiniBufExplorer 插件配置 >
+" -----------------------------------------------------------------------------
+" 快速浏览和操作Buffer
+" 主要用于同时打开多个文件并相与切换
 
 " let g:miniBufExplMapWindowNavArrows = 1     "用Ctrl加方向键切换到上下左右的窗口中去
 " let g:miniBufExplMapWindowNavVim = 1        "用<C-k,j,h,l>切换到上下左右的窗口中去
 " let g:miniBufExplMapCTabSwitchBufs = 1      "功能增强（不过好像只有在Windows中才有用）
-" "                                            <C-Tab> 向前循环切换到每个buffer上,并在但前窗口打开
-" "                                            <C-S-Tab> 向后循环切换到每个buffer上,并在当前窗口打开
+"                                            <C-Tab> 向前循环切换到每个buffer上,并在但前窗口打开
+"                                            <C-S-Tab> 向后循环切换到每个buffer上,并在当前窗口打开
 
 " 在不使用 MiniBufExplorer 插件时也可用<C-k,j,h,l>切换到上下左右的窗口中去
 noremap <c-k> <c-w>k
@@ -690,10 +690,10 @@ set completeopt=menu                        "关闭预览窗口
 " 增强源代码浏览，其功能就像Windows中的"Source Insight"
 nmap <F3> :SrcExplToggle<CR>                "打开/闭浏览窗口
 
-" " -----------------------------------------------------------------------------
-" "  < supertab 插件配置 >
-" " -----------------------------------------------------------------------------
-" " 我主要用于配合 omnicppcomplete 插件，在按 Tab 键时自动补全效果更好更快
+" -----------------------------------------------------------------------------
+"  < supertab 插件配置 >
+" -----------------------------------------------------------------------------
+" 我主要用于配合 omnicppcomplete 插件，在按 Tab 键时自动补全效果更好更快
 "  let g:supertabdefaultcompletiontype = "<c-x><c-u>"
 
 " -----------------------------------------------------------------------------
