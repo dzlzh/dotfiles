@@ -237,6 +237,8 @@ set nobackup        "设置无备份文件
 "  < 以下为常用自动命令配置 >
 " -------------------------------------------------------------------------------------
 au BufRead,BufNewFile,BufEnter * cd %:p:h  
+"让配置变更立即生效
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 
 

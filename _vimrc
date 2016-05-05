@@ -721,7 +721,7 @@ let c_cpp_comments = 0
 " 相对 TagList 能更好的支持面向对象
 
 " 常规模式下输入 tb 调用插件，如果有打开 TagList 窗口则先将其关闭
-nmap tb :TlistClose<CR>:TagbarToggle<CR>
+nmap tb :TagbarToggle<CR>
 
 let g:tagbar_width=30                       "设置窗口宽度
 " let g:tagbar_left=1                         "在左侧窗口中显示
@@ -895,6 +895,13 @@ let g:vim_markdown_folding_disabled=1
 
 " 自动切换目录为当前编辑文件所在目录
 au BufRead,BufNewFile,BufEnter * cd %:p:h
+" 让配置变更立即生效
+" autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" 设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <Leader>y "+y
+" VIM 自身命令行模式智能补全
+set wildmenu
+
 
 " =============================================================================
 "                     << windows 下解决 Quickfix 乱码问题 >>
