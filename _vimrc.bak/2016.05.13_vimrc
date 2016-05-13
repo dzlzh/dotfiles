@@ -148,11 +148,15 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
-" Ultisnips 需要python32 32位
 Plugin 'UltiSnips'
 Plugin 'VimTweak'
 Plugin 'honza/vim-snippets'
 Plugin 'TxtBrowser'
+" Plugin 'taglist.vim'
+" Plugin 'ZoomWin'
+" Plugin 'godlygeek/tabular'
+" Plugin 'plasticboy/vim-markdown'
+" Plugin 'vimwiki'
 filetype plugin indent on    " required
 " -----------------------------------------------------------------------------
 "  < 编码配置 >
