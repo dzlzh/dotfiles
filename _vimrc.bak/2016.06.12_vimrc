@@ -147,7 +147,6 @@ Plugin 'std_c.zip'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
-Plugin 'taglist.vim'
 Plugin 'mattn/emmet-vim'
 " Ultisnips 需要python32 32位
 Plugin 'UltiSnips'
@@ -298,7 +297,7 @@ fun! Browser(browser)
 
     let s:Directory  = getcwd()
     "let s:PHP        = "X:\\AppServ\\www"
-    let s:PHP        = "E:\\GitHub\\PHP\\work"
+    let s:PHP        = "E:\\GitHub\\PHP\\ubuntu"
     "let s:TEST       = "\\\\TEST\\duanzhilei\\vhost"
     let s:TEST       = "Z:\\vhost"
     let l:PHP_location  = stridx(s:Directory,s:PHP)
