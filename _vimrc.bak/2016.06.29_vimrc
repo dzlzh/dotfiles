@@ -114,7 +114,6 @@ endif
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 " 如果想在 windows 安装就必需先安装 "git for window"，可查阅网上资料
 
-
 set nocompatible                                      "禁用 Vi 兼容模式
 filetype off                                          "禁用文件类型侦测
 
@@ -226,13 +225,6 @@ imap <c-l> <Right>
 
 " 启用每行超过80列的字符提示（字体变蓝并加下划线），不启用就注释掉
 au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 120 . 'v.\+', -1)
-
-"只有在是PHP文件时，才启用PHP补全
-au FileType php call AddPHPFuncList()
-function AddPHPFuncList()
-    set dictionary-=$VIM/vimfiles/function/php_funclist.txt dictionary+=$VIM/vimfiles/function/php_funclist.txt
-    set complete-=k complete+=k
-endfunction
 
 " -----------------------------------------------------------------------------
 "  < 界面配置 >
