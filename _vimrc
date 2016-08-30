@@ -189,7 +189,11 @@ filetype plugin indent on                             "启用缩进
 set smartindent                                       "启用智能对齐方式
 set expandtab                                         "将Tab键转换为空格
 set tabstop=4                                         "设置Tab键的宽度
-set shiftwidth=4                                      "换行时自动缩进4个空格
+if (expand("%:e") == "html" || expand("%:e") == "htm" || expand("%:e") == "css")
+    set shiftwidth=2
+else
+    set shiftwidth=4                                      "换行时自动缩进4个空格
+endif
 set smarttab                                          "指定按一次backspace就删除shiftwidth宽度的空格
 set foldenable                                        "启用折叠
 set foldmethod=indent                                 "indent 折叠方式
@@ -202,8 +206,8 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " 当文件在外部被修改，自动更新该文件
 set autoread
 
-" 常规模式下输入 S 清除行尾空格
-nmap <Leader>s :%s/\s\+$//g<CR>:noh<CR>
+" 常规模式下输入 cS 清除行尾空格
+nmap <Leader>cS :%s/\s\+$//g<CR>:noh<CR>
 
 " 常规模式下输入 cM 清除行尾 ^M 符号
 nmap cM :%s/\r$//g<CR>:noh<CR>
