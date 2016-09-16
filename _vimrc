@@ -143,7 +143,7 @@ set tabstop=4                                         "设置Tab键的宽度
 if (expand("%:e") == "html" || expand("%:e") == "htm" || expand("%:e") == "css")
     set shiftwidth=2
 else
-    set shiftwidth=4                                      "换行时自动缩进4个空格
+    set shiftwidth=4                                  "换行时自动缩进4个空格
 endif
 set smarttab                                          "指定按一次backspace就删除shiftwidth宽度的空格
 set foldenable                                        "启用折叠
@@ -242,6 +242,8 @@ endif
 
 set writebackup                             "保存文件前建立备份，保存成功后删除该备份
 set nobackup                                "设置无备份文件
+set noundofile
+set noswapfile
 
 " -----------------------------------------------------------------------------
 "  < Vundle 插件管理工具配置 >
