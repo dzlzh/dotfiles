@@ -156,8 +156,8 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " 当文件在外部被修改，自动更新该文件
 set autoread
 
-" 常规模式下输入 S 清除行尾空格
-nmap <Leader>cS :%s/\s\+$//g<CR>:noh<CR>
+" 常规模式下输入 cS 清除行尾空格
+nmap cS :%s/\s\+$//g<CR>:noh<CR>
 
 " 常规模式下输入 cM 清除行尾 ^M 符号
 nmap cM :%s/\r$//g<CR>:noh<CR>
@@ -183,13 +183,6 @@ if g:isGUI
     au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 120 . 'v.\+', -1)
 endif
 
-"只有在是PHP文件时，才启用PHP补全
-au FileType php call AddPHPFuncList()
-function AddPHPFuncList()
-    set dictionary-=$VIM/vimfiles/function/php_funclist.txt dictionary+=$VIM/vimfiles/function/php_funclist.txt
-    set complete-=k complete+=k
-endfunction
-
 " -----------------------------------------------------------------------------
 "  < 界面配置 >
 " -----------------------------------------------------------------------------
@@ -203,7 +196,7 @@ set shortmess=atI                                     "去掉欢迎界面
 
 " 设置 gVim 窗口初始位置及大小
 if g:isGUI
-    winpos 400 80                                     "指定窗口出现的位置，坐标原点在屏幕左上角
+    winpos 100 10                                     "指定窗口出现的位置，坐标原点在屏幕左上角
     set lines=38 columns=120                          "指定窗口大小，lines为高度，columns为宽度
 endif
 
@@ -240,8 +233,9 @@ endif
 "  < 其它配置 >
 " -----------------------------------------------------------------------------
 
-set writebackup                             "保存文件前建立备份，保存成功后删除该备份
+" set writebackup                             "保存文件前建立备份，保存成功后删除该备份
 set nobackup                                "设置无备份文件
+set nowb
 set noundofile
 set noswapfile
 
@@ -268,25 +262,27 @@ Plugin 'VundleVim/Vundle.vim'
 
 " 以下为要安装或更新的插件，不同仓库都有（具体书写规范请参考帮助）
 Plugin 'a.vim'
-Plugin 'Align'
+" Plugin 'Align'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'bufexplorer.zip'
 Plugin 'ccvext.vim'
-Plugin 'cSyntaxAfter'
+" Plugin 'cSyntaxAfter'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Mark--Karkat'
-Plugin 'Shougo/neocomplcache.vim'
+" Plugin 'Shougo/neocomplcache.vim'
+Plugin 'Shougo/neocomplete'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'OmniCppComplete'
+" Plugin 'OmniCppComplete'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'repeat.vim'
 Plugin 'std_c.zip'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
-Plugin 'taglist.vim'
-Plugin 'TxtBrowser'
+" Plugin 'taglist.vim'
+Plugin 'shawncplus/phpcomplete.vim'
+" Plugin 'TxtBrowser'
 Plugin 'mattn/emmet-vim'
 " Ultisnips 需要python32 32位
 Plugin 'UltiSnips'
@@ -296,6 +292,15 @@ filetype plugin indent on    " required
 " =============================================================================
 "                          << 以下为常用插件配置 >>
 " =============================================================================
+
+" -----------------------------------------------------------------------------
+" 只有在是PHP文件时，才启用PHP补全
+" -----------------------------------------------------------------------------
+au FileType php call AddPHPFuncList()
+function AddPHPFuncList()
+    set dictionary-=$VIM/vimfiles/function/php_funclist.txt dictionary+=$VIM/vimfiles/function/php_funclist.txt
+    set complete-=k complete+=k
+endfunction
 
 " -----------------------------------------------------------------------------
 "  < a.vim 插件配置 >
@@ -338,7 +343,7 @@ filetype plugin indent on    " required
 "  < cSyntaxAfter 插件配置 >
 " -----------------------------------------------------------------------------
 " 高亮括号与运算符等
-au! BufRead,BufNewFile,BufEnter *.{c,cpp,h,java,javascript} call CSyntaxAfter()
+" au! BufRead,BufNewFile,BufEnter *.{c,cpp,h,java,javascript} call CSyntaxAfter()
 
 " -----------------------------------------------------------------------------
 "  < indentLine 插件配置 >
@@ -370,9 +375,95 @@ let g:indentLine_color_term = 239
 "  < neocomplcache 插件配置 >
 " -----------------------------------------------------------------------------
 " 关键字补全、文件路径补全、tag补全等等，各种，非常好用，速度超快。
-let g:neocomplcache_enable_at_startup = 1     "vim 启动时启用插件
+" let g:neocomplcache_enable_at_startup = 1     "vim 启动时启用插件
 " let g:neocomplcache_disable_auto_complete = 1 "不自动弹出补全列表
 " 在弹出补全列表后用 <c-p> 或 <c-n> 进行上下选择效果比较好
+
+" -----------------------------------------------------------------------------
+"  < neocomplete 插件配置 >
+" -----------------------------------------------------------------------------
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+" For cursor moving in insert mode(Not recommended)
+"inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
+"inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
+"inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
+"inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
+" Or set this.
+"let g:neocomplete#enable_cursor_hold_i = 1
+" Or set this.
+"let g:neocomplete#enable_insert_char_pre = 1
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " -----------------------------------------------------------------------------
 "  < nerdcommenter 插件配置 >
@@ -404,7 +495,7 @@ nmap <F2> :NERDTreeToggle<CR>
 " ctags -R --c++-kinds=+p --fields=+iaS --extra=+q
 " 我使用上面的参数生成标签后，对函数使用跳转时会出现多个选择
 " 所以我就将--c++-kinds=+p参数给去掉了，如果大侠有什么其它解决方法希望不要保留呀
-set completeopt=menu                        "关闭预览窗口
+" set completeopt=menu                        "关闭预览窗口
 
 " -----------------------------------------------------------------------------
 "  < powerline 插件配置 >
@@ -466,7 +557,7 @@ let Tlist_Use_Right_Window=1                "在右侧窗口中显示
 "  < txtbrowser 插件配置 >
 " -----------------------------------------------------------------------------
 " 用于文本文件生成标签与与语法高亮（调用TagList插件生成标签，如果可以）
-au BufRead,BufNewFile *.txt setlocal ft=txt
+" au BufRead,BufNewFile *.txt setlocal ft=txt
 
 " -----------------------------------------------------------------------------
 "  < emmet-vim 工具配置 >
@@ -548,7 +639,8 @@ endif
 "  < ctags 工具配置 >
 " -----------------------------------------------------------------------------
 " 对浏览代码非常的方便,可以在函数,变量之间跳转等
-set tags=./tags;                            "向上级目录递归查找tags文件（好像只有在Windows下才有用）
+" set tags=./tags;                            "向上级目录递归查找tags文件（好像只有在Windows下才有用）
+set tags+=tags;                            "向上级目录递归查找tags文件（好像只有在Windows下才有用）
 
 
 " =============================================================================
@@ -560,7 +652,7 @@ au BufRead,BufNewFile,BufEnter * cd %:p:h
 " 设置快捷键将选中文本块复制至系统剪贴板
 vnoremap <Leader>y "+y
 " VIM 自身命令行模式智能补全
-set wildmenu
+" set wildmenu
 
 " =============================================================================
 "                          << 其它 >>
