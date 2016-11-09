@@ -277,6 +277,7 @@ Plugin 'scrooloose/nerdtree'
 " Plugin 'OmniCppComplete'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'repeat.vim'
+Plugin 'wesleyche/SrcExpl'
 Plugin 'std_c.zip'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
@@ -508,6 +509,12 @@ nmap <F2> :NERDTreeToggle<CR>
 "  < repeat 插件配置 >
 " -----------------------------------------------------------------------------
 " 主要用"."命令来重复上次插件使用的命令
+
+" -----------------------------------------------------------------------------
+"  < SrcExpl 插件配置 >
+" -----------------------------------------------------------------------------
+" 增强源代码浏览，其功能就像Windows中的"Source Insight"
+nmap <F3> :SrcExplToggle<CR>                "打开/闭浏览窗口
 
 " -----------------------------------------------------------------------------
 "  < std_c 插件配置 >
