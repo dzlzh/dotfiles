@@ -289,7 +289,7 @@ Plugin 'mattn/emmet-vim'
 " Ultisnips 需要python32 32位
 Plugin 'UltiSnips'
 Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-markdown'
+" Plugin 'tpope/vim-markdown'
 filetype plugin indent on    " required
 
 " =============================================================================
