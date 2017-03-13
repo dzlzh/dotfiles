@@ -140,12 +140,11 @@ filetype plugin indent on                             "启用缩进
 set smartindent                                       "启用智能对齐方式
 set expandtab                                         "将Tab键转换为空格
 set tabstop=4                                         "设置Tab键的宽度
-" if (expand("%:e") == "html" || expand("%:e") == "htm" || expand("%:e") == "css")
-    " set shiftwidth=2
-" else
-    " set shiftwidth=4                                  "换行时自动缩进4个空格
-" endif
-set shiftwidth=4                                      "换行时自动缩进4个空格
+if (expand("%:e") == "html" || expand("%:e") == "htm" || expand("%:e") == "css")
+    set shiftwidth=2
+else
+    set shiftwidth=4                                  "换行时自动缩进4个空格
+endif
 set smarttab                                          "指定按一次backspace就删除shiftwidth宽度的空格
 set foldenable                                        "启用折叠
 set foldmethod=indent                                 "indent 折叠方式
@@ -197,7 +196,7 @@ set shortmess=atI                                     "去掉欢迎界面
 
 " 设置 gVim 窗口初始位置及大小
 if g:isGUI
-    winpos 250 50                                     "指定窗口出现的位置，坐标原点在屏幕左上角
+    winpos 100 10                                     "指定窗口出现的位置，坐标原点在屏幕左上角
     set lines=38 columns=120                          "指定窗口大小，lines为高度，columns为宽度
 endif
 
@@ -268,6 +267,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'bufexplorer.zip'
 Plugin 'ccvext.vim'
 " Plugin 'cSyntaxAfter'
+Plugin 'Yggdroot/indentLine'
 Plugin 'Mark--Karkat'
 " Plugin 'Shougo/neocomplcache.vim'
 Plugin 'Shougo/neocomplete'
@@ -276,7 +276,6 @@ Plugin 'scrooloose/nerdtree'
 " Plugin 'OmniCppComplete'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'repeat.vim'
-Plugin 'wesleyche/SrcExpl'
 Plugin 'std_c.zip'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
@@ -288,10 +287,7 @@ Plugin 'mattn/emmet-vim'
 " Ultisnips 需要python32 32位
 Plugin 'UltiSnips'
 Plugin 'honza/vim-snippets'
-" Plugin 'tpope/vim-markdown'
-if expand("%:e") != "json"
-Plugin 'Yggdroot/indentLine'
-endif
+Plugin 'tpope/vim-markdown'
 filetype plugin indent on    " required
 
 " =============================================================================
@@ -412,7 +408,7 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-i>     neocomplete#complete_common_string()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -425,8 +421,8 @@ endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-u> neocomplete#smart_close_popup()."\<C-u>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-u>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
 " Close popup by <Space>.
@@ -511,12 +507,6 @@ nmap <F2> :NERDTreeToggle<CR>
 "  < repeat 插件配置 >
 " -----------------------------------------------------------------------------
 " 主要用"."命令来重复上次插件使用的命令
-
-" -----------------------------------------------------------------------------
-"  < SrcExpl 插件配置 >
-" -----------------------------------------------------------------------------
-" 增强源代码浏览，其功能就像Windows中的"Source Insight"
-nmap <F3> :SrcExplToggle<CR>                "打开/闭浏览窗口
 
 " -----------------------------------------------------------------------------
 "  < std_c 插件配置 >
