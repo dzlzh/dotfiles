@@ -292,7 +292,6 @@ Plugin 'honza/vim-snippets'
 if expand("%:e") != "json"
 Plugin 'Yggdroot/indentLine'
 endif
-Plugin 'ctrlpvim/ctrlp.vim'
 filetype plugin indent on    " required
 
 " =============================================================================
@@ -612,24 +611,6 @@ noremap <c-k> <c-w>k
 noremap <c-j> <c-w>j
 noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
-
-" -----------------------------------------------------------------------------
-"  < ctrlp.vim 插件配置 >
-" -----------------------------------------------------------------------------
-
-let g:ctrlp_map = '<leader>p'
-let g:ctrlp_cmd = 'CtrlP'
-map <leader>f :CtrlPMRU<CR>
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
-    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
-    \ }
-let g:ctrlp_working_path_mode=0
-let g:ctrlp_match_window_bottom=1
-let g:ctrlp_max_height=15
-let g:ctrlp_match_window_reversed=0
-let g:ctrlp_mruf_max=500
-let g:ctrlp_follow_symlinks=1
 
 " =============================================================================
 "                          << 以下为常用工具配置 >>
