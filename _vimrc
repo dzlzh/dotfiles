@@ -155,7 +155,7 @@ set foldlevelstart=99                                 " 打开文件是默认不
 let mapleader = "\<Space>"
 
 " 用空格键来开关折叠
-nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+nnoremap <leader>\ @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 当文件在外部被修改，自动更新该文件
 set autoread
@@ -211,7 +211,10 @@ endif
 if g:isGUI
     colorscheme monokai                               "Gvim配色方案
 else
-    colorscheme Tomorrow-Night-Eighties               "终端配色方案
+    syntax enable
+    set background=dark
+    let g:solarized_termcolors=256
+    colorscheme solarized                             "终端配色方案
 endif
 
 " 显示/隐藏菜单栏、工具栏、滚动条，可用 Ctrl + F11 切换
