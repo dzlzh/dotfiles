@@ -152,7 +152,7 @@ set foldmethod=indent                                 "indent 折叠方式
 set foldlevelstart=99                                 " 打开文件是默认不折叠代码
 
 " <Leader>映射到<Space>
-let mapleader = "\<Space>"
+" let mapleader = "\<Space>"
 
 " 用空格键来开关折叠
 nnoremap <leader>\ @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
@@ -206,8 +206,6 @@ endif
 
 " 设置代码配色方案
 " 安装配色方案 https://github.com/altercation/vim-colors-solarized
-" syntax enable
-" set background=dark
 if g:isGUI
     colorscheme monokai                               "Gvim配色方案
 else
