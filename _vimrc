@@ -644,9 +644,9 @@ let g:ctrlp_follow_symlinks=1
 " -----------------------------------------------------------------------------
 
 let g:vimwiki_use_mouse = 1
-let g:vimwiki_list = [{'path': 'E:/WorkSpace/vimwiki/',
-\ 'path_html': 'E:/WorkSpace/vimwiki/html/',
-\ 'html_header': 'E:/WorkSpace/vimwiki/template/header.tpl',}]
+let g:vimwiki_list = [{'path': 'E:/WorkSpace/dzlzh/Codes/Vimwiki/',
+\ 'path_html': 'E:/WorkSpace/dzlzh/Codes/Vimwiki/html/',
+\ 'template_path': 'E:/WorkSpace/dzlzh/Codes/Vimwiki/template',}]
 
 " =============================================================================
 "                          << 以下为常用工具配置 >>
