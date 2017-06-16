@@ -657,13 +657,15 @@ hi VimwikiHeader4 guifg=#0000FF
 hi VimwikiHeader5 guifg=#00FFFF  
 hi VimwikiHeader6 guifg=#FFFF00
 
-let g:vimwiki_list = [{'path': 'D:/WorkSpace/dzlzh/Codes/Vimwiki/',
-\ 'path_html': 'D:/WorkSpace/dzlzh/Codes/Vimwiki/html/',
-\ 'template_path': 'D:/WorkSpace/dzlzh/Codes/Vimwiki/template',
+let g:vimwiki_list = [{'path': 'D:/WorkSpace/dzlzh/Vimwiki/',
+\ "syntax": "markdown", 
+\ "ext": ".md",
 \ 'nested_syntaxes': {'python': 'python', 
 \ 'c++': 'cpp', 'java': 'java', 'sh': 'sh',
 \ 'viml': 'vim', 'xml': 'xml', 'json': 'json',
 \ 'css': 'css', 'html': 'html', 'php': 'php', 'javascript': 'js'}}]
+" \ 'path_html': 'D:/WorkSpace/dzlzh/Codes/Vimwiki/html/',
+" \ 'template_path': 'D:/WorkSpace/dzlzh/Codes/Vimwiki/template',
 
 " =============================================================================
 "                          << 以下为常用工具配置 >>
