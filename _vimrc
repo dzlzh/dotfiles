@@ -200,8 +200,9 @@ set shortmess=atI                                     "去掉欢迎界面
 
 " 设置 gVim 窗口初始位置及大小
 if g:isGUI
-    winpos 250 50                                     "指定窗口出现的位置，坐标原点在屏幕左上角
-    set lines=38 columns=120                          "指定窗口大小，lines为高度，columns为宽度
+    " winpos 250 50                                     "指定窗口出现的位置，坐标原点在屏幕左上角
+    " set lines=38 columns=120                          "指定窗口大小，lines为高度，columns为宽度
+    au GUIEnter * simalt ~x                             "启动时默认激活最大化
 endif
 
 " 设置代码配色方案
