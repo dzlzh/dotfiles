@@ -299,7 +299,6 @@ if expand("%:e") != "json"
 Plugin 'Yggdroot/indentLine'
 endif
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vimwiki/vimwiki'
 filetype plugin indent on    " required
 
 " =============================================================================
@@ -637,15 +636,6 @@ let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
-
-" -----------------------------------------------------------------------------
-"  < vimwiki 插件配置 >
-" -----------------------------------------------------------------------------
-
-let g:vimwiki_use_mouse = 1
-let g:vimwiki_list = [{'path': 'E:/WorkSpace/vimwiki/',
-\ 'path_html': 'E:/WorkSpace/vimwiki/html/',
-\ 'html_header': 'E:/WorkSpace/vimwiki/template/header.tpl',}]
 
 " =============================================================================
 "                          << 以下为常用工具配置 >>
