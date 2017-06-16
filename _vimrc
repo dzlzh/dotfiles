@@ -646,10 +646,24 @@ let g:ctrlp_follow_symlinks=1
 "  < vimwiki 插件配置 >
 " -----------------------------------------------------------------------------
 
+nmap <Leader>t :VimwikiToggleListItem<CR>
 let g:vimwiki_use_mouse = 1
-let g:vimwiki_list = [{'path': 'E:/WorkSpace/dzlzh/Codes/Vimwiki/',
-\ 'path_html': 'E:/WorkSpace/dzlzh/Codes/Vimwiki/html/',
-\ 'template_path': 'E:/WorkSpace/dzlzh/Codes/Vimwiki/template',}]
+let g:vimwiki_h1_headers = 1
+" 设置颜色  
+hi VimwikiHeader1 guifg=#FF0000  
+hi VimwikiHeader2 guifg=#00FF00  
+hi VimwikiHeader3 guifg=#FF00FF  
+hi VimwikiHeader4 guifg=#0000FF
+hi VimwikiHeader5 guifg=#00FFFF  
+hi VimwikiHeader6 guifg=#FFFF00
+
+let g:vimwiki_list = [{'path': 'D:/WorkSpace/dzlzh/Codes/Vimwiki/',
+\ 'path_html': 'D:/WorkSpace/dzlzh/Codes/Vimwiki/html/',
+\ 'template_path': 'D:/WorkSpace/dzlzh/Codes/Vimwiki/template',
+\ 'nested_syntaxes': {'python': 'python', 
+\ 'c++': 'cpp', 'java': 'java', 'sh': 'sh',
+\ 'viml': 'vim', 'xml': 'xml', 'json': 'json',
+\ 'css': 'css', 'html': 'html', 'php': 'php', 'javascript': 'js'}}]
 
 " =============================================================================
 "                          << 以下为常用工具配置 >>
