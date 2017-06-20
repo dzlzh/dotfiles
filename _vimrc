@@ -304,6 +304,7 @@ Plugin 'Yggdroot/indentLine'
 endif
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vimwiki/vimwiki'
+Plugin 'tpope/vim-fugitive'
 filetype plugin indent on    " required
 
 " =============================================================================
@@ -713,7 +714,7 @@ set tags+=tags;                            "向上级目录递归查找tags文�
 "                          << 以下为常用自动命令配置 >>
 " =============================================================================
 " 自动切换目录为当前编辑文件所在目录
-au BufRead,BufNewFile,BufEnter * cd %:p:h
+" au BufRead,BufNewFile,BufEnter * cd %:p:h
 " 设置快捷键将选中文本块复制至系统剪贴板
 vnoremap <Leader>y "+y
 " VIM 自身命令行模式智能补全
