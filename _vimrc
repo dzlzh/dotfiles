@@ -301,7 +301,7 @@ Plugin 'mattn/emmet-vim'
 " Ultisnips 需要python32 32位
 Plugin 'UltiSnips'
 Plugin 'honza/vim-snippets'
-if expand("%:e") != "json"
+if g:Suffix != "json"
     Plugin 'Yggdroot/indentLine'
 endif
 Plugin 'ctrlpvim/ctrlp.vim'
