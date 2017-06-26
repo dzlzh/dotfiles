@@ -182,7 +182,7 @@ if g:isGUI
 endif
 
 " 默认寄存器和系统剪贴板共享
-set clipboard+=unnamed
+" set clipboard+=unnamed
 
 " 设置 退出 vim 后，内容显示在终端屏幕, 可以用于查看和复制, 不需要可以去掉
 if g:islinux
@@ -209,7 +209,7 @@ set laststatus=2                                      "启用状态栏信息
 set cmdheight=2                                       "设置命令行的高度为2，默认为1
 set cursorline                                        "突出显示当前行
 set cursorcolumn                                      "突出显示当前列
-set guifont=Source_Code_Pro_Semibold:h14              "设置字体:字号（字体名称空格用下划线代替）
+set guifont=Source_Code_Pro_for_Powerline:h14         "设置字体:字号（字体名称空格用下划线代替）
 set nowrap                                            "设置不自动折行
 set shortmess=atI                                     "去掉欢迎界面
 
@@ -290,7 +290,8 @@ Plugin 'Mark--Karkat'
 Plugin 'Shougo/neocomplete'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'repeat.vim'
 Plugin 'wesleyche/SrcExpl'
 Plugin 'tpope/vim-surround'
@@ -462,9 +463,21 @@ let NERDSpaceDelims = 1                     "在左注释符之后，右注释�
 nmap <F2> :NERDTreeToggle<CR>
 
 " -----------------------------------------------------------------------------
-"  < powerline 插件配置 >
+"  < airline 插件配置 >
 " -----------------------------------------------------------------------------
 " 状态栏插件，更好的状态栏效果
+let g:airline_theme="powerlineish" 
+
+"这个是安装字体后 必须设置此项" 
+let g:airline_powerline_fonts = 1   
+
+ "打开tabline功能,方便查看Buffer和切换,省去了minibufexpl插件
+ let g:airline#extensions#tabline#enabled = 1
+ let g:airline#extensions#tabline#buffer_nr_show = 1
+
+"设置切换Buffer快捷键"
+ nnoremap <C-tab> :bn<CR>
+ nnoremap <C-s-tab> :bp<CR>
 
 " -----------------------------------------------------------------------------
 "  < repeat 插件配置 >
