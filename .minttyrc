@@ -1,0 +1,9 @@
+BoldAsFont=-1
+Font=Source Code Pro for Powerline
+FontHeight=15
+Columns=126
+Rows=38
+Scrollbar=none
+Transparency=high
+ComposeKey=off
+RightClickAction=paste
