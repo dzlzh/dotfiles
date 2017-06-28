@@ -1,0 +1,18 @@
+[user]
+	email = dzlzh@null.net
+	name = DZLZH
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status
+	br = branch
+	ch = checkout
+[core]
+	quotepath = false
+	ignorecase = false
+[gui]
+	encoding = utf-8
+[i18n]
+	commitencoding = utf-8
+	logoutputencoding = utf-8
+[push]
+	default = current
