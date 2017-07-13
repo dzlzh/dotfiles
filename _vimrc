@@ -145,9 +145,10 @@ set expandtab                                         " 将Tab键转换为空格
 set tabstop=4                                         " 设置Tab键的宽度
 set shiftwidth=4                                      " 换行时自动缩进4个空格
 set smarttab                                          " 指定按一次backspace就删除shiftwidth宽度的空格
-set foldenable                                        " 启用折叠
-set foldmethod=indent                                 " indent 折叠方式
-set foldlevelstart=99                                 " 打开文件是默认不折叠代码
+set nofoldenable                                      " 关闭折叠
+" set foldenable                                        " 启用折叠
+" set foldmethod=indent                                 " indent 折叠方式
+" set foldlevelstart=99                                 " 打开文件是默认不折叠代码
 
 " 用反斜杠来开关折叠
 nnoremap <leader>\ @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
