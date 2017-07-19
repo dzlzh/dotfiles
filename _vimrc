@@ -309,6 +309,7 @@ endif
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'tpope/vim-fugitive'
+Plugin 'mileszs/ack.vim'
 filetype plugin indent on    " required
 
 " =============================================================================
@@ -605,6 +606,15 @@ let g:vimwiki_list = [{'path': 'D:/WorkSpace/dzlzh/vimwiki/',
 \ 'c++': 'cpp', 'java': 'java', 'sh': 'sh',
 \ 'viml': 'vim', 'xml': 'xml', 'json': 'json',
 \ 'css': 'css', 'html': 'html', 'php': 'php', 'javascript': 'js'}}]
+
+" -----------------------------------------------------------------------------
+"  < ack.vim 插件配置 >
+" -----------------------------------------------------------------------------
+
+" Ack.vim 是 Ack 的 Vim 插件，通过 Quickfix 来提供搜索结果
+" Windos 通过 choco 安装 ag #choco install ag
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 
 " =============================================================================
 "                          << 以下为常用工具配置 >>
