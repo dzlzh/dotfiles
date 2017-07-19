@@ -614,6 +614,7 @@ let g:vimwiki_list = [{'path': 'D:/WorkSpace/dzlzh/vimwiki/',
 " Ack.vim 是 Ack 的 Vim 插件，通过 Quickfix 来提供搜索结果
 " Windos 通过 choco 安装 ag #choco install ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
+map <leader>s :Ack<space>-i<space>
 
 
 " =============================================================================
