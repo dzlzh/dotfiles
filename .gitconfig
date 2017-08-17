@@ -9,6 +9,8 @@
 [core]
 	quotepath = false
 	ignorecase = false
+	autocrlf = false
+    safecrlf = true
 [gui]
 	encoding = utf-8
 [i18n]
