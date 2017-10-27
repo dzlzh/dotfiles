@@ -294,6 +294,7 @@ Plugin 'Mark--Karkat'
 Plugin 'Shougo/neocomplete'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'repeat.vim'
@@ -466,6 +467,17 @@ let NERDSpaceDelims = 1                     "在左注释符之后，右注释�
 
 " 常规模式下输入 F2 调用插件
 nmap <F2> :NERDTreeToggle<CR>
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 
 " -----------------------------------------------------------------------------
 "  < airline 插件配置 >
