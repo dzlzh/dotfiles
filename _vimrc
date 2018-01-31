@@ -294,7 +294,7 @@ Plugin 'Mark--Karkat'
 Plugin 'Shougo/neocomplete'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'repeat.vim'
@@ -587,7 +587,10 @@ let g:indentLine_color_term = 239
 
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_cmd = 'CtrlP'
+" \p 打开 Mru
 map <leader>p :CtrlPMRU<CR>
+" \b 打开 Buffer
+map <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
     \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
