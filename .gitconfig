@@ -9,7 +9,7 @@
 [core]
     quotepath = false
     ignorecase = false
-    autocrlf = false
+    autocrlf = input
     safecrlf = true
 [gui]
     encoding = utf-8
