@@ -317,6 +317,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
+if g:Suffix != 'json'
+    Plugin 'Yggdroot/indentLine'
+endif
+if g:Suffix == 'go'
+    Plugin 'fatih/vim-go' 
+endif
 filetype plugin indent on    " required
 
 " =============================================================================
