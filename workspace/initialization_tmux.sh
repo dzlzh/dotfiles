@@ -18,8 +18,8 @@ $cmd has -t $session 2> /dev/null
 
 if [ $? -ne 0 ]; then
     $cmd -f $conf new -d -n workspace -s $session 
-    $cmd neww -n zsh -t $session "zsh"
-    $cmd selectw -t $session:2
+    # $cmd neww -n zsh -t $session
+    # $cmd selectw -t $session:2
 fi
 
 $cmd att -t $session
