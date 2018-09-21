@@ -9,7 +9,7 @@ session="dzl"
 # 配置文件地址
 conf="./wrokspace.tmux.conf"
 # window name
-window1="workspace"
+workspace="workspace"
 
 if [ -z $cmd ]; then
     echo "You need to install tmux."
@@ -19,11 +19,11 @@ fi
 $cmd has -t $session
 
 if [ $? -ne 0 ]; then
-    $cmd -f $conf new -d -n $window1 -s $session 
-    $cmd splitw -t $session:$window1
-    $cmd splitw -t $session:$window1
-    $cmd send -t $session:$window1.1 'vim'
-    $cmd selectl -t $window1 main-horizontal 
+    $cmd -f $conf new -d -n $workspace -s $session 
+    $cmd splitw -t $session:$workspace
+    $cmd splitw -t $session:$workspace
+    $cmd send -t $session:$workspace.1 'vim'
+    $cmd selectl -t $workspace main-horizontal 
     $cmd selectw -t $session:1
 fi
 
