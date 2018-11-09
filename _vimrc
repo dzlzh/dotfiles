@@ -623,13 +623,15 @@ hi VimwikiHeader4 guifg=#0000FF
 hi VimwikiHeader5 guifg=#00FFFF  
 hi VimwikiHeader6 guifg=#FFFF00
 
-let g:vimwiki_list = [{'path': 'D:/WorkSpace/dzlzh/vimwiki/',
-\ "syntax": "markdown", 
-\ "ext": ".md",
+let g:vimwiki_list = [{'path': 'D:/workspace/dzlzh/',
+\ 'index': 'README',
+\ 'syntax': 'markdown', 
+\ 'ext': '.md',
 \ 'nested_syntaxes': {'python': 'python', 
 \ 'c++': 'cpp', 'java': 'java', 'sh': 'sh',
 \ 'viml': 'vim', 'xml': 'xml', 'json': 'json',
-\ 'css': 'css', 'html': 'html', 'php': 'php', 'javascript': 'js'}}]
+\ 'css': 'css', 'html': 'html', 'php': 'php', 
+\ 'go': 'go', 'sql': 'sql', 'javascript': 'js'}}]
 
 " -----------------------------------------------------------------------------
 "  < ack.vim 插件配置 >
