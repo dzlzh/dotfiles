@@ -623,7 +623,7 @@ hi VimwikiHeader4 guifg=#0000FF
 hi VimwikiHeader5 guifg=#00FFFF  
 hi VimwikiHeader6 guifg=#FFFF00
 
-let g:vimwiki_list = [{'path': 'D:/workspace/dzlzh/',
+let g:vimwiki_list = [{'path': 'D:/workspace/vimwiki/',
 \ 'index': 'README',
 \ 'syntax': 'markdown', 
 \ 'ext': '.md',
