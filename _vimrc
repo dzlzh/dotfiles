@@ -184,6 +184,8 @@ imap <c-l> <Right>
 if g:isGUI
     au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)
 endif
+" 80 个字符的位置显示一条竖线来警示
+set colorcolumn=81
 
 " 默认寄存器和系统剪贴板共享
 " set clipboard+=unnamed
