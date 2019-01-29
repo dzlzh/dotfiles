@@ -36,7 +36,7 @@ let g:ctrlp_follow_symlinks=1
 
 " ack setting
 let g:ackprg = 'ag --nogroup --nocolor --column'
-map <leader>s :Ack<space>-i<space>
+map <A-f> :Ack<space>-i<space>
 
 " tagbar setting
 let g:tagbar_width=30                                 " 设置窗口宽度
