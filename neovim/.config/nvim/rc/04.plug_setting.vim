@@ -91,7 +91,7 @@ call remote#host#RegisterPlugin('python3', '$VIM/plugged/deoplete.nvim/rplugin/p
      \ ])
 
 " vimwiki setting
-nmap Leadert VimwikiToggleListItemCR
+nmap <Leader>t :VimwikiToggleListItem<CR>
 let gvimwiki_use_mouse = 1
 let gvimwiki_h1_headers = 1
 hi VimwikiHeader1 guifg=#FF0000  
