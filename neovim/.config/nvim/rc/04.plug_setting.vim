@@ -51,17 +51,23 @@ xmap ga <Plug>(EasyAlign)
 
 " ale setting
 let g:ale_sign_column_always = 0                      " 开启标志列
-let g:ale_set_highlights = 0
-let g:ale_lint_on_text_changed = 'never'              " 文件内容发生变化时不进行检查
-let g:ale_lint_on_enter = 0                           " 打开文件时不进行检查
-let g:ale_sign_error = 'x'                            " 自定义error图标
-let g:ale_sign_warning = '!'                          " 自定义warning图标 
-" 在vim自带的状态栏中整合ale
-let g:ale_statusline_format = ['x%d', '!%d', 'OK']
-" 显示Linter名称,出错或警告等相关信息
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '>>'                           " 自定义error图标
+let g:ale_sign_warning = '--'                         " 自定义warning图标
+let g:ale_fix_on_save = 1
+let g:airline#extensions#ale#enabled = 1              " 在状态栏显示
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'php': ['php_cs_fixer', 'phpcbf'],
+\}
+" let g:ale_set_highlights = 0
+" let g:ale_lint_on_text_changed = 'never'              " 文件内容发生变化时不进行检查
+" let g:ale_lint_on_enter = 0                           " 打开文件时不进行检查
+" " 在vim自带的状态栏中整合ale
+" let g:ale_statusline_format = ['x%d', '!%d', 'OK']
+" " 显示Linter名称,出错或警告等相关信息
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " 普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
 nmap sp <Plug>(ale_previous_wrap)
 nmap sn <Plug>(ale_next_wrap)
@@ -94,18 +100,18 @@ call remote#host#RegisterPlugin('python3', '$VIM/plugged/deoplete.nvim/rplugin/p
 nmap <Leader>t :VimwikiToggleListItem<CR>
 let gvimwiki_use_mouse = 1
 let gvimwiki_h1_headers = 1
-hi VimwikiHeader1 guifg=#FF0000  
-hi VimwikiHeader2 guifg=#00FF00  
-hi VimwikiHeader3 guifg=#FF00FF  
+hi VimwikiHeader1 guifg=#FF0000
+hi VimwikiHeader2 guifg=#00FF00
+hi VimwikiHeader3 guifg=#FF00FF
 hi VimwikiHeader4 guifg=#0000FF
-hi VimwikiHeader5 guifg=#00FFFF  
+hi VimwikiHeader5 guifg=#00FFFF
 hi VimwikiHeader6 guifg=#FFFF00
 let g:vimwiki_list = [{'path': g:vimwikiPath,
 \ 'index': 'README',
-\ 'syntax': 'markdown', 
+\ 'syntax': 'markdown',
 \ 'ext': '.md',
-\ 'nested_syntaxes': {'python': 'python', 
+\ 'nested_syntaxes': {'python': 'python',
 \ 'c++': 'cpp', 'java': 'java', 'sh': 'sh',
 \ 'viml': 'vim', 'xml': 'xml', 'json': 'json',
-\ 'css': 'css', 'html': 'html', 'php': 'php', 
+\ 'css': 'css', 'html': 'html', 'php': 'php',
 \ 'go': 'go', 'sql': 'sql', 'javascript': 'js'}}]
