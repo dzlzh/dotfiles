@@ -15,13 +15,14 @@ Plug 'pbrisbin/vim-mkdir'                             " 自动创建目录
 Plug 'kien/ctrlp.vim'                                 " 文件跳转
 Plug 'mileszs/ack.vim'                                " 全文搜索
 Plug 'tpope/vim-fugitive'                             " Git
+Plug 'airblade/vim-gitgutter'                         " Git Diff
 
 " Plugins for code
 Plug 'majutsushi/tagbar'                              " 变量与函数列表
 Plug 'jiangmiao/auto-pairs'                           " 自动补全括号
 Plug 'scrooloose/nerdcommenter'                       " 代码注释
 Plug 'tpope/vim-surround'                             " 快速给单词/句子两边增加符号
-Plug 'vim-scripts/repeat.vim'                         " .命令来重复上次插件使用的命令 
+Plug 'vim-scripts/repeat.vim'                         " .命令来重复上次插件使用的命令
 Plug 'matze/vim-move'                                 " 向上和向下移动代码
 Plug 'junegunn/vim-easy-align'                        " 快速对齐
 Plug 'w0rp/ale'                                       " 异步代码检测工具
