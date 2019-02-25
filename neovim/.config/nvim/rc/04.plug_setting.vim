@@ -115,3 +115,6 @@ let g:vimwiki_list = [{'path': g:vimwikiPath,
 \ 'viml': 'vim', 'xml': 'xml', 'json': 'json',
 \ 'css': 'css', 'html': 'html', 'php': 'php',
 \ 'go': 'go', 'sql': 'sql', 'javascript': 'js'}}]
+
+" AsyncRun
+nmap <Leader>: :AsyncRun<space>

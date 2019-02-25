@@ -18,3 +18,6 @@ nnoremap <leader>\ @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 常规模式下文件格式转成 Unix
 nmap <leader>U :set fileformat=unix<CR>
+
+" 常规模式下打开 quickfix
+nmap <F3> :copen<CR>
