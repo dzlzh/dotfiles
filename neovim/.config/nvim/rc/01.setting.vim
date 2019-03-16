@@ -14,7 +14,7 @@ set fileformats=unix,dos,mac                          " 给出文件的<EOL>格�
 syntax on
 set background=dark
 colorscheme NeoSolarized
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 hi Pmenu ctermbg=238 gui=bold
 if has("termguicolors")
     set termguicolors
