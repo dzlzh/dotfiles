@@ -14,11 +14,13 @@ set fileformats=unix,dos,mac                          " 给出文件的<EOL>格�
 syntax on
 set background=dark
 colorscheme NeoSolarized
-" hi Normal guibg=NONE ctermbg=NONE
 hi Pmenu ctermbg=238 gui=bold
-if has("termguicolors")
-    set termguicolors
+if g:islinux
+    hi Normal guibg=NONE ctermbg=NONE
 endif
+" if has("termguicolors")
+"     set termguicolors
+" endif
 
 if g:islinux 
     set mouse=a                                       " 在任何模式下启用鼠标
