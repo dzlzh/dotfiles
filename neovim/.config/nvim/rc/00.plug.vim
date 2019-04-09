@@ -3,8 +3,11 @@
 " -----------------------------------------------------------------------------
 call plug#begin('$VIM/plugged')
 
+" Plugins for blendent
+Plug 'iCyMind/NeoSolarized'                           " Solarized
+Plug 'morhetz/gruvbox'                                " gruvbox
+
 " Plugins for beautify
-Plug 'iCyMind/NeoSolarized'                           " 配色
 Plug 'bling/vim-airline'                              " 美化状态栏
 Plug 'vim-airline/vim-airline-themes'                 " 美化状态栏主题
 Plug 'Yggdroot/indentLine'                            " 缩进提示线
