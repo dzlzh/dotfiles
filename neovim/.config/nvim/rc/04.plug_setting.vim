@@ -118,3 +118,6 @@ let g:vimwiki_list = [{'path': g:vimwikiPath,
 
 " AsyncRun
 nmap <Leader>: :AsyncRun<space>
+
+" vim-gitgutter
+set updatetime=100
