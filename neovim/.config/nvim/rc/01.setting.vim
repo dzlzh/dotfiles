@@ -12,9 +12,11 @@ set fileformats=unix,dos,mac                          " 给出文件的<EOL>格�
 " -----------------------------------------------------------------------------
 " 设置代码配色方案
 syntax on
+" set background=light
 set background=dark
-colorscheme NeoSolarized
-hi Pmenu ctermbg=238 gui=bold
+" colorscheme NeoSolarized
+ colorscheme gruvbox
+" hi Pmenu ctermbg=238 gui=bold
 if g:islinux
     hi Normal guibg=NONE ctermbg=NONE
 endif
