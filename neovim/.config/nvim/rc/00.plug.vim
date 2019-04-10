@@ -28,19 +28,20 @@ Plug 'tpope/vim-surround'                             " 快速给单词/句子�
 Plug 'vim-scripts/repeat.vim'                         " .命令来重复上次插件使用的命令
 Plug 'matze/vim-move'                                 " 向上和向下移动代码
 Plug 'junegunn/vim-easy-align'                        " 快速对齐
-Plug 'w0rp/ale'                                       " 异步代码检测工具
 Plug 'skywind3000/asyncrun.vim'                       " 异步构建和测试调度程序
 
 " Plugins for autocomplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+" Plug 'w0rp/ale'                                       " 异步代码检测工具
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
 
 " Plugins for golang
 Plug 'fatih/vim-go', { 'for': 'go' }

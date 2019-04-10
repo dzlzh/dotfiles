@@ -34,10 +34,6 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 
-" ack setting
-let g:ackprg = 'ag --nogroup --nocolor --column'
-map <A-f> :Ack<space>-i<space>
-
 " tagbar setting
 let g:tagbar_width=30                                 " 设置窗口宽度
 nmap tb :TagbarToggle<CR>
@@ -50,51 +46,51 @@ vmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 
 " ale setting
-let g:ale_sign_column_always = 0                      " 开启标志列
-let g:ale_sign_error = '>>'                           " 自定义error图标
-let g:ale_sign_warning = '--'                         " 自定义warning图标
-let g:ale_fix_on_save = 1
-let g:airline#extensions#ale#enabled = 1              " 在状态栏显示
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'php': ['php_cs_fixer', 'phpcbf'],
-\}
-" let g:ale_set_highlights = 0
-" let g:ale_lint_on_text_changed = 'never'              " 文件内容发生变化时不进行检查
-" let g:ale_lint_on_enter = 0                           " 打开文件时不进行检查
-" " 在vim自带的状态栏中整合ale
-" let g:ale_statusline_format = ['x%d', '!%d', 'OK']
-" " 显示Linter名称,出错或警告等相关信息
-" let g:ale_echo_msg_error_str = 'E'
-" let g:ale_echo_msg_warning_str = 'W'
-" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-" 普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
-nmap sp <Plug>(ale_previous_wrap)
-nmap sn <Plug>(ale_next_wrap)
-" <Leader>s触发/关闭语法检查
-nmap <Leader>s :ALEToggle<CR>
-" <Leader>d查看错误或警告的详细信息
-nmap <Leader>d :ALEDetail<CR>
+"let g:ale_sign_column_always = 0                      " 开启标志列
+"let g:ale_sign_error = '>>'                           " 自定义error图标
+"let g:ale_sign_warning = '--'                         " 自定义warning图标
+"let g:ale_fix_on_save = 1
+"let g:airline#extensions#ale#enabled = 1              " 在状态栏显示
+"let g:ale_fixers = {
+"\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+"\   'php': ['php_cs_fixer', 'phpcbf'],
+"\}
+"" let g:ale_set_highlights = 0
+"" let g:ale_lint_on_text_changed = 'never'              " 文件内容发生变化时不进行检查
+"" let g:ale_lint_on_enter = 0                           " 打开文件时不进行检查
+"" 在vim自带的状态栏中整合ale
+"" let g:ale_statusline_format = ['x%d', '!%d', 'OK']
+"" 显示Linter名称,出错或警告等相关信息
+"" let g:ale_echo_msg_error_str = 'E'
+"" let g:ale_echo_msg_warning_str = 'W'
+"" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+"" 普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
+"nmap sp <Plug>(ale_previous_wrap)
+"nmap sn <Plug>(ale_next_wrap)
+"" <Leader>s触发/关闭语法检查
+"nmap <Leader>s :ALEToggle<CR>
+"" <Leader>d查看错误或警告的详细信息
+"nmap <Leader>d :ALEDetail<CR>
 
 " deoplete setting
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#auto_complete_start_length = 1
-let g:deoplete#auto_complete_delay = 50
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_smart_case = 1
+" let g:deoplete#auto_complete_start_length = 1
+" let g:deoplete#auto_complete_delay = 50
 
 " neosnippet setting
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-call remote#host#RegisterPlugin('python3', '$VIM/plugged/deoplete.nvim/rplugin/python3/deoplete.py', [
-      \ {'sync': 1, 'name': 'DeopleteInitializePython', 'type': 'command', 'opts': {}},
-     \ ])
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>     <Plug>(neosnippet_expand_target)
+" imap <expr><TAB>
+"  \ pumvisible() ? "\<C-n>" :
+"  \ neosnippet#expandable_or_jumpable() ?
+"  \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" call remote#host#RegisterPlugin('python3', '$VIM/plugged/deoplete.nvim/rplugin/python3/deoplete.py', [
+"       \ {'sync': 1, 'name': 'DeopleteInitializePython', 'type': 'command', 'opts': {}},
+"      \ ])
 
 " vimwiki setting
 nmap <Leader>t :VimwikiToggleListItem<CR>
@@ -115,6 +111,10 @@ let g:vimwiki_list = [{'path': g:vimwikiPath,
 \ 'viml': 'vim', 'xml': 'xml', 'json': 'json',
 \ 'css': 'css', 'html': 'html', 'php': 'php',
 \ 'go': 'go', 'sql': 'sql', 'javascript': 'js'}}]
+
+" ack setting
+let g:ackprg = 'ag --nogroup --nocolor --column'
+map <A-f> :Ack<space>-i<space>
 
 " AsyncRun
 nmap <Leader>: :AsyncRun<space>
