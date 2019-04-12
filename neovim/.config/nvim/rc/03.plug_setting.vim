@@ -1,9 +1,6 @@
 " airline setting
 let g:airline_theme="powerlineish"                    " 状态栏插件，更好的状态栏效果
 let g:airline_powerline_fonts = 1                     " 这个是安装字体后 必须设置此项
-" 设置切换Buffer快捷键
-nnoremap <C-tab> :bn<CR>
-nnoremap <C-s-tab> :bp<CR>
 
 " indentLine setting
 " 开启/关闭对齐线

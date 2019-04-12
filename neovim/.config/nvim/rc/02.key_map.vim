@@ -7,6 +7,10 @@ noremap <c-j> <c-w>j
 noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 
+" 设置切换Buffer快捷键
+nnoremap <C-tab> :bn<CR>
+nnoremap <C-s-tab> :bp<CR>
+
 "  插入模式下光标向上移动
 imap <c-k> <Up>
 imap <c-j> <Down>
