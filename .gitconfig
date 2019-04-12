@@ -1,20 +1,18 @@
 [user]
-    email = dzlzh@null.net
-    name = DZLZH
+    email             = dzlzh@null.net
+    name              = dzlzh
 [alias]
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    st = status
-    br = branch
-    ch = checkout
+    lg                = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    st                = status
 [core]
-    quotepath = false
-    ignorecase = false
-    autocrlf = input
-    safecrlf = true
+    quotepath         = false
+    ignorecase        = false
+    autocrlf          = input
+    safecrlf          = true
 [gui]
-    encoding = utf-8
+    encoding          = utf-8
 [i18n]
-    commitencoding = utf-8
+    commitencoding    = utf-8
     logoutputencoding = utf-8
 [push]
-    default = current
+    default           = current
