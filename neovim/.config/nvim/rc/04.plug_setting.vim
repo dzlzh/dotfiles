@@ -45,6 +45,36 @@ let NERDSpaceDelims = 1                               " 在左注释符之后，
 vmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 
+" vimwiki setting
+nmap <Leader>t :VimwikiToggleListItem<CR>
+let gvimwiki_use_mouse = 1
+let gvimwiki_h1_headers = 1
+hi VimwikiHeader1 guifg=#FF0000
+hi VimwikiHeader2 guifg=#00FF00
+hi VimwikiHeader3 guifg=#FF00FF
+hi VimwikiHeader4 guifg=#0000FF
+hi VimwikiHeader5 guifg=#00FFFF
+hi VimwikiHeader6 guifg=#FFFF00
+let g:vimwiki_list = [{'path': g:vimwikiPath,
+\ 'index': 'README',
+\ 'syntax': 'markdown',
+\ 'ext': '.md',
+\ 'nested_syntaxes': {'python': 'python',
+\ 'c++': 'cpp', 'java': 'java', 'sh': 'sh',
+\ 'viml': 'vim', 'xml': 'xml', 'json': 'json',
+\ 'css': 'css', 'html': 'html', 'php': 'php',
+\ 'go': 'go', 'sql': 'sql', 'javascript': 'js'}}]
+
+" ack setting
+let g:ackprg = 'ag --nogroup --nocolor --column'
+map <A-f> :Ack<space>-i<space>
+
+" AsyncRun
+nmap <Leader>: :AsyncRun<space>
+
+" vim-gitgutter
+set updatetime=100
+
 " ale setting
 "let g:ale_sign_column_always = 0                      " 开启标志列
 "let g:ale_sign_error = '>>'                           " 自定义error图标
@@ -92,32 +122,3 @@ xmap ga <Plug>(EasyAlign)
 "       \ {'sync': 1, 'name': 'DeopleteInitializePython', 'type': 'command', 'opts': {}},
 "      \ ])
 
-" vimwiki setting
-nmap <Leader>t :VimwikiToggleListItem<CR>
-let gvimwiki_use_mouse = 1
-let gvimwiki_h1_headers = 1
-hi VimwikiHeader1 guifg=#FF0000
-hi VimwikiHeader2 guifg=#00FF00
-hi VimwikiHeader3 guifg=#FF00FF
-hi VimwikiHeader4 guifg=#0000FF
-hi VimwikiHeader5 guifg=#00FFFF
-hi VimwikiHeader6 guifg=#FFFF00
-let g:vimwiki_list = [{'path': g:vimwikiPath,
-\ 'index': 'README',
-\ 'syntax': 'markdown',
-\ 'ext': '.md',
-\ 'nested_syntaxes': {'python': 'python',
-\ 'c++': 'cpp', 'java': 'java', 'sh': 'sh',
-\ 'viml': 'vim', 'xml': 'xml', 'json': 'json',
-\ 'css': 'css', 'html': 'html', 'php': 'php',
-\ 'go': 'go', 'sql': 'sql', 'javascript': 'js'}}]
-
-" ack setting
-let g:ackprg = 'ag --nogroup --nocolor --column'
-map <A-f> :Ack<space>-i<space>
-
-" AsyncRun
-nmap <Leader>: :AsyncRun<space>
-
-" vim-gitgutter
-set updatetime=100

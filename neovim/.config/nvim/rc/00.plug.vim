@@ -30,8 +30,14 @@ Plug 'matze/vim-move'                                 " 向上和向下移动代
 Plug 'junegunn/vim-easy-align'                        " 快速对齐
 Plug 'skywind3000/asyncrun.vim'                       " 异步构建和测试调度程序
 
+" Plugins for wiki
+Plug 'vimwiki/vimwiki'
+
+" Plugins for golang
+Plug 'fatih/vim-go', { 'for': 'go' }
+
 " Plugins for autocomplete
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim'
 " Plug 'w0rp/ale'                                       " 异步代码检测工具
 " if has('nvim')
 "   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -42,11 +48,5 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " endif
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
-
-" Plugins for golang
-Plug 'fatih/vim-go', { 'for': 'go' }
-
-" Plugins for wiki
-Plug 'vimwiki/vimwiki'
 
 call plug#end()
