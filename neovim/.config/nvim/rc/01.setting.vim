@@ -10,26 +10,23 @@ set fileformats   = unix,dos,mac                      " 给出文件的<EOL>格�
 " -----------------------------------------------------------------------------
 "  < 界面配置 >
 " -----------------------------------------------------------------------------
+" 设置字体:字号（字体名称空格用下划线代替）
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+
 " 设置代码配色方案
 syntax on
-" set background=light
-set background=dark
-" colorscheme NeoSolarized
- colorscheme gruvbox
-" hi Pmenu ctermbg=238 gui=bold
-if g:islinux
+set background=dark                                   " dark/light
+colorscheme gruvbox                                   " NeoSolarized/gruvbox
+if g:islinux 
     hi Normal guibg=NONE ctermbg=NONE
+    set mouse=a                                       " 在任何模式下启用鼠标
+    set t_Co=256                                      " 在终端启用256色
+    set t_ti= t_te=                                   " 退出后，内容显示在终端屏幕
 endif
+" hi Pmenu ctermbg=238 gui=bold
 " if has("termguicolors")
 "     set termguicolors
 " endif
-
-if g:islinux 
-    set mouse=a                                       " 在任何模式下启用鼠标
-    set t_Co=256                                      " 在终端启用256色
-    " 设置退出后，内容显示在终端屏幕, 可以用于查看和复制, 不需要可以去掉
-    set t_ti= t_te=
-endif
 
 set shortmess=atI                                     " 去掉欢迎界面
 set nowrap                                            " 设置不自动折行
@@ -43,10 +40,6 @@ set showmode                                          " 左下角显示当前 vi
 set cursorline                                        " 突出显示当前行
 set cursorcolumn                                      " 突出显示当前列
 set colorcolumn=81                                    " 80 个字符的位置显示一条竖线来警示
-
-" 设置字体:字号（字体名称空格用下划线代替）
-set guifont=Source\ Code\ Pro\ for\ Powerline:h14
-
 " 启用每行超过80列的字符提示（字体变蓝并加下划线），不启用就注释掉
 au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)
 
@@ -79,3 +72,15 @@ set smartcase                                         " 如果搜索模式包含
 set foldenable                                        " 启用折叠
 set foldmethod=indent                                 " indent 折叠方式
 set foldlevelstart=1                                  " 开始编辑时总是关闭所有的折叠 (0)，关闭某些折叠 (1) 或者没有折叠 (99)
+
+" -----------------------------------------------------------------------------
+"  < 其它配置 >
+" -----------------------------------------------------------------------------
+"设置无备份文件
+set nobackup
+set nowb
+set noundofile
+set noswapfile
+
+" PHP w 认为 $ 为单词的一部分
+autocmd FileType php setlocal iskeyword+=$
