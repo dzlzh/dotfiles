@@ -1,17 +1,17 @@
 " -----------------------------------------------------------------------------
 "  < 编码配置 >
 " -----------------------------------------------------------------------------
-set encoding      = utf-8                             " 设置内部编码
-set fileencoding  = utf-8                             " 设置当前文件编码
-set fileencodings = ucs-bom,utf-8,gbk,cp936,latin-1   " 设置支持打开的文件的编码
-set fileformat    = unix                              " 设置新文件的<EOL>格式
-set fileformats   = unix,dos,mac                      " 给出文件的<EOL>格式类型
+set encoding=utf-8                                    " 设置内部编码
+set fileencoding=utf-8                                " 设置当前文件编码
+set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1     " 设置支持打开的文件的编码
+set fileformat=unix                                   " 设置新文件的<EOL>格式
+set fileformats=unix,dos,mac                          " 给出文件的<EOL>格式类型
 
 " -----------------------------------------------------------------------------
 "  < 界面配置 >
 " -----------------------------------------------------------------------------
 " 设置字体:字号（字体名称空格用下划线代替）
-set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
 " 设置代码配色方案
 syntax on

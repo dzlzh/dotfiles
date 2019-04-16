@@ -15,10 +15,14 @@ Plug 'Yggdroot/indentLine'                            " 缩进提示线
 " Plugins for file
 Plug 'scrooloose/nerdtree'                            " 文件管理器
 Plug 'pbrisbin/vim-mkdir'                             " 自动创建目录
-Plug 'kien/ctrlp.vim'                                 " 文件跳转
-Plug 'mileszs/ack.vim'                                " 全文搜索
+Plug 'junegunn/fzf', {'do': './install --all'}        " FZF 文件搜索
+Plug 'junegunn/fzf.vim'                               " FZF 文件搜索
+" Plug 'mileszs/ack.vim'                                " 全文搜索
+" Plug 'kien/ctrlp.vim'                                 " CtrlP 文件搜索
+
+" Plugins for Git
 Plug 'tpope/vim-fugitive'                             " Git
-Plug 'airblade/vim-gitgutter'                         " Git Diff
+Plug 'airblade/vim-gitgutter'                         " Git Diff 
 
 " Plugins for code
 Plug 'majutsushi/tagbar'                              " 变量与函数列表
