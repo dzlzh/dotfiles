@@ -78,7 +78,6 @@ function! OpenFloatingWin()
         \ 'width': width * 2 / 3,
         \ 'height': height / 2
         \ }
-
   let buf=nvim_create_buf(v:false, v:true)
   let win=nvim_open_win(buf, v:true, opts)
   " 设置浮动窗口高亮
@@ -91,6 +90,10 @@ function! OpenFloatingWin()
         \ norelativenumber
         \ signcolumn=no
 endfunction
+
+" Coc
+" CocInstall coc-json
+" CocInstall coc-phpls
 
 " ack setting
 " let g:ackprg = 'ag --nogroup --nocolor --column'

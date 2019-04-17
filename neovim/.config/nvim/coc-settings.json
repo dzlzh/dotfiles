@@ -1,9 +1,2 @@
 {
-  "languageserver": {
-    "phplang": {
-      "command": "php",
-      "args": ["vendor/felixfbecker/language-server/bin/php-language-server.php"],
-      "filetypes": ["php"]
-    }
-  }
 }
