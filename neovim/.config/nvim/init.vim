@@ -10,8 +10,8 @@ if (has("win32")|| has("win64"))
     let g:config            = '~/AppData/Local/nvim'
     let g:rc                = '~/AppData/Local/nvim/rc/*.vim'
     let g:vimwikiPath       = ''
-    let g:python_host_prog  = ''
-    let g:python3_host_prog = ''
+    " let g:python_host_prog  = ''
+    " let g:python3_host_prog = ''
 else
     let g:islinux           = 1
     let g:config            = '~/.config/nvim'
