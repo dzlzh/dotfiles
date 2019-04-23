@@ -45,7 +45,7 @@ let g:vimwiki_list=[{'path': g:vimwikiPath,
 \ 'go': 'go', 'sql': 'sql', 'javascript': 'js'}}]
 
 " AsyncRun
-nmap <Leader>: :AsyncRun<space>
+nmap <Leader>; :AsyncRun<space>
 
 " vim-gitgutter
 set updatetime=100
