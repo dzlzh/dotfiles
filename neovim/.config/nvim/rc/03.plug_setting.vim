@@ -12,6 +12,16 @@ let g:indentLine_color_term=239
 " nerdtree setting
 " 常规模式下输入 F2 调用插件
 nmap <F2> :NERDTreeToggle<CR>
+let g:tagbar_type_php  = {
+\ 'ctagstype' : 'php',
+\ 'kinds'     : [
+    \ 'i:interfaces',
+    \ 'c:classes',
+    \ 'd:constant definitions',
+    \ 'f:functions',
+    \ 'j:javascript functions:1'
+\ ]
+\ }
 
 " tagbar setting
 let g:tagbar_width=30                                 " 设置窗口宽度
