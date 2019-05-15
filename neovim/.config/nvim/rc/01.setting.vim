@@ -20,8 +20,8 @@ colorscheme gruvbox                                   " NeoSolarized/gruvbox
 if g:islinux 
     hi Normal guibg=NONE ctermbg=NONE
     set mouse=a                                       " 在任何模式下启用鼠标
-    set t_Co=256                                      " 在终端启用256色
     set t_ti= t_te=                                   " 退出后，内容显示在终端屏幕
+    " set t_Co=256                                      " 在终端启用256色
 endif
 " hi Pmenu ctermbg=238 gui=bold
 " if has("termguicolors")
