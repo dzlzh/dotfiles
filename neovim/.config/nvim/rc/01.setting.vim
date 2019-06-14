@@ -36,6 +36,7 @@ set cmdheight=2                                       " 设置命令行的高度
 set ruler                                             " 显示当前的行号列号
 set showcmd                                           " 在状态栏显示正在输入的命令
 set showmode                                          " 左下角显示当前 vim 模式
+set modelines=0
 
 set cursorline                                        " 突出显示当前行
 set cursorcolumn                                      " 突出显示当前列
