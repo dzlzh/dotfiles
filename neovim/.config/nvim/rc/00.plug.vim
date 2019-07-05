@@ -41,7 +41,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'fatih/vim-go', { 'for': 'go' }
 
 " Plugins for autocomplete
-Plug 'neoclide/coc.nvim', { 'do': ':coc#util#build()' }
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
 " Plug 'w0rp/ale'                                       " 异步代码检测工具
 " if has('nvim')
 "   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
