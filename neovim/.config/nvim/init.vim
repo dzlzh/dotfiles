@@ -9,7 +9,7 @@ let g:iswindows=0
 let g:islinux=0
 if (has("win32")|| has("win64"))
     let g:iswindows= 1
-    let g:config=expand('~/.config/nvim/')
+    let g:config=expand('~/AppData/Local/nvim/')
 else
     let g:islinux=1
     let g:config=expand('~/.config/nvim/')
