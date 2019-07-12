@@ -37,3 +37,8 @@ function! QuickfixToggle()
         let g:quickfix_is_open = 1
     endif
 endfunction
+
+" terminal emulation
+if g:iswindows
+    nnoremap <leader>sh :vsplit term://bash<CR>
+endif
