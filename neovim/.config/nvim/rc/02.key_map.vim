@@ -42,3 +42,4 @@ endfunction
 if g:iswindows
     nnoremap <leader>sh :vsplit term://bash<CR>
 endif
+tnoremap <Esc> <C-\><C-n>
