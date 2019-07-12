@@ -48,7 +48,9 @@ Plug 'junegunn/vim-easy-align'                        " 快速对齐
 Plug 'skywind3000/asyncrun.vim'                       " 异步构建和测试调度程序
 
 " Plugins for wiki
-Plug 'vimwiki/vimwiki'
+if exists("g:vimwiki_path")
+    Plug 'vimwiki/vimwiki'
+endif
 
 " Plugins for golang
 Plug 'fatih/vim-go', { 'for': 'go' }
