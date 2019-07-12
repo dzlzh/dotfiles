@@ -17,11 +17,11 @@ endif
 call plug#begin(g:vimplug_plugged)
 
 " Plugins for blendent
-Plug 'iCyMind/NeoSolarized'                           " Solarized
+" Plug 'iCyMind/NeoSolarized'                           " Solarized
 Plug 'morhetz/gruvbox'                                " gruvbox
 
 " Plugins for beautify
-Plug 'bling/vim-airline'                              " 美化状态栏
+Plug 'vim-airline/vim-airline'                        " 美化状态栏
 Plug 'vim-airline/vim-airline-themes'                 " 美化状态栏主题
 Plug 'Yggdroot/indentLine'                            " 缩进提示线
 
@@ -37,6 +37,10 @@ Plug 'junegunn/fzf.vim'                               " FZF 文件搜索
 Plug 'tpope/vim-fugitive'                             " Git
 Plug 'airblade/vim-gitgutter'                         " Git Diff 
 
+" Plugins for Session
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+
 " Plugins for code
 Plug 'majutsushi/tagbar'                              " 变量与函数列表
 Plug 'jiangmiao/auto-pairs'                           " 自动补全括号
@@ -46,6 +50,7 @@ Plug 'vim-scripts/repeat.vim'                         " .命令来重复上次�
 Plug 'matze/vim-move'                                 " 向上和向下移动代码
 Plug 'junegunn/vim-easy-align'                        " 快速对齐
 Plug 'skywind3000/asyncrun.vim'                       " 异步构建和测试调度程序
+" Plug 'w0rp/ale'                                       " 异步代码检测工具
 
 " Plugins for wiki
 if exists("g:vimwiki_path")
@@ -57,16 +62,5 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 
 " Plugins for autocomplete
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-
-" Plug 'w0rp/ale'                                       " 异步代码检测工具
-" if has('nvim')
-"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"   Plug 'Shougo/deoplete.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-" Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
 
 call plug#end()
