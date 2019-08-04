@@ -64,8 +64,8 @@ Xcursor.size:                     0
 ! URxvt.bold.font: -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
 !! terminus names see end of file!
 
-URxvt.font:     xft:DejaVu Sans Mono for Powerline:pixelsize=18,xft:WenQuanYi Zen Hei:pixelsize=18
-URxvt.boldfont: xft:DejaVu Sans Mono for Powerline:pixelsize=18,xft:WenQuanYi Zen Hei:pixelsize=18
+URxvt.font:     xft:DejaVu Sans Mono for Powerline:style=Regular:antialias=True:pixelsize=16,xft:WenQuanYi Micro Hei Mono:style=Regular:pixelsize=16
+URxvt.boldfont: xft:DejaVu Sans Mono for Powerline:style=Bold:antialias=True:pixelsize=16,xft:WenQuanYi Micro Hei Mono:style=Bold:pixelsize=16
 
 URxvt*letterSpace: 0
 
