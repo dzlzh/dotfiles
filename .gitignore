@@ -1,3 +1,9 @@
 autoload/
 plugged/
 local/
+rime/.place_holder
+rime/build/
+rime/installation.yaml
+rime/user.yaml
+rime/wubi86.userdb/
+
