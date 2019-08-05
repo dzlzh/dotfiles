@@ -104,3 +104,4 @@ alias vim="nvim"
 alias wechat="/opt/deepinwine/apps/Deepin-WeChat/run.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.loan_alias.zsh ] && source ~/.loan_alias.zsh
