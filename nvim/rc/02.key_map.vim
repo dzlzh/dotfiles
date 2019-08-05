@@ -41,5 +41,7 @@ endfunction
 " terminal emulation
 if g:iswindows
     nnoremap <leader>sh :vsplit term://bash<CR>
+else
+    nnoremap <leader>sh :vsplit term://zsh<CR>
 endif
 tnoremap <Esc> <C-\><C-n>
