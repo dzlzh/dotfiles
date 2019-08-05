@@ -142,10 +142,10 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1:Terminal
-set $ws2 2:Browser
-set $ws3 3:Nvim
-set $ws4 4:Music
+set $ws1 1:
+set $ws2 2:
+set $ws4 3:
+set $ws3 4
 set $ws5 5
 set $ws6 6
 set $ws7 7
@@ -195,11 +195,9 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-assign [title="nvim"] $ws3
 assign [class="URxvt"] $ws1
 assign [class="Google-chrome"] $ws2
-assign [class="nvim-qt"] $ws3
-assign [class="ieasemusic"] $ws4
+assign [class="ieasemusic"] $ws3
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"]                    floating   enable border pixel  1
@@ -337,7 +335,8 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar -t
-	status_command i3status
+	# status_command i3status
+	status_command conky -c $HOME/.i3/conkyrc_bar
 	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
@@ -439,6 +438,7 @@ mode "$mode_gaps_outer" {
 
 exec --no-startup-id fcitx
 exec --no-startup-id sslocal -c ~/.config/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
+exec --no-startup-id feh --bg-scale "$HOME/.i3/wallpaper.jpg"
 exec --no-startup-id aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=/home/dzlzh/Downloads/aria2.conf
 exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
 bindsym Ctrl+Mod1+w exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
