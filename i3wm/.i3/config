@@ -150,6 +150,15 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 
+# workspace $ws1 output VGA1
+# workspace $ws2 output VGA1
+# workspace $ws3 output VGA1
+# workspace $ws4 output VGA1
+# workspace $ws5 output VGA1
+# workspace $ws6 output VGA1
+# workspace $ws7 output VGA1
+# workspace $ws8 output VGA1
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -217,6 +226,8 @@ for_window [class="Timeset-gui"]                  floating   enable border norma
 for_window [class="(?i)virtualbox"]               floating   enable border normal
 for_window [class="Xfburn"]                       floating   enable
 for_window [class="Oblogout"]                     fullscreen enable
+for_window [class="wechat.exe"]                   floating   enable sticky enable border pixel 1
+for_window [class="Wine"]                         floating   enable sticky enable border pixel 1
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -426,3 +437,6 @@ mode "$mode_gaps_outer" {
 
 exec --no-startup-id fcitx
 exec --no-startup-id sslocal -c ~/.config/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
+exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
+bindsym Ctrl+Mod1+w exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
+# exec --no-startup-id xrandr --output VGA1 --primary --auto --output VGA1 --auto --left-of LVDS1
