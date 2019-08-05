@@ -144,7 +144,7 @@ bindsym $mod+Ctrl+Left workspace prev
 set $ws1 1:Terminal
 set $ws2 2:Browser
 set $ws3 3:Nvim
-set $ws4 4
+set $ws4 4:Music
 set $ws5 5
 set $ws6 6
 set $ws7 7
@@ -198,6 +198,7 @@ assign [title="nvim"] $ws3
 assign [class="URxvt"] $ws1
 assign [class="Google-chrome"] $ws2
 assign [class="nvim-qt"] $ws3
+assign [class="ieasemusic"] $ws4
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"]                    floating   enable border pixel  1
@@ -437,6 +438,7 @@ mode "$mode_gaps_outer" {
 
 exec --no-startup-id fcitx
 exec --no-startup-id sslocal -c ~/.config/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
+exec --no-startup-id iease-music
 exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
 bindsym Ctrl+Mod1+w exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
 # exec --no-startup-id xrandr --output VGA1 --primary --auto --output VGA1 --auto --left-of LVDS1
