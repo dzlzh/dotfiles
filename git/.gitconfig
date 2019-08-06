@@ -9,6 +9,7 @@
     ignorecase        = false
     autocrlf          = input
     safecrlf          = true
+	editor = vim
 [gui]
     encoding          = utf-8
 [i18n]
