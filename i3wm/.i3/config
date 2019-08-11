@@ -195,8 +195,8 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-assign [class="URxvt"] $ws1
-assign [class="Google-chrome"] $ws2
+# assign [class="URxvt"] $ws1
+# assign [class="Google-chrome"] $ws2
 assign [class="ieasemusic"] $ws8
 
 # Open specific applications in floating mode
@@ -226,8 +226,8 @@ for_window [class="Timeset-gui"]                  floating   enable border norma
 for_window [class="(?i)virtualbox"]               floating   enable border normal
 for_window [class="Xfburn"]                       floating   enable
 for_window [class="Oblogout"]                     fullscreen enable
-for_window [class="wechat.exe"]                   floating   enable sticky enable border pixel 1
-for_window [class="Wine"]                         floating   enable sticky enable border pixel 1
+# for_window [class="wechat.exe"]                   floating   enable sticky enable border pixel 1
+# for_window [class="Wine"]                         floating   enable sticky enable border pixel 1
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
