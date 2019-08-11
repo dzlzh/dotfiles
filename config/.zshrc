@@ -102,5 +102,5 @@ alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
 alias unsetproxy="unset ALL_PROXY"
 alias vim="nvim"
 alias wechat="/opt/deepinwine/apps/Deepin-WeChat/run.sh >/dev/null 2>&1"
-[ -f ~/.local_alias.zsh ] && source ~/.local_alias.zsh
+[ -f ~/.local.zsh ] && source ~/.local.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
