@@ -27,7 +27,8 @@ font pango:DejaVu Sans Mono for Powerline, pango:WenQuanYi Micro Hei Mono 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+# bindsym $mod+Return exec terminal
+bindsym $mod+Return exec urxvt -fg lightgray -bg black -bc -tr -tint lightgray -sh 20 -sr
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -57,7 +58,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-# bindsym $mod+F2 exec palemoon
+bindsym $mod+F2 exec google-chrome-stable
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu pcmanfm
@@ -287,15 +288,15 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id manjaro-hello
+# exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+# exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
@@ -349,7 +350,8 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #222D31
+        # background #222D31
+        background #000000
         statusline #F9FAF9
         separator  #454947
 
@@ -437,9 +439,9 @@ mode "$mode_gaps_outer" {
 ###################
 
 exec --no-startup-id fcitx
+exec --no-startup-id feh --bg-scale "$HOME/.i3/wallpaper.jpeg"
 exec --no-startup-id sslocal -c ~/.config/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
 exec --no-startup-id aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=/home/dzlzh/Downloads/aria2.conf
-bindsym Ctrl+Mod1+w exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
-# exec --no-startup-id feh --bg-scale "$HOME/.i3/wallpaper.jpeg"
+bindsym $mod+F1 exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
 # exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
 # exec --no-startup-id xrandr --output VGA1 --primary --auto --output VGA1 --auto --left-of LVDS1
