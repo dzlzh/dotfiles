@@ -1,9 +1,13 @@
-autoload/
-plugged/
-local/
-rime/.place_holder
-rime/build/
-rime/installation.yaml
-rime/user.yaml
-rime/wubi86.userdb/
+# nvim
+/nvim/autoload/
+/nvim/plugged/
+/nvim/preload.vim
+/nvim/afterload.vim
+
+# rime
+/rime/.place_holder
+/rime/build/
+/rime/installation.yaml
+/rime/user.yaml
+/rime/wubi86.userdb/
 
