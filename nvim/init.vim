@@ -18,17 +18,18 @@ endif
 let g:rc=g:config . 'rc/*.vim'
 let g:vimplug_exists=expand(g:config . 'autoload/plug.vim')
 let g:vimplug_plugged=expand(g:config . 'plugged')
-let g:local_path=expand(g:config . 'local/path.vim')
-let g:local_config=expand(g:config . 'local/config.vim')
 
-if filereadable(g:local_path)
-    exe 'source' g:local_path
+let g:preload=expand(g:config . 'preload.vim')
+let g:afterload=expand(g:config . 'afterload.vim')
+
+if filereadable(g:preload)
+    exe 'source' g:preload
 endif
 
 for f in split(glob(g:rc), '\n')
     exe 'source' f
 endfor
 
-if filereadable(g:local_config)
-    exe 'source' g:local_config
+if filereadable(g:afterload)
+    exe 'source' g:afterload
 endif

@@ -63,4 +63,6 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " Plugins for autocomplete
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
+Plug 'zxqfl/tabnine-vim'
+
 call plug#end()
