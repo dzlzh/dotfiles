@@ -150,7 +150,7 @@ set $ws4 4:
 set $ws5 5
 set $ws6 6
 set $ws7 7
-set $ws8 8:
+set $ws8 8:
 
 # workspace $ws1 output VGA1
 # workspace $ws2 output VGA1
