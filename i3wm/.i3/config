@@ -433,7 +433,8 @@ mode "$mode_gaps_outer" {
 
 exec --no-startup-id fcitx
 exec --no-startup-id feh --bg-scale "$HOME/.i3/wallpaper.jpeg"
-exec --no-startup-id sslocal -c ~/.config/shadowsocks/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
+# exec --no-startup-id sslocal -c ~/.config/shadowsocks/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
+exec --no-startup-id v2ray -config ~/.config/v2ray/config.json
 exec --no-startup-id aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=/home/dzlzh/Downloads/aria2.conf
 exec --no-startup-id fluxgui
 # exec --no-startup-id xrandr --output VGA1 --primary --auto --output VGA1 --auto --left-of LVDS1
