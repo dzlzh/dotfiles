@@ -57,20 +57,6 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec google-chrome-stable
-bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec gksu pcmanfm
-bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-# bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
 
@@ -143,23 +129,18 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1:
-set $ws2 2:
-set $ws3 3:
-set $ws4 4:
-set $ws5 5:
+
+set $ws1 1:Home
+set $ws2 2:Browser
+set $ws3 3:Coding
+set $ws4 4:Comments
+set $ws5 5:Fun
 set $ws6 6
 set $ws7 7
-set $ws8 8:
+set $ws8 8:Desktop
 
+# workspace output
 # workspace $ws1 output VGA1
-# workspace $ws2 output VGA1
-# workspace $ws3 output VGA1
-# workspace $ws4 output VGA1
-# workspace $ws5 output VGA1
-# workspace $ws6 output VGA1
-# workspace $ws7 output VGA1
-# workspace $ws8 output VGA1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -279,82 +260,29 @@ mode "resize" {
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
 
-# Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-# exec --no-startup-id manjaro-hello
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-# exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-
-# Color palette used for the terminal ( ~/.Xresources file )
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your terminal like this:
-# [example]
-# If you want your bar to have the same background color as your
-# terminal background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
-set_from_resource $term_background background
-set_from_resource $term_foreground foreground
-set_from_resource $term_color0     color0
-set_from_resource $term_color1     color1
-set_from_resource $term_color2     color2
-set_from_resource $term_color3     color3
-set_from_resource $term_color4     color4
-set_from_resource $term_color5     color5
-set_from_resource $term_color6     color6
-set_from_resource $term_color7     color7
-set_from_resource $term_color8     color8
-set_from_resource $term_color9     color9
-set_from_resource $term_color10    color10
-set_from_resource $term_color11    color11
-set_from_resource $term_color12    color12
-set_from_resource $term_color13    color13
-set_from_resource $term_color14    color14
-set_from_resource $term_color15    color15
-
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	i3bar_command i3bar -t
-	# status_command i3status
-	status_command conky -c $HOME/.i3/conkyrc_bar
-	position top
+	i3bar_command /$HOME/.config/polybar/launch.sh
+	# i3bar_command i3bar -t
+	# status_command conky -c $HOME/.i3/conkyrc_bar
+    # mode hide
+	# position top
 
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
+	# bindsym button4 nop
+	# bindsym button5 nop
+	# strip_workspace_numbers yes
 
-	bindsym button4 nop
-	bindsym button5 nop
-#   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
+    # colors {
+    #     background #000000
+    #     statusline #F9FAF9
+    #     separator  #454947
 
-    colors {
-        # background #222D31
-        background #000000
-        statusline #F9FAF9
-        separator  #454947
-
-#                      border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-    }
+    #     focused_workspace  #F9FAF9 #16a085 #292F34
+    #     active_workspace   #595B5B #353836 #FDF6E3
+    #     inactive_workspace #595B5B #222D31 #EEE8D5
+    #     binding_mode       #16a085 #2C2C2C #F9FAF9
+    #     urgent_workspace   #16a085 #FDF6E3 #E5201D
+    # }
 }
 
 # hide/unhide i3status bar
@@ -427,16 +355,35 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-###################
-##    Custom     ##
-###################
+# Hot Key
+bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+F2 exec google-chrome-stable
+bindsym $mod+F3 exec pcmanfm
+bindsym $mod+Shift+F3 exec gksu pcmanfm
+bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+t exec --no-startup-id pkill compton
+bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym Print exec --no-startup-id i3-scrot
+bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym Ctrl+Mod1+a exec --no-startup-id deepin-screenshot
+bindsym $mod+F1 exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
 
+# Autostart applications
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id pamac-tray
+exec --no-startup-id clipit
+exec --no-startup-id dunst
 exec --no-startup-id fcitx
 exec --no-startup-id feh --bg-scale "$HOME/.i3/wallpaper.jpeg"
-# exec --no-startup-id sslocal -c ~/.config/shadowsocks/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
 exec --no-startup-id v2ray -config ~/.config/v2ray/config.json
 exec --no-startup-id aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=/home/dzlzh/Downloads/aria2.conf
-exec --no-startup-id fluxgui
+exec --no-startup-id redshift
+# exec --no-startup-id sslocal -c ~/.config/shadowsocks/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
+# exec --no-startup-id fluxgui
 # exec --no-startup-id xrandr --output VGA1 --primary --auto --output VGA1 --auto --left-of LVDS1
-
-bindsym $mod+F1 exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
