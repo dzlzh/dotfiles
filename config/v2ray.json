@@ -1,0 +1,85 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "inbounds": [
+        {
+            "port": 1080,
+            "listen": "127.0.0.1",
+            "protocol": "socks",
+            "settings": {
+               "auth": "noauth",
+               "udp": true
+            },
+            "sniffing": {
+               "destOverride": ["http", "tls"],
+               "enabled": true
+            },
+            "tag": "socks"
+        },
+        {
+          "port": 1081,
+          "protocol": "http",
+          "settings": {},
+          "tag": "http"
+        }
+    ],
+    "outbounds": [
+        {
+            "tag": "proxy",
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [{
+                    "address": "domain name",
+                    "port": 443,
+                    "users": [{
+                        "alterId": 233,
+                        "id": "",
+                        "security": "auto"
+                    }]
+                }]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "tlssettings": {
+                    "allowInsecure": true,
+                    "serverName": "domain name"
+                },
+                "wssettings": {
+                    "connectionReuse": true,
+                    "headers": {"Host": "domain name"},
+                    "path": "/"
+                }
+            }
+        },
+        {
+            "tag":"direct",
+            "protocol":"freedom",
+            "settings":{}
+        },  
+        {
+            "tag":"blocked",
+            "protocol":"blackhole",
+            "settings":{}
+        }  
+    ],
+    "routing": {
+        "domainStrategy": "IPOnDemand",
+        "rules": [
+            {
+                "ip": ["geoip:private","geoip:cn"],
+                "outboundTag": "direct",
+                "type": "field"
+            },  
+            {
+                "domain": ["geosite:cn"],
+                "outboundTag": "direct",
+                "type": "field"
+            }
+        ]
+    },
+    "dns": {},
+    "policy": {},
+    "stats": {}
+}
