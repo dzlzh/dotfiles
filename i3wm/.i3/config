@@ -370,6 +370,7 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym Ctrl+Mod1+a exec --no-startup-id deepin-screenshot
 bindsym $mod+F1 exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
+bindsym $mod+p move workspace to output right
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
