@@ -41,6 +41,9 @@ Plug 'airblade/vim-gitgutter'                         " Git Diff
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
+" Plugins for Tmux
+Plug 'christoomey/vim-tmux-navigator'                 " Tmux
+
 " Plugins for code
 Plug 'majutsushi/tagbar'                              " 变量与函数列表
 Plug 'jiangmiao/auto-pairs'                           " 自动补全括号
