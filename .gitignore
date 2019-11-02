@@ -3,6 +3,9 @@
 /nvim/plugged/
 /nvim/preload.vim
 /nvim/afterload.vim
+/nvim/session/
+/nvim/tmp/
+
 
 # rime
 /rime/.place_holder
