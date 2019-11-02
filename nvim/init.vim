@@ -15,21 +15,21 @@ else
     let g:config=expand('~/.config/nvim/')
 endif
 
-let g:rc=g:config . 'rc/*.vim'
-let g:vimplug_exists=expand(g:config . 'autoload/plug.vim')
-let g:vimplug_plugged=expand(g:config . 'plugged')
+" -----------------------------------------------------------------------------
+"  模块加载
+" -----------------------------------------------------------------------------
+" 加载文件
+command! -nargs=1 LoadScript exec 'so '.g:config.'/'.'<args>'
 
-let g:preload=expand(g:config . 'preload.vim')
-let g:afterload=expand(g:config . 'afterload.vim')
-
-if filereadable(g:preload)
-    exe 'source' g:preload
+if filereadable(g:config . 'preload.vim')
+    LoadScript preload.vim
 endif
 
-for f in split(glob(g:rc), '\n')
-    exe 'source' f
-endfor
+LoadScript rc/setting.vim
+LoadScript rc/plugs.vim
+LoadScript rc/keymaps.vim
+LoadScript rc/plug-setting.vim
 
-if filereadable(g:afterload)
-    exe 'source' g:afterload
+if filereadable(g:config . 'afterload.vim')
+    LoadScript afterload.vim
 endif

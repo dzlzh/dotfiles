@@ -7,15 +7,11 @@ noremap <c-j> <c-w>j
 noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 
-" 设置切换Buffer快捷键
-nnoremap <C-tab> :bn<CR>
-nnoremap <C-s-tab> :bp<CR>
-
 "  插入模式下光标向上移动
-imap <c-k> <Up>
-imap <c-j> <Down>
-imap <c-h> <Left>
-imap <c-l> <Right>
+inoremap <c-h> <Left>
+inoremap <c-j> <Down>
+inoremap <c-k> <Up>
+inoremap <c-l> <Right>
 
 " 用反斜杠来开关折叠
 nnoremap <leader>\ @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
@@ -24,19 +20,7 @@ nnoremap <leader>\ @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 nmap <leader>U :set fileformat=unix<CR>
 
 " 常规模式下打开 quickfix
-nmap <leader>q :call QuickfixToggle()<cr>
-let g:quickfix_is_open = 0
-function! QuickfixToggle()
-    if g:quickfix_is_open
-        cclose
-        let g:quickfix_is_open = 0
-        execute g:quickfix_return_to_window . "wincmd w"
-    else
-        let g:quickfix_return_to_window = winnr()
-        copen
-        let g:quickfix_is_open = 1
-    endif
-endfunction
+nmap <leader>q :call asyncrun#quickfix_toggle(6)<cr>
 
 " terminal emulation
 if g:iswindows
