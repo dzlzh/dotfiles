@@ -3,6 +3,7 @@
 " ------------------------------------------------------------------------------
 set background=dark
 colorscheme gruvbox
+hi Normal ctermbg=NONE guibg=NONE 
 
 " ------------------------------------------------------------------------------
 "  < airline setting >
@@ -129,6 +130,9 @@ endif
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+
+" 禁用gutentags_plus默认键盘映射
+let g:gutentags_plus_nomap = 1
 
 " ------------------------------------------------------------------------------
 "  < Coc setting >

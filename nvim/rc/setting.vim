@@ -57,7 +57,6 @@ set lazyredraw                                        " 延迟绘制（提升性
 set errorformat+=[%f:%l]\ ->\ %m,[%f:%l]:%m           " 错误格式
 set listchars=tab:\|\ ,trail:.,extends:>,precedes:<   " 设置分隔符可视
 set t_ti= t_te=                                       " 退出后，内容显示在终端屏幕
-hi Normal guibg=NONE ctermbg=NONE
 
 " -----------------------------------------------------------------------------
 " < 搜索配置 >
@@ -99,6 +98,8 @@ set tags=./.tags;,.tags
 
 " 合并两行中文时，不在中间加空格
 set formatoptions+=B 
+
+let g:netrw_dirhistmax = 0
 
 " 启用每行超过80列的字符提示（字体变蓝并加下划线），不启用就注释掉
 au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)
