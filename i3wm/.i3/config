@@ -261,7 +261,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+9 exec --no-startup-id gpg-connect-agent reloadagent /bye && blurlock
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
