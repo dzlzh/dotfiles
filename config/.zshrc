@@ -116,6 +116,8 @@ source $ZSH/oh-my-zsh.sh
 alias setproxy="export ALL_PROXY=http://127.0.0.1:1081"
 alias unsetproxy="unset ALL_PROXY"
 alias vim="nvim"
+alias lockpass="gpgconf --reload gpg-agent"
 alias wechat="/opt/deepinwine/apps/Deepin-WeChat/run.sh >/dev/null 2>&1"
+
 [ -f ~/.local.zsh ] && source ~/.local.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
