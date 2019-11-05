@@ -142,6 +142,23 @@ let g:gutentags_plus_nomap = 1
 " ------------------------------------------------------------------------------
 " CocInstall coc-json
 " CocInstall coc-phpls
+" CocInstall coc-lists
+" CocInstall coc-snippets
+" 开启vim-airline集成
+let g:airline#extensions#coc#enabled = 1
+autocmd FileType json syntax match Comment +\/\/.\+$+
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" 使用 <tab> 触发补全并导航到下一个补全项
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 
 " ------------------------------------------------------------------------------
 "  < vimwiki setting >

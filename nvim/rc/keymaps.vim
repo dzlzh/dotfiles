@@ -29,3 +29,6 @@ else
     nnoremap <leader>sh :vsplit term://zsh<CR>
 endif
 tnoremap <Esc> <C-\><C-n>
+
+" 更新配置
+nnoremap <leader>r :so $MYVIMRC<CR>

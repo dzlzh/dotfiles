@@ -54,6 +54,7 @@ Plug 'junegunn/vim-easy-align'                        " 快速对齐
 Plug 'skywind3000/asyncrun.vim'                       " 异步构建和测试调度程序
 Plug 'ludovicchabant/vim-gutentags'                   " ctags/gtags 自动更新
 Plug 'skywind3000/gutentags_plus'                     " 自动处理好 gtags 数据库切换
+Plug 'honza/vim-snippets'
 
 " Plugins for autocomplete
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}

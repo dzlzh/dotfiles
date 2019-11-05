@@ -1,2 +1,4 @@
 {
+    "suggest.noselect": false,
+    "suggest.snippetIndicator": "*"
 }
