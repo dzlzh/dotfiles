@@ -58,6 +58,9 @@ noremap <leader>h :LeaderfMru<cr>
 " ALT+p 打开函数列表，按 i 进入模糊匹配，ESC 退出
 noremap <A-t> :LeaderfFunction!<cr>
 
+" ALT+f 打开RG搜索
+noremap <A-f> :Leaderf rg<space>
+
 " 最大历史文件保存 2048 个
 let g:Lf_MruMaxFiles = 2048
 
@@ -78,8 +81,8 @@ let g:Lf_WildIgnore = {
 " ------------------------------------------------------------------------------
 "  < Ack setting >
 " ------------------------------------------------------------------------------
-let g:ackprg = 'ag --nogroup --nocolor --column'
-map <A-f> :Ack<space>
+" let g:ackprg = 'ag --nogroup --nocolor --column'
+" map <A-f> :Ack<space>
 
 " ------------------------------------------------------------------------------
 "  < vim-session setting >

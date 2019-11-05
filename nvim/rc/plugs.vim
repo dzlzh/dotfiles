@@ -31,7 +31,7 @@ Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle
 Plug 'pbrisbin/vim-mkdir'                             " 自动创建目录
 Plug 'junegunn/fzf', {'do': './install --all'}        " FZF
 Plug 'Yggdroot/LeaderF'
-Plug 'mileszs/ack.vim'                                " Ag 搜索
+" Plug 'mileszs/ack.vim'                                " Ag 搜索
 
 " Plugins for Git
 Plug 'tpope/vim-fugitive'                             " Git
