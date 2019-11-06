@@ -44,7 +44,6 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
@@ -378,17 +377,17 @@ bindsym $mod+p move workspace to output right
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xautolock -time 10 -locker blurlock
-exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-# exec --no-startup-id clipit
-exec --no-startup-id dunst
 exec --no-startup-id fcitx
+exec --no-startup-id nm-applet
+# exec --no-startup-id pamac-tray
+# exec --no-startup-id volumeicon
+# exec --no-startup-id clipit
 exec --no-startup-id feh --bg-scale "$HOME/.i3/wallpaper.jpeg"
+exec --no-startup-id dunst
+exec --no-startup-id tilda
+exec --no-startup-id redshift
 exec --no-startup-id v2ray -config ~/.config/v2ray/config.json
 exec --no-startup-id aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=/home/dzlzh/Downloads/aria2.conf
-exec --no-startup-id redshift
-exec --no-startup-id tilda
 # exec --no-startup-id sslocal -c ~/.config/shadowsocks/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
-# exec --no-startup-id fluxgui
 # exec --no-startup-id xrandr --output VGA1 --primary --auto --output VGA1 --auto --left-of LVDS1
