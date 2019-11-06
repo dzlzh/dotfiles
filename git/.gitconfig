@@ -17,3 +17,5 @@
     logoutputencoding = utf-8
 [push]
     default           = current
+[commit]
+    template          = ~/.gitmessage
