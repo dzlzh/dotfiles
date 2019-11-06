@@ -388,6 +388,6 @@ exec --no-startup-id dunst
 exec --no-startup-id tilda
 exec --no-startup-id redshift
 exec --no-startup-id v2ray -config ~/.config/v2ray/config.json
-exec --no-startup-id aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=/home/dzlzh/Downloads/aria2.conf
+exec --no-startup-id aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=/home/dzlzh/.config/aria2/aria2.conf
 # exec --no-startup-id sslocal -c ~/.config/shadowsocks/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
 # exec --no-startup-id xrandr --output VGA1 --primary --auto --output VGA1 --auto --left-of LVDS1
