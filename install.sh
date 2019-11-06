@@ -27,6 +27,7 @@ ln -s `pwd`/tmux/.tmux.conf ~/.tmux.conf
 
 # git
 ln -s `pwd`/git/.gitconfig ~/.gitconfig
+ln -s `pwd`/git/.gitmessage ~/.gitmessage
 
 # mycli
 ln -s `pwd`/config/.mycli ~/.mycli
