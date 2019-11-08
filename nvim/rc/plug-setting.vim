@@ -90,6 +90,8 @@ let g:Lf_WildIgnore = {
 let g:session_directory=g:config . 'session'
 let g:session_autoload="no"
 let g:session_autosave="no"
+let g:session_autosave_periodic = 60
+let g:session_autosave_sil = 1
 let g:session_command_aliases=1
 nnoremap <leader>so :OpenSession<Space>
 nnoremap <leader>ss :SaveSession<Space>
