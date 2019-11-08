@@ -1,7 +1,4 @@
 {
-    "log": {
-        "loglevel": "warning"
-    },
     "inbounds": [
         {
             "port": 1080,
@@ -18,10 +15,11 @@
             "tag": "socks"
         },
         {
-          "port": 1081,
-          "protocol": "http",
-          "settings": {},
-          "tag": "http"
+            "port": 1081,
+            "listen": "127.0.0.1",
+            "protocol": "http",
+            "settings": {},
+            "tag": "http"
         }
     ],
     "outbounds": [
@@ -35,7 +33,8 @@
                     "users": [{
                         "alterId": 233,
                         "id": "",
-                        "security": "auto"
+                        "security": "auto",
+                        "level": 8
                     }]
                 }]
             },
@@ -54,6 +53,24 @@
             }
         },
         {
+            "tag": "ss",
+            "protocol": "shadowsocks",
+            "settings": {
+                "servers": [{
+                    "address": "ip",
+                    "port": 9999,
+                    "password": "pass",
+                    "method": "aes-256-cfb",
+                    "ota": false,
+                    "level": 8
+
+                }]
+            },
+            "streamSettings": {
+                "network": "tcp"
+            }
+        },
+        {
             "tag":"direct",
             "protocol":"freedom",
             "settings":{}
@@ -65,21 +82,48 @@
         }  
     ],
     "routing": {
-        "domainStrategy": "IPOnDemand",
+        "domainStrategy": "IPIfNonMatch",
         "rules": [
             {
-                "ip": ["geoip:private","geoip:cn"],
-                "outboundTag": "direct",
-                "type": "field"
+                "type": "field",
+                "domain": [
+                    "geosite:cn"
+                ],
+                "outboundTag": "direct"
             },  
             {
-                "domain": ["geosite:cn"],
-                "outboundTag": "direct",
-                "type": "field"
+                "type": "field",
+                "ip": [
+                    "geoip:private",
+                    "geoip:cn"
+                ],
+                "outboundTag": "direct"
+            },  
+            {
+                "type": "field",
+                "ip": [
+                    "1.1.1.1",
+                    "8.8.8.8"
+                ],
+                "outboundTag": "proxy"
+            },
+            {
+                "type": "field",
+                "network": "tcp,udp",
+                "outboundTag": "proxy"
             }
         ]
     },
-    "dns": {},
+    "log": {
+        "loglevel": "warning"
+    },
+    "dns": {
+        "servers": [
+            "1.1.1.1",
+            "8.8.8.8",
+            "localhost"
+        ]
+    },
     "policy": {},
     "stats": {}
 }
