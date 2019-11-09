@@ -113,11 +113,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias setproxy="export ALL_PROXY=http://127.0.0.1:1081"
+
+alias localip="curl myip.ipip.net"
+alias proxyip="curl ipinfo.io"
+alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
 alias unsetproxy="unset ALL_PROXY"
+
+alias vi="nvim"
 alias vim="nvim"
 alias lockpass="gpg-connect-agent reloadagent /bye"
-alias wechat="/opt/deepinwine/apps/Deepin-WeChat/run.sh >/dev/null 2>&1"
 
 [ -f ~/.local.zsh ] && source ~/.local.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
