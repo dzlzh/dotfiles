@@ -1,4 +1,14 @@
 {
+    "log": {
+        "loglevel": "none"
+    },
+    "dns": {
+        "servers": [
+            "1.1.1.1",
+            "8.8.8.8",
+            "localhost"
+        ]
+    },
     "inbounds": [
         {
             "port": 1080,
@@ -83,6 +93,14 @@
     ],
     "routing": {
         "domainStrategy": "IPIfNonMatch",
+        "balancers": [{
+            "selector": [
+              "proxy",
+              "shadowsocks"
+            ],
+        "strategy": "latency",
+        "tag": "proxy-group"
+        }],
         "rules": [
             {
                 "type": "field",
@@ -101,27 +119,14 @@
             },  
             {
                 "type": "field",
-                "ip": [
-                    "1.1.1.1",
-                    "8.8.8.8"
-                ],
+                "network": "tcp,udp",
                 "outboundTag": "proxy"
             },
             {
                 "type": "field",
                 "network": "tcp,udp",
-                "outboundTag": "proxy"
+                "balancerTag": "proxy-group"
             }
-        ]
-    },
-    "log": {
-        "loglevel": "warning"
-    },
-    "dns": {
-        "servers": [
-            "1.1.1.1",
-            "8.8.8.8",
-            "localhost"
         ]
     },
     "policy": {},
