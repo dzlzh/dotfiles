@@ -75,6 +75,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 plugins=(
     git
+    vi-mode
     autojump
     zsh-autosuggestions
     zsh-syntax-highlighting
