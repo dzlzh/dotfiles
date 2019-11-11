@@ -99,8 +99,8 @@
               "proxy",
               "shadowsocks"
             ],
-        "strategy": "latency",
-        "tag": "proxy-group"
+            "strategy": "latency",
+            "tag": "proxy-group"
         }],
         "rules": [
             {
