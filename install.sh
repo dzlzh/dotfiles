@@ -31,3 +31,6 @@ ln -s `pwd`/git/.gitmessage ~/.gitmessage
 
 # mycli
 ln -s `pwd`/config/.mycli ~/.mycli
+
+# redshift
+ln -s `pwd`/redshift ~/.config/redshift
