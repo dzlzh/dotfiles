@@ -31,7 +31,6 @@ Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle
 Plug 'pbrisbin/vim-mkdir'                             " 自动创建目录
 Plug 'junegunn/fzf', {'do': './install --all'}        " FZF
 Plug 'Yggdroot/LeaderF'
-" Plug 'mileszs/ack.vim'                                " Ag 搜索
 
 " Plugins for Git
 Plug 'tpope/vim-fugitive'                             " Git
@@ -58,11 +57,10 @@ Plug 'honza/vim-snippets'
 
 " Plugins for autocomplete
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'zxqfl/tabnine-vim'                              " AI自动补全
 
 " Plugins for golang
 Plug 'fatih/vim-go', { 'for': 'go' }
-
-Plug 'zxqfl/tabnine-vim'
 
 " Plugins for wiki
 if exists("g:vimwiki_path")
