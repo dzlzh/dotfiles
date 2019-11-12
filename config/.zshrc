@@ -2,8 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/dzlzh/.oh-my-zsh"
-export EDITOR="/bin/nvim"
+export ZSH="/home/$USER/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -115,14 +114,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export EDITOR="/bin/nvim"
+
 alias localip="curl myip.ipip.net"
 alias proxyip="curl ipinfo.io"
 alias setproxy="export ALL_PROXY=http://127.0.0.1:1081"
 alias unsetproxy="unset ALL_PROXY"
-
+alias lockpass="gpg-connect-agent reloadagent /bye"
 alias vi="nvim"
 alias vim="nvim"
-alias lockpass="gpg-connect-agent reloadagent /bye"
 
-[ -f ~/.local.zsh ] && source ~/.local.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.local.zsh ] && source ~/.local.zsh
