@@ -13,6 +13,10 @@ inoremap <c-j> <Down>
 inoremap <c-k> <Up>
 inoremap <c-l> <Right>
 
+"设置切换Buffer快捷键
+nnoremap <c-n> :bn<CR>
+nnoremap <c-p> :bp<CR>
+
 " 用反斜杠来开关折叠
 nnoremap <leader>\ @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
