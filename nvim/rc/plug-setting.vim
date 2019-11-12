@@ -105,6 +105,7 @@ nnoremap <leader>sc :CloseSession<CR>
 " ------------------------------------------------------------------------------
 " 在左注释符之后，右注释符之前留有空格
 let NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
 
 " ------------------------------------------------------------------------------
 "  < vim-easy-align setting >
