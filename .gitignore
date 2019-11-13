@@ -13,3 +13,5 @@
 /rime/user.yaml
 /rime/wubi86.userdb/
 
+# polybar
+/polybar/.env
