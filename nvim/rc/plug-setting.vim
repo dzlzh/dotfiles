@@ -146,9 +146,10 @@ let g:gutentags_plus_nomap = 1
 "  < Coc setting >
 " ------------------------------------------------------------------------------
 " CocInstall coc-json
-" CocInstall coc-phpls
 " CocInstall coc-lists
 " CocInstall coc-snippets
+" CocInstall coc-phpls
+" CocInstall coc-go
 " 开启vim-airline集成
 let g:airline#extensions#coc#enabled = 1
 autocmd FileType json syntax match Comment +\/\/.\+$+
