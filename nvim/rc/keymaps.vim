@@ -36,3 +36,12 @@ tnoremap <Esc> <C-\><C-n>
 
 " 更新配置
 nnoremap <leader>r :so $MYVIMRC<CR>
+
+" 保存时自动删除行尾空格
+func! DeleteTrailingWS()
+    exec "normal mz"
+    %s/\s\+$//ge
+    exec "normal `z"
+endfunc
+au BufWrite * :call DeleteTrailingWS()
+map <leader>W :call DeleteTrailingWS()<CR>
