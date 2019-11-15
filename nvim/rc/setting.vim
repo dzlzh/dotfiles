@@ -17,8 +17,7 @@ set expandtab                                         " 将Tab键转换为空格
 set tabstop=4                                         " 设置Tab键的宽度
 set shiftwidth=4                                      " 换行时自动缩进4个空格
 set smarttab                                          " 指定按一次backspace就删除shiftwidth宽度的空格
-set backspace=2
-set backspace=indent,eol,start                        " 设置 Backspace 键模式
+set backspace=2                                       " 设置 Backspace 键模式 backspace=indent,eol,start
 set smartindent                                       " 启用智能对齐方式
 filetype on                                           " 启用文件类型侦测
 filetype indent on                                    " 针对不同的文件类型采用不同的缩进格式
@@ -76,9 +75,9 @@ set foldlevelstart=99                                 " 开始编辑时总是关
 " -----------------------------------------------------------------------------
 " < 语法高亮 >
 " -----------------------------------------------------------------------------
-" if has('syntax')  
-"     syntax enable 
-"     syntax on 
+" if has('syntax')
+"     syntax enable
+"     syntax on
 " endif
 
 " -----------------------------------------------------------------------------
@@ -97,7 +96,7 @@ set noundofile                                        " 禁用 undo 文件
 set tags=./.tags;,.tags
 
 " 合并两行中文时，不在中间加空格
-set formatoptions+=B 
+set formatoptions+=B
 
 let g:netrw_dirhistmax = 0
 
@@ -107,11 +106,23 @@ au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)
 " 离开当前 Buf 区时自动保存
 au BufLeave * silent! wall
 
-" PHP w 认为 $ 为单词的一部分
-au FileType php setlocal iskeyword+=$
-
 " 打开文件时恢复上一次光标所在位置
 au BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \	 exe "normal! g`\"" |
     \ endif
+
+" 文件为y
+augroup InitFileTypesGroup
+	au!
+    " 设置Tab键的宽度
+    " 换行时自动缩进4个空格
+    au FileType yaml,json setlocal shiftwidth=2 tabstop=2
+
+    " PHP w 认为 $ 为单词的一部分
+    au FileType php setlocal iskeyword+=$
+
+    au FileType json syntax match Comment +\/\/.\+$+
+
+	au FileType qf setlocal nonumber
+augroup END

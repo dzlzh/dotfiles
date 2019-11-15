@@ -32,6 +32,10 @@ if g:iswindows
 else
     nnoremap <leader>sh :vsplit term://zsh<CR>
 endif
+augroup VimUnixTerminalGroup
+    au!
+    autocmd TermOpen * setlocal nonumber signcolumn=no
+augroup END
 tnoremap <Esc> <C-\><C-n>
 
 " 更新配置
@@ -43,5 +47,5 @@ func! DeleteTrailingWS()
     %s/\s\+$//ge
     exec "normal `z"
 endfunc
-au BufWrite * :call DeleteTrailingWS()
 map <leader>W :call DeleteTrailingWS()<CR>
+au BufWrite * :call DeleteTrailingWS()
