@@ -1,15 +1,15 @@
 patch:
-    speller:
-        max_code_length: 4                  # 最长 4 码
-        auto_select: true                   # 顶字上屏
-        auto_select_unique_candidate: true  # 无重码自动上屏
-    switches:
-      - name: ascii_mode
-        reset: 1
-        states: ["中文", "西文"]
-      - name: full_shape
-        states: ["半角", "全角"]
-      - name: ascii_punct
-        states: ["，。", "，．"]
-      - name: extended_charset
-        states: ["通用", "增廣"]
+  speller:
+    max_code_length: 4                  # 最长 4 码
+    auto_select: true                   # 顶字上屏
+    auto_select_unique_candidate: true  # 无重码自动上屏
+  switches:
+    - name: ascii_mode
+      reset: 1
+      states: ["中文", "西文"]
+    - name: full_shape
+      states: ["半角", "全角"]
+    - name: ascii_punct
+      states: ["，。", "，．"]
+    - name: extended_charset
+      states: ["通用", "增廣"]
