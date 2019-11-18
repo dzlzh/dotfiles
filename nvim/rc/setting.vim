@@ -84,7 +84,6 @@ set foldlevelstart=99                                 " 开始编辑时总是关
 " < termguicolors >
 " -----------------------------------------------------------------------------
 if has("termguicolors")
-    " enable true color
     set termguicolors
 endif
 
