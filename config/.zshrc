@@ -80,9 +80,9 @@ plugins=(
     zsh-syntax-highlighting
 )
 
-# git clone git://github.com/joelthelion/autojump.git 
+# git clone git://github.com/joelthelion/autojump.git
 # cd autojump
-# ./install.py 
+# ./install.py
 # rm -rf autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
