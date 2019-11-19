@@ -1,9 +1,11 @@
 " ------------------------------------------------------------------------------
 "  < colorschemes >
 " ------------------------------------------------------------------------------
-set background=dark
+" set background=dark
+
 colorscheme gruvbox
-hi Normal ctermbg=NONE guibg=NONE 
+
+hi Normal ctermbg=NONE guibg=NONE
 
 " ------------------------------------------------------------------------------
 "  < airline setting >

@@ -34,7 +34,7 @@ Plug 'Yggdroot/LeaderF'
 
 " Plugins for Git
 Plug 'tpope/vim-fugitive'                             " Git
-Plug 'airblade/vim-gitgutter'                         " Git Diff 
+Plug 'airblade/vim-gitgutter'                         " Git Diff
 
 " Plugins for Session
 Plug 'xolox/vim-misc'
