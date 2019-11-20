@@ -65,6 +65,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 
 " Plugins for wiki
 if exists("g:vimwiki_path")
+    Plug 'hotoo/pangu.vim', {'for': 'markdown'}
     Plug 'vimwiki/vimwiki'
 endif
 

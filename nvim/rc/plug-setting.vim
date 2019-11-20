@@ -197,3 +197,10 @@ if exists("g:vimwiki_path")
     \ 'css': 'css', 'html': 'html', 'php': 'php',
     \ 'go': 'go', 'sql': 'sql', 'javascript': 'js'}}]
 endif
+
+" ------------------------------------------------------------------------------
+"  < Pangu setting >
+" ------------------------------------------------------------------------------
+"  『盘古之白』中文排版自动规范化的 Vim 插件
+
+autocmd BufWritePre *.md call PanGuSpacing()
