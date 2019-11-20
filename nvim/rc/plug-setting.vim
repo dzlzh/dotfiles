@@ -5,9 +5,9 @@
 
 " colorscheme gruvbox
 
-colorscheme equinusocio_material
 let g:equinusocio_material_style='darker'
 let g:equinusocio_material_vertsplit='visible'
+colorscheme equinusocio_material
 let g:lightline = {
     \ 'colorscheme': 'equinusocio_material',
     \ }
