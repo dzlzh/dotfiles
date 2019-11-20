@@ -3,9 +3,16 @@
 " ------------------------------------------------------------------------------
 " set background=dark
 
-colorscheme gruvbox
+" colorscheme gruvbox
 
-hi Normal ctermbg=NONE guibg=NONE
+colorscheme equinusocio_material
+let g:equinusocio_material_style='darker'
+let g:equinusocio_material_vertsplit='visible'
+let g:lightline = {
+    \ 'colorscheme': 'equinusocio_material',
+    \ }
+
+" hi Normal ctermbg=NONE guibg=NONE
 
 " ------------------------------------------------------------------------------
 "  < airline setting >

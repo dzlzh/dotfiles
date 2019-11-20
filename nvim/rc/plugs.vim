@@ -20,6 +20,7 @@ call plug#begin(s:vimplug_plugged)
 
 " Plugins for blendent
 Plug 'flazz/vim-colorschemes'
+Plug 'chuling/vim_equinusocio_material'
 
 " Plugins for beautify
 Plug 'vim-airline/vim-airline'                        " 美化状态栏
