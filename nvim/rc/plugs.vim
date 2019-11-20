@@ -61,7 +61,7 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'zxqfl/tabnine-vim'                              " AI自动补全
 
 " Plugins for golang
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'}
 
 " Plugins for wiki
 if exists("g:vimwiki_path")
