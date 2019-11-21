@@ -37,8 +37,8 @@ else
 endif
 augroup VimUnixTerminalGroup
     au!
-    autocmd TermOpen * setlocal nonumber signcolumn=no
-    autocmd TermOpen * :resize 15
+    au TermOpen * setlocal nonumber signcolumn=no
+    au TermOpen * :resize 15
 augroup END
 tnoremap <Esc> <C-\><C-n>
 
