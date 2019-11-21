@@ -18,7 +18,7 @@ nnoremap <c-n> :bn<CR>
 nnoremap <c-p> :bp<CR>
 
 " 用反斜杠来开关折叠
-nnoremap <leader>\ @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 常规模式下文件格式转成 Unix
 nmap <leader>U :set fileformat=unix<CR>
