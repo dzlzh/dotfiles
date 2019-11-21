@@ -1,6 +1,9 @@
 " -----------------------------------------------------------------------------
 "  < 快捷键映射 >
 " -----------------------------------------------------------------------------
+" Y 复制到系统
+noremap Y "+y
+
 " 快速浏览和操作Buffer
 noremap <c-k> <c-w>k
 noremap <c-j> <c-w>j
@@ -21,10 +24,10 @@ nnoremap <c-p> :bp<CR>
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 常规模式下文件格式转成 Unix
-nmap <leader>U :set fileformat=unix<CR>
+nnoremap <leader>U :set fileformat=unix<CR>
 
 " 常规模式下打开 quickfix
-nmap <leader>q :call asyncrun#quickfix_toggle(6)<cr>
+nnoremap <leader>q :call asyncrun#quickfix_toggle(6)<cr>
 
 " terminal emulation
 if g:iswindows
@@ -47,5 +50,5 @@ func! DeleteTrailingWS()
     %s/\s\+$//ge
     exec "normal `z"
 endfunc
-map <leader>W :call DeleteTrailingWS()<CR>
+noremap <leader>W :call DeleteTrailingWS()<CR>
 au BufWrite * :call DeleteTrailingWS()
