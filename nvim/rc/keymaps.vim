@@ -31,13 +31,14 @@ nnoremap <leader>q :call asyncrun#quickfix_toggle(6)<cr>
 
 " terminal emulation
 if g:iswindows
-    nnoremap <leader>sh :vsplit term://bash<CR>
+    nnoremap <leader>sh :botright split term://bash<CR>
 else
-    nnoremap <leader>sh :vsplit term://zsh<CR>
+    nnoremap <leader>sh :botright split term://zsh<CR>
 endif
 augroup VimUnixTerminalGroup
     au!
     autocmd TermOpen * setlocal nonumber signcolumn=no
+    autocmd TermOpen * :resize 15
 augroup END
 tnoremap <Esc> <C-\><C-n>
 
