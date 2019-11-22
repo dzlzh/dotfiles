@@ -33,12 +33,11 @@ nnoremap <leader>q :call asyncrun#quickfix_toggle(6)<cr>
 if g:iswindows
     nnoremap <leader>sh :botright split term://bash<CR>
 else
-    nnoremap <leader>sh :botright split term://zsh<CR>
+    nnoremap <leader>sh :botright split term://zsh<CR> :resize 15<CR>
 endif
 augroup VimUnixTerminalGroup
     au!
     au TermOpen * setlocal nonumber signcolumn=no
-    au TermOpen * :resize 15
 augroup END
 tnoremap <Esc> <C-\><C-n>
 
