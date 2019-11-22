@@ -1,6 +1,9 @@
 " -----------------------------------------------------------------------------
 "  < 快捷键映射 >
 " -----------------------------------------------------------------------------
+" 更新配置
+nnoremap <leader>r :so $MYVIMRC<CR>
+
 " Y 复制到系统
 noremap Y "+y
 
@@ -26,23 +29,21 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " 常规模式下文件格式转成 Unix
 nnoremap <leader>U :set fileformat=unix<CR>
 
-" 常规模式下打开 quickfix
-nnoremap <leader>q :call asyncrun#quickfix_toggle(6)<cr>
-
 " terminal emulation
-if g:iswindows
-    nnoremap <leader>sh :botright split term://bash<CR>
-else
-    nnoremap <leader>sh :botright split term://zsh<CR> :resize 15<CR>
-endif
+func! OpenTerminal()
+    if g:iswindows
+        exec "botright split term://bash"
+    else
+        exec "botright split term://zsh"
+    endif
+    exec "resize 15"
+endfunc
+nnoremap <leader>sh :call OpenTerminal()<CR>
 augroup VimUnixTerminalGroup
     au!
     au TermOpen * setlocal nonumber signcolumn=no
 augroup END
 tnoremap <Esc> <C-\><C-n>
-
-" 更新配置
-nnoremap <leader>r :so $MYVIMRC<CR>
 
 " 保存时自动删除行尾空格
 func! DeleteTrailingWS()
