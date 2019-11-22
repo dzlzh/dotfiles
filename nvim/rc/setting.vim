@@ -24,6 +24,9 @@ filetype indent on                                    " 针对不同的文件类
 filetype plugin on                                    " 针对不同的文件类型加载对应的插件
 filetype plugin indent on                             " 启动自动补全
 
+" 定义快捷键的前缀，即<Leader>
+let mapleader=";"
+
 " ------------------------------------------------------------------------------
 "  < 编码配置 >
 " ------------------------------------------------------------------------------
@@ -103,23 +106,32 @@ set tags=./.tags;,.tags
 " 合并两行中文时，不在中间加空格
 set formatoptions+=B
 
+" .netrwhist 指示在历史记录文件中存储的修改目录的最大数量
 let g:netrw_dirhistmax = 0
-
-" 启用每行超过80列的字符提示（字体变蓝并加下划线），不启用就注释掉
-au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)
 
 " 离开当前 Buf 区时自动保存
 au BufLeave * silent! wall
 
+" 保存时自动删除行尾空格
+func! DeleteTrailingWS()
+    exec "normal mz"
+    %s/\s\+$//ge
+    exec "normal `z"
+endfunc
+au BufWrite * :call DeleteTrailingWS()
+
+" 启用每行超过80列的字符提示（字体变蓝并加下划线），不启用就注释掉
+au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)
+
 " 打开文件时恢复上一次光标所在位置
 au BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \	 exe "normal! g`\"" |
-    \ endif
+            \ if line("'\"") > 1 && line("'\"") <= line("$") |
+            \     exe "normal! g`\"" |
+            \ endif
 
 " 文件为y
-augroup InitFileTypesGroup
-	au!
+aug InitFileTypesGroup
+    au!
     " 设置Tab键的宽度
     " 换行时自动缩进4个空格
     au FileType yaml,json setlocal shiftwidth=2 tabstop=2
@@ -129,5 +141,5 @@ augroup InitFileTypesGroup
 
     au FileType json syntax match Comment +\/\/.\+$+
 
-	au FileType qf setlocal nonumber
-augroup END
+    au FileType qf setlocal nonumber
+aug END

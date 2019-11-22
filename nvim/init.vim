@@ -27,8 +27,8 @@ endif
 
 LoadScript rc/setting.vim
 LoadScript rc/plugs.vim
-LoadScript rc/keymaps.vim
 LoadScript rc/plug-setting.vim
+LoadScript rc/keymaps.vim
 
 if filereadable(g:config . 'afterload.vim')
     LoadScript afterload.vim

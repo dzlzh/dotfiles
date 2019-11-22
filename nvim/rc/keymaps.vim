@@ -4,8 +4,10 @@
 " 更新配置
 nnoremap <leader>r :so $MYVIMRC<CR>
 
-" Y 复制到系统
-noremap Y "+y
+" 系统复制/粘贴
+vnoremap <leader>c "+y
+nnoremap <leader>c "+yy
+nnoremap <leader>v "+p
 
 " 快速浏览和操作Buffer
 noremap <c-k> <c-w>k
@@ -44,12 +46,3 @@ augroup VimUnixTerminalGroup
     au TermOpen * setlocal nonumber signcolumn=no
 augroup END
 tnoremap <Esc> <C-\><C-n>
-
-" 保存时自动删除行尾空格
-func! DeleteTrailingWS()
-    exec "normal mz"
-    %s/\s\+$//ge
-    exec "normal `z"
-endfunc
-noremap <leader>W :call DeleteTrailingWS()<CR>
-au BufWrite * :call DeleteTrailingWS()
