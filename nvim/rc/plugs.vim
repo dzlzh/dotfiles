@@ -29,7 +29,11 @@ Plug 'Yggdroot/indentLine'                            " 缩进提示线
 
 " Plugins for file
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind']}
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'pbrisbin/vim-mkdir'                             " 自动创建目录
+
+" Plugins for search
 Plug 'junegunn/fzf', {'do': './install --all'}        " FZF
 Plug 'Yggdroot/LeaderF'
 
@@ -45,10 +49,10 @@ Plug 'xolox/vim-session'
 Plug 'christoomey/vim-tmux-navigator'                 " Tmux
 
 " Plugins for code
+Plug 'vim-scripts/repeat.vim'                         " .命令来重复上次插件使用的命令
 Plug 'jiangmiao/auto-pairs'                           " 自动补全括号
 Plug 'scrooloose/nerdcommenter'                       " 代码注释
 Plug 'tpope/vim-surround'                             " 快速给单词/句子两边增加符号
-Plug 'vim-scripts/repeat.vim'                         " .命令来重复上次插件使用的命令
 Plug 'matze/vim-move'                                 " 向上和向下移动代码
 Plug 'junegunn/vim-easy-align'                        " 快速对齐
 Plug 'skywind3000/asyncrun.vim'                       " 异步构建和测试调度程序

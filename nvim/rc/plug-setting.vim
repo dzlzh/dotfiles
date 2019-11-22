@@ -26,7 +26,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 "  < indentLine setting >
 " ------------------------------------------------------------------------------
 " 开启/关闭对齐线
-nmap <leader>il :IndentLinesToggle<CR>
+nmap <Leader>il :IndentLinesToggle<CR>
 let g:indentLine_char="┊"
 let g:indentLine_first_char="┊"
 let g:indentLine_color_term=239
@@ -44,6 +44,23 @@ let g:NERDTreeShowHidden=1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :NERDTreeFind<CR>
+
+" ------------------------------------------------------------------------------
+"  < nerdtree-git-plugin setting >
+" ------------------------------------------------------------------------------
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+let g:NERDTreeShowIgnoredStatus = 1
 
 " ------------------------------------------------------------------------------
 "  < Git fugitive setting >
@@ -64,7 +81,7 @@ set updatetime=100
 "  < LeaderF setting >
 " ------------------------------------------------------------------------------
 " CTRL+n 打开最近使用的文件 MRU，进行模糊匹配
-noremap <leader>h :LeaderfMru<cr>
+noremap <Leader>h :LeaderfMru<cr>
 
 " ALT+p 打开函数列表，按 i 进入模糊匹配，ESC 退出
 noremap <A-t> :LeaderfFunction!<cr>
@@ -98,11 +115,11 @@ let g:session_autosave="no"
 let g:session_autosave_periodic = 60
 let g:session_autosave_sil = 1
 let g:session_command_aliases=1
-nnoremap <leader>so :OpenSession<Space>
-nnoremap <leader>ss :SaveSession<Space>
-nnoremap <leader>sd :DeleteSession<CR>
-nnoremap <leader>sc :CloseSession<CR>
-nnoremap <leader>sv :ViewSession<CR>
+nnoremap <Leader>so :OpenSession<Space>
+nnoremap <Leader>ss :SaveSession<Space>
+nnoremap <Leader>sd :DeleteSession<CR>
+nnoremap <Leader>sc :CloseSession<CR>
+nnoremap <Leader>sv :ViewSession<CR>
 
 " ------------------------------------------------------------------------------
 "  < auto-pairs setting >
@@ -128,7 +145,7 @@ xmap ga <Plug>(EasyAlign)
 " ------------------------------------------------------------------------------
 nmap <Leader>; :AsyncRun<space>
 " 常规模式下打开 quickfix
-nnoremap <leader>q :call asyncrun#quickfix_toggle(6)<cr>
+nnoremap <Leader>q :call asyncrun#quickfix_toggle(6)<cr>
 
 " ------------------------------------------------------------------------------
 "  < tags setting >
@@ -176,6 +193,22 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+" ------------------------------------------------------------------------------
+"  < Go setting >
+" ------------------------------------------------------------------------------
+let g:go_fmt_command              = "goimports" " 格式化将默认的 gofmt 替换
+let g:go_autodetect_gopath        = 1
+let g:go_list_type                = "quickfix"
+ let g:go_term_mode               = "split"
+
+let g:go_highlight_types          = 1 " Highlight struct and interface names
+let g:go_highlight_fields         = 1 " Highlight struct field names.
+let g:go_highlight_functions      = 1 " Highlight function and method declarations
+let g:go_highlight_function_calls = 1 " Highlight function and method calls
+let g:go_highlight_operators      = 1 " Highlight operators such
+let g:go_highlight_extra_types    = 1 " Highlight commonly used library types
+let g:go_highlight_generate_tags  = 1 " Highlight go:generate directives
 
 " ------------------------------------------------------------------------------
 "  < vimwiki setting >

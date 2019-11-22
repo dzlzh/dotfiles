@@ -2,12 +2,12 @@
 "  < 快捷键映射 >
 " -----------------------------------------------------------------------------
 " 更新配置
-nnoremap <leader>r :so $MYVIMRC<CR>
+nnoremap <Leader>r :so $MYVIMRC<CR>
 
 " 系统复制/粘贴
-vnoremap <leader>c "+y
-nnoremap <leader>c "+yy
-nnoremap <leader>v "+p
+vnoremap <Leader>y "+y
+nnoremap <Leader>y "+yy
+nnoremap <Leader>p "+p
 
 " 快速浏览和操作Buffer
 noremap <c-k> <c-w>k
@@ -29,7 +29,7 @@ nnoremap <c-p> :bp<CR>
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 常规模式下文件格式转成 Unix
-nnoremap <leader>U :set fileformat=unix<CR>
+nnoremap <Leader>U :set fileformat=unix<CR>
 
 " terminal emulation
 func! OpenTerminal()
@@ -40,7 +40,7 @@ func! OpenTerminal()
     endif
     exec "resize 15"
 endfunc
-nnoremap <leader>sh :call OpenTerminal()<CR>
+nnoremap <Leader>sh :call OpenTerminal()<CR>
 augroup VimUnixTerminalGroup
     au!
     au TermOpen * setlocal nonumber signcolumn=no
