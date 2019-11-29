@@ -5,19 +5,26 @@
 
 " colorscheme gruvbox
 
-let g:equinusocio_material_style='darker'
-let g:equinusocio_material_vertsplit='visible'
-colorscheme equinusocio_material
+" let g:equinusocio_material_style='darker'
+" let g:equinusocio_material_vertsplit='visible'
+" let g:lightline = {
+"     \ 'colorscheme': 'equinusocio_material',
+"     \ }
+" colorscheme equinusocio_material
+
+let g:onedark_hide_endofbuffer = 1
+let g:onedark_terminal_italics = 1
 let g:lightline = {
-    \ 'colorscheme': 'equinusocio_material',
-    \ }
+  \ 'colorscheme': 'onedark',
+  \ }
+colorscheme onedark
 
 " hi Normal ctermbg=NONE guibg=NONE
 
 " ------------------------------------------------------------------------------
 "  < airline setting >
 " ------------------------------------------------------------------------------
-let g:airline_theme="powerlineish"
+let g:airline_theme="onedark"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
