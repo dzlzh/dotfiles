@@ -10,6 +10,12 @@ ln -s `pwd`/nvim ~/.config/nvim
 # tmux
 ln -s `pwd`/tmux/.tmux.conf ~/.tmux.conf
 
+# termite
+ln -s `pwd`/termite ~/.config/termite
+
+# tilda
+ln -s `pwd`/tilda ~/.config/tilda
+
 # git
 ln -s `pwd`/git/.gitconfig ~/.gitconfig
 ln -s `pwd`/git/.gitmessage ~/.gitmessage
@@ -25,9 +31,6 @@ ln -s `pwd`/dunst ~/.config/dunst
 
 # .xprofile
 ln -s `pwd`/config/.xprofile ~/.xprofile
-
-# termite
-ln -s `pwd`/termite ~/.config/termite
 
 # URxvt
 ln -s `pwd`/URxvt/.Xresources ~/.Xresources
