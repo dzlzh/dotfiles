@@ -35,7 +35,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'pbrisbin/vim-mkdir'                             " 自动创建目录
 
 " Plugins for search
-Plug 'junegunn/fzf', {'do': './install --all'}        " FZF
+" Plug 'junegunn/fzf', {'do': './install --all'}        " FZF
 Plug 'Yggdroot/LeaderF'
 
 " Plugins for Git
