@@ -127,5 +127,4 @@ alias setproxy="export ALL_PROXY=http://127.0.0.1:1081"
 alias unsetproxy="unset ALL_PROXY"
 alias lockpass="gpg-connect-agent reloadagent /bye"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.local.zsh ] && source ~/.local.zsh
