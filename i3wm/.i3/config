@@ -391,11 +391,12 @@ exec --no-startup-id fcitx
 # exec --no-startup-id pamac-tray
 # exec --no-startup-id volumeicon
 # exec --no-startup-id clipit
-exec --no-startup-id feh --bg-scale "$HOME/.i3/1.png"
+exec --no-startup-id feh --bg-scale "$HOME/.i3/wallpaper/1.png"
 exec --no-startup-id dunst
 exec --no-startup-id tilda
 exec --no-startup-id redshift
-exec --no-startup-id v2ray -config ~/.config/v2ray/config.json
+exec --no-startup-id clash
+# exec --no-startup-id v2ray -config ~/.config/v2ray/config.json
 # exec --no-startup-id aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=$HOME/.config/aria2/aria2.conf
 # exec --no-startup-id sslocal -c ~/.config/shadowsocks/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
 # exec --no-startup-id xrandr --output eDP1 --primary --auto --output HDMI1 --auto --left-of eDP1
