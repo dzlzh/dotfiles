@@ -48,6 +48,7 @@ Plug 'xolox/vim-session'
 
 " Plugins for Tmux
 Plug 'christoomey/vim-tmux-navigator'                 " Tmux
+Plug 'benmills/vimux'
 
 " Plugins for code
 Plug 'vim-scripts/repeat.vim'                         " .命令来重复上次插件使用的命令

@@ -155,6 +155,27 @@ nmap <Leader>; :AsyncRun<space>
 nnoremap <Leader>q :call asyncrun#quickfix_toggle(6)<cr>
 
 " ------------------------------------------------------------------------------
+"  < Vimux setting >
+" ------------------------------------------------------------------------------
+" 提示命令运行
+map <Leader>vp :VimuxPromptCommand<CR>
+
+" 运行VimuxRunCommand执行的最后一条命令
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+" 检查流道窗格
+map <Leader>vi :VimuxInspectRunner<CR>
+
+" 关闭由VimuxRunCommand打开的vim tmux运行程序
+map <Leader>vq :VimuxCloseRunner<CR>
+
+" 中断运行程序窗格中运行的任何命令
+map <Leader>vx :VimuxInterruptRunner<CR>
+
+" 缩放运行器窗格（使用<bind-key> z还原运行器窗格）
+map <Leader>vz :VimuxZoomRunner<CR>
+
+" ------------------------------------------------------------------------------
 "  < tags setting >
 " ------------------------------------------------------------------------------
 " gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
