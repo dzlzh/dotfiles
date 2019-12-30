@@ -202,6 +202,7 @@ let g:gutentags_plus_nomap = 1
 " ------------------------------------------------------------------------------
 "  < Coc setting >
 " ------------------------------------------------------------------------------
+" CocInstall coc-vimlsp
 " CocInstall coc-json
 " CocInstall coc-lists
 " CocInstall coc-snippets
@@ -213,14 +214,21 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " 使用 <tab> 触发补全并导航到下一个补全项
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]	=~ '\s'
 endfunction
-
 inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+			\ pumvisible() ? "\<C-n>" :
+			\ <SID>check_back_space() ? "\<Tab>" :
+			\ coc#refresh()
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent><expr> <c-space> coc#refresh()
+
+nmap gd <Plug>(coc-definition)
+nmap gy <Plug>(coc-type-definition)
+nmap gi <Plug>(coc-implementation)
+nmap gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
 
 " ------------------------------------------------------------------------------
 "  < Go setting >
