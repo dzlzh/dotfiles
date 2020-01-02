@@ -63,11 +63,14 @@ Plug 'skywind3000/gutentags_plus'                     " 自动处理好 gtags �
 Plug 'honza/vim-snippets'
 
 " Plugins for autocomplete
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'zxqfl/tabnine-vim'                              " AI自动补全
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 " Plugins for golang
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'}
+
+" Plugins for nginx
+Plug 'chr4/nginx.vim', {'for': 'nginx'}
 
 " Plugins for wiki
 if exists("g:vimwiki_path")
