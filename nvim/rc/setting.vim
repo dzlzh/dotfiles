@@ -135,11 +135,12 @@ aug InitFileTypesGroup
     " 设置Tab键的宽度
     " 换行时自动缩进4个空格
     au FileType yaml,json setlocal shiftwidth=2 tabstop=2
+    au FileType json syntax match Comment +\/\/.\+$+
 
     " PHP w 认为 $ 为单词的一部分
     au FileType php setlocal iskeyword+=$
 
-    au FileType json syntax match Comment +\/\/.\+$+
-
     au FileType qf setlocal nonumber
+
+    au BufNewFile,BufRead *.conf setf dosini
 aug END
