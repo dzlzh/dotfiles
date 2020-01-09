@@ -121,6 +121,17 @@ export EDITOR="/bin/nvim"
 alias vi="nvim"
 alias vim="nvim"
 
+# 删除改为移动
+alias rm=trash
+trash()
+{
+    mv $@ ~/.trash/
+}
+cleartrash()
+{
+    /usr/bin/rm -rf ~/.trash/*
+}
+
 alias localip="curl myip.ipip.net"
 alias proxyip="curl ipinfo.io"
 alias setproxy="export ALL_PROXY=http://127.0.0.1:1081"
