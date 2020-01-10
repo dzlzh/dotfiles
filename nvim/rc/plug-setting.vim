@@ -208,6 +208,7 @@ let g:gutentags_plus_nomap = 1
 " CocInstall coc-snippets
 " CocInstall coc-phpls
 " CocInstall coc-go
+" CocInstall coc-post
 " 开启vim-airline集成
 let g:airline#extensions#coc#enabled = 1
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
