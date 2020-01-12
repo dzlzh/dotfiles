@@ -209,6 +209,7 @@ let g:gutentags_plus_nomap = 1
 " CocInstall coc-phpls
 " CocInstall coc-go
 " CocInstall coc-post
+" CocInstall coc-translator
 " 开启vim-airline集成
 let g:airline#extensions#coc#enabled = 1
 set signcolumn=yes
@@ -245,6 +246,14 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" coc-translator
+" popup
+nmap <Leader>tt <Plug>(coc-translator-p)
+" echo
+nmap <Leader>te <Plug>(coc-translator-e)
+" replace
+nmap <Leader>tr <Plug>(coc-translator-r)
 
 " ------------------------------------------------------------------------------
 "  < Go setting >
