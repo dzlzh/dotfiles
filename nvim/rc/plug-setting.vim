@@ -202,14 +202,19 @@ let g:gutentags_plus_nomap = 1
 " ------------------------------------------------------------------------------
 "  < Coc setting >
 " ------------------------------------------------------------------------------
-" CocInstall coc-vimlsp
-" CocInstall coc-json
 " CocInstall coc-lists
+" CocInstall coc-highlight
+" CocInstall coc-json
 " CocInstall coc-snippets
+"
+" CocInstall coc-vimlsp
 " CocInstall coc-phpls
 " CocInstall coc-go
+" CocInstall coc-docker
+"
 " CocInstall coc-post
 " CocInstall coc-translator
+
 " 开启vim-airline集成
 let g:airline#extensions#coc#enabled = 1
 set signcolumn=yes
