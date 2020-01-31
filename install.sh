@@ -1,5 +1,5 @@
 # i3wm
-ln -s `pwd`/i3wm/i3 ~/.i3
+ln -s `pwd`/i3wm/.i3 ~/.i3
 
 # zsh
 ln -s `pwd`/config/.zshrc ~/.zshrc
