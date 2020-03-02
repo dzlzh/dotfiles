@@ -141,6 +141,7 @@ alias setproxy="export HTTPS_PROXY=http://127.0.0.1:1081 HTTP_PROXY=http://127.0
 alias unsetproxy="unset HTTPS_PROXY HTTP_PROXY ALL_PROXY"
 alias lockpass="gpg-connect-agent reloadagent /bye"
 alias xrandrone="xrandr --output eDP1 --primary --auto --output HDMI1 --off"
-alias xrandrtow="xrandr --output eDP1 --primary --auto --output HDMI1 --auto --left-of eDP1"
+alias xrandrtowl="xrandr --output eDP1 --primary --auto --output HDMI1 --auto --left-of eDP1"
+alias xrandrtowr="xrandr --output eDP1 --primary --auto --output HDMI1 --auto --right-of eDP1"
 
 [ -f ~/.local.zsh ] && source ~/.local.zsh
