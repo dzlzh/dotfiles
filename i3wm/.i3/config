@@ -379,6 +379,7 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+F1 exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
 bindsym $mod+p move workspace to output right
+bindsym $mod+Shift+p move workspace to output left
 
 bindsym Ctrl+Mod1+w scratchpad show
 bindsym Ctrl+Mod1+a exec --no-startup-id flameshot gui
