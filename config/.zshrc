@@ -144,4 +144,9 @@ alias xrandrone="xrandr --output eDP1 --primary --auto --output HDMI1 --off"
 alias xrandrtowl="xrandr --output eDP1 --primary --auto --output HDMI1 --auto --left-of eDP1"
 alias xrandrtowr="xrandr --output eDP1 --primary --auto --output HDMI1 --auto --right-of eDP1"
 
+# git
+alias gcf='git checkout $(git branch | fzf)'
+alias gcfa='git checkout $(git branch -a | fzf)'
+alias gdf='git branch -d $(git branch | fzf)'
+
 [ -f ~/.local.zsh ] && source ~/.local.zsh
