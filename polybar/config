@@ -30,7 +30,7 @@ font-4 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-5 = siji:pixelsize=10;1
 
 modules-left   = i3 workspace-name
-modules-center = weather
+;modules-center = weather
 modules-right  = keyboard battery alsa date network-short notify
 
 tray-position = right
