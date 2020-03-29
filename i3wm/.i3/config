@@ -384,7 +384,7 @@ bindsym $mod+Shift+p move workspace to output left
 bindsym Ctrl+Mod1+a exec --no-startup-id flameshot gui
 
 bindsym Ctrl+Mod1+w [class="(?!dingtalk)"] scratchpad show
-bindsym Ctrl+w [class="dingtalk"] scratchpad show
+# bindsym Ctrl+w [class="dingtalk"] scratchpad show
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
