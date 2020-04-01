@@ -6,7 +6,7 @@ bold_is_bright = true
 #cell_width_scale = 1.0
 clickable_url = true
 #dynamic_title = true
-font = Monospace 12
+font = DejaVu Sans Mono for Powerline 12
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
@@ -48,7 +48,7 @@ foreground = #d8d8d8
 foreground_bold = #ffffff
 background = #212121
 
-# background = rgba(0, 0, 0, 0.8)
+background = rgba(0, 0, 0, 0.8)
 
 highlight = #2f2f2f
 
