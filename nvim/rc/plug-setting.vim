@@ -214,6 +214,8 @@ let g:gutentags_plus_nomap = 1
 "
 " CocInstall coc-post
 " CocInstall coc-translator
+"
+" CocInstall coc-markmap
 
 " 开启vim-airline集成
 let g:airline#extensions#coc#enabled = 1
@@ -259,6 +261,12 @@ nmap <Leader>tt <Plug>(coc-translator-p)
 nmap <Leader>te <Plug>(coc-translator-e)
 " replace
 nmap <Leader>tr <Plug>(coc-translator-r)
+
+" coc-markmap
+" Create markmap from the whole file
+nmap <Leader>m <Plug>(coc-markmap-create)
+" Create markmap from the selected lines
+vmap <Leader>m <Plug>(coc-markmap-create-v)
 
 " ------------------------------------------------------------------------------
 "  < Go setting >
