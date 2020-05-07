@@ -36,7 +36,7 @@ ln -s `pwd`/config/.xprofile ~/.xprofile
 ln -s `pwd`/URxvt/.Xresources ~/.Xresources
 
 # mycli
-ln -s `pwd`/config/.mycli ~/.mycli
+# ln -s `pwd`/config/.myclirc ~/.myclirc
 
 # redshift
 ln -s `pwd`/redshift ~/.config/redshift
