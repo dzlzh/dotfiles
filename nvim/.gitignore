@@ -1,6 +1,6 @@
-/nvim/autoload/
-/nvim/plugged/
-/nvim/preload.vim
-/nvim/afterload.vim
-/nvim/session/
-/nvim/tmp/
+/autoload/
+/plugged/
+/preload.vim
+/afterload.vim
+/session/
+/tmp/
