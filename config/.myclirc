@@ -25,7 +25,7 @@ log_level = INFO
 
 # Log every query and its results to a file. Enable this by uncommenting the
 # line below.
-# audit_log = ~/.mycli-audit.log
+audit_log = ~/.mycli-audit.log
 
 # Timing of sql statments and table rendering.
 timing = True
@@ -41,7 +41,7 @@ table_format = ascii
 # friendly, monokai, paraiso, colorful, murphy, bw, pastie, paraiso, trac, default,
 # fruity.
 # Screenshots at http://mycli.net/syntax
-syntax_style = monokai
+syntax_style = monokai-dark
 
 # Keybindings: Possible values: emacs, vi.
 # Emacs mode: Ctrl-A is home, Ctrl-E is end. All emacs keybindings are available in the REPL.
@@ -64,7 +64,8 @@ wider_completion_menu = True
 # \s - Seconds of the current time
 # \t - Product type (Percona, MySQL, MariaDB)
 # \u - Username
-prompt = '\t \u@\h:\d> '
+# prompt = '\t \u@\h:\d> '
+prompt = '\u@\h:\d> '
 prompt_continuation = '-> '
 
 # Skip intro info on startup and outro info on exit
