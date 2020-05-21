@@ -49,8 +49,8 @@ let g:NERDTreeShowBookmarks=1
 let g:NERDTreeWinSize=30
 let g:NERDTreeShowHidden=1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-nmap <Leader>e :NERDTreeToggle<CR>
-nmap <Leader>ef :NERDTreeToggle<CR>
+nmap <Leader>ee :NERDTreeToggle<CR>
+nmap <Leader>ef :NERDTreeFind<CR>
 
 " ------------------------------------------------------------------------------
 "  < nerdtree-git-plugin setting >
