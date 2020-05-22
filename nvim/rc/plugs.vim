@@ -61,6 +61,7 @@ Plug 'skywind3000/asyncrun.vim'                       " 异步构建和测试调
 Plug 'ludovicchabant/vim-gutentags'                   " ctags/gtags 自动更新
 Plug 'skywind3000/gutentags_plus'                     " 自动处理好 gtags 数据库切换
 Plug 'honza/vim-snippets'
+Plug 'sheerun/vim-polyglot'
 
 " Plugins for autocomplete
 " Plug 'zxqfl/tabnine-vim'                              " AI自动补全
