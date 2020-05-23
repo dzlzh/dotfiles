@@ -124,6 +124,7 @@ export BROWSER="google-chrome-stable"
 export EDITOR="/bin/nvim"
 alias vi="nvim"
 alias vim="nvim"
+alias cat="bat"
 
 # 删除改为移动
 alias rm=trash
