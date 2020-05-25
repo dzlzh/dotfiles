@@ -148,14 +148,8 @@ alias gdf='git branch -D $(git branch | fzf)'
 
 # 删除改为移动
 alias rm=trash
-trash()
-{
-    mv $@ ~/.trash/
-}
-cleartrash()
-{
-    /usr/bin/rm -rf ~/.trash/*
-}
+trash(){mv $@ ~/.trash/}
+cleartrash(){/usr/bin/rm -rf ~/.trash/*}
 
 # 解压
 alias Z=extract
