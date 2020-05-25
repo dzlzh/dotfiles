@@ -122,9 +122,29 @@ source $ZSH/oh-my-zsh.sh
 
 export BROWSER="google-chrome-stable"
 export EDITOR="/bin/nvim"
+# export GOPATH=$HOME
+
+alias mkdir='mkdir -pv'
 alias vi="nvim"
 alias vim="nvim"
 alias cat="bat"
+alias lockpass="gpg-connect-agent reloadagent /bye"
+
+# proxy
+alias localip="curl myip.ipip.net"
+alias proxyip="curl ipinfo.io"
+alias setproxy="export HTTPS_PROXY=http://127.0.0.1:1081 HTTP_PROXY=http://127.0.0.1:1081 ALL_PROXY=socks5://127.0.0.1:1080"
+alias unsetproxy="unset HTTPS_PROXY HTTP_PROXY ALL_PROXY"
+
+# xrandr
+alias xrandrone="xrandr --output eDP1 --primary --auto --output HDMI1 --off"
+alias xrandrtowl="xrandr --output eDP1 --primary --auto --output HDMI1 --auto --left-of eDP1"
+alias xrandrtowr="xrandr --output eDP1 --primary --auto --output HDMI1 --auto --right-of eDP1"
+
+# git
+alias gcf='git checkout $(git branch | fzf)'
+alias gcfa='git checkout $(git branch -a | fzf)'
+alias gdf='git branch -D $(git branch | fzf)'
 
 # 删除改为移动
 alias rm=trash
@@ -137,19 +157,29 @@ cleartrash()
     /usr/bin/rm -rf ~/.trash/*
 }
 
-alias localip="curl myip.ipip.net"
-alias proxyip="curl ipinfo.io"
-alias setproxy="export HTTPS_PROXY=http://127.0.0.1:1081 HTTP_PROXY=http://127.0.0.1:1081 ALL_PROXY=socks5://127.0.0.1:1080"
-alias unsetproxy="unset HTTPS_PROXY HTTP_PROXY ALL_PROXY"
-alias lockpass="gpg-connect-agent reloadagent /bye"
-alias xrandrone="xrandr --output eDP1 --primary --auto --output HDMI1 --off"
-alias xrandrtowl="xrandr --output eDP1 --primary --auto --output HDMI1 --auto --left-of eDP1"
-alias xrandrtowr="xrandr --output eDP1 --primary --auto --output HDMI1 --auto --right-of eDP1"
-
-# git
-alias gcf='git checkout $(git branch | fzf)'
-alias gcfa='git checkout $(git branch -a | fzf)'
-alias gdf='git branch -d $(git branch | fzf)'
-alias gdf='git branch -D $(git branch | fzf)'
+# 解压
+alias Z=extract
+extract() {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1     ;;
+            *.tar.gz)    tar xzf $1     ;;
+            *.bz2)       bunzip2 $1     ;;
+            *.rar)       unrar e $1     ;;
+            *.gz)        gunzip $1      ;;
+            *.tar)       tar xf $1      ;;
+            *.tbz2)      tar xjf $1     ;;
+            *.tgz)       tar xzf $1     ;;
+            *.zip)       unzip $1       ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1        ;;
+            *)     echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
 
 [ -f ~/.local.zsh ] && source ~/.local.zsh
+
+export PATH=$PATH:$GOPATH/bin
