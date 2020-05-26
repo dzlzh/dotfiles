@@ -119,6 +119,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# E437: terminal capability "cm" required : export TERM=xterm
 
 export BROWSER="google-chrome-stable"
 export EDITOR="/bin/nvim"
