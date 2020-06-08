@@ -20,3 +20,5 @@
     default           = current
 [commit]
     template          = ~/.gitmessage
+[pull]
+	rebase = false
