@@ -65,7 +65,7 @@ Plug 'honza/vim-snippets'
 
 " Plugins for autocomplete
 " Plug 'zxqfl/tabnine-vim'                              " AI自动补全
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Plugins for golang
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'}
