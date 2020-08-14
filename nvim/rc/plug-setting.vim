@@ -218,6 +218,8 @@ let g:gutentags_plus_nomap = 1
 " CocInstall coc-translator
 "
 " CocInstall coc-markmap
+"
+" CocInstall coc-tabnine
 
 " 开启vim-airline集成
 let g:airline#extensions#coc#enabled = 1
