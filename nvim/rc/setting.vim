@@ -59,6 +59,7 @@ set lazyredraw                                        " 延迟绘制（提升性
 set errorformat+=[%f:%l]\ ->\ %m,[%f:%l]:%m           " 错误格式
 set listchars=tab:\|\ ,trail:.,extends:>,precedes:<   " 设置分隔符可视
 set t_ti= t_te=                                       " 退出后，内容显示在终端屏幕
+set relativenumber                                    " 显示相对于光标在行前面的行的行号
 
 " termguicolors
 if has("termguicolors")
