@@ -147,6 +147,9 @@ alias gcf='git checkout $(git branch | fzf)'
 alias gcfa='git checkout $(git branch -a | fzf)'
 alias gdf='git branch -D $(git branch | fzf)'
 
+# aria2
+alias aria2='aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=$HOME/.config/aria2/aria2.conf'
+
 # 删除改为移动
 alias rm=trash
 trash(){mv $@ ~/.trash/}
