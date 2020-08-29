@@ -68,7 +68,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
-let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusShowIgnored = 1
 
 " ------------------------------------------------------------------------------
 "  < Git fugitive setting >
