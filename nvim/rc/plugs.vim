@@ -68,7 +68,7 @@ Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Plugins for golang
-Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'}
+Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries'}
 
 " Plugins for nginx
 Plug 'chr4/nginx.vim', {'for': 'nginx'}
