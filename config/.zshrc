@@ -180,5 +180,6 @@ extract() {
 
 [ -f ~/.local.zsh ] && source ~/.local.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(starship init zsh)"
 
 export PATH=$PATH:$GOPATH/bin
