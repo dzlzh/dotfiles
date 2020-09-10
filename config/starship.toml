@@ -1,0 +1,6 @@
+# 不用在提示符的开始换行
+add_newline = false
+
+# 将提示符标志由“❯”换成“➜”
+[character]      # 正在配置的组件名称是“character”
+symbol = "➜"     # “symbol”字段被设置为 "➜"

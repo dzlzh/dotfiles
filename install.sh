@@ -40,3 +40,6 @@ ln -s `pwd`/URxvt/.Xresources ~/.Xresources
 
 # redshift
 ln -s `pwd`/redshift ~/.config/redshift
+
+# starship
+ln -s `pwd`/config/starship.toml ~/.config/starship.toml
