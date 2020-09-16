@@ -2,7 +2,7 @@
 "  < 快捷键映射 >
 " -----------------------------------------------------------------------------
 " 更新配置
-nnoremap <Leader>r :so $MYVIMRC<CR>
+" nnoremap <Leader>r :so $MYVIMRC<CR>
 
 " 系统复制/粘贴
 vnoremap <Leader>y "+y

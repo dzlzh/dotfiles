@@ -290,6 +290,8 @@ let g:go_highlight_operators      = 1 " Highlight operators such
 let g:go_highlight_extra_types    = 1 " Highlight commonly used library types
 let g:go_highlight_generate_tags  = 1 " Highlight go:generate directives
 
+au FileType go nmap <leader>r <Plug>(go-run)
+
 " ------------------------------------------------------------------------------
 "  < vimwiki setting >
 " ------------------------------------------------------------------------------
