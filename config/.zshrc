@@ -123,6 +123,7 @@ source $ZSH/oh-my-zsh.sh
 
 export BROWSER="google-chrome-stable"
 export EDITOR="/bin/nvim"
+export PATH=$PATH:$GOPATH/bin
 # export GOPATH=$HOME
 
 alias mkdir='mkdir -pv'
@@ -178,8 +179,6 @@ extract() {
     fi
 }
 
-[ -f ~/.local.zsh ] && source ~/.local.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(starship init zsh)"
-
-export PATH=$PATH:$GOPATH/bin
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.local.zsh ] && source ~/.local.zsh
