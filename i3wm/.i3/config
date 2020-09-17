@@ -370,11 +370,9 @@ mode "$mode_gaps_outer" {
 }
 
 # Hot Key
+bindsym $mod+p move workspace to output right
+bindsym $mod+Shift+p move workspace to output left
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec google-chrome-stable
-bindsym $mod+F3 exec pcmanfm
-bindsym $mod+Shift+F3 exec gksu pcmanfm
-bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -382,9 +380,13 @@ bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+
 bindsym $mod+F1 exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
-bindsym $mod+p move workspace to output right
-bindsym $mod+Shift+p move workspace to output left
+bindsym $mod+F2 exec google-chrome-stable
+bindsym $mod+F3 exec pcmanfm
+bindsym $mod+Shift+F3 exec gksu pcmanfm
+bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+F12 exec --no-startup-id ~/workspace/frp/frpc -c ~/workspace/frp/frpc.ini
 
 bindsym Ctrl+Mod1+a exec --no-startup-id flameshot gui
 
