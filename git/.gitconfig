@@ -1,5 +1,5 @@
 [user]
-    email             = dzlzh@null.net
+    email             = 8456085+dzlzh@users.noreply.github.com
     name              = dzlzh
 [alias]
     lg                = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
