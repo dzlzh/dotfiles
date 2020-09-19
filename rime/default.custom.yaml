@@ -13,4 +13,4 @@ patch:
   menu:
     page_size: 3
   switcher/hotkeys:
-    - F4
+    - F12
