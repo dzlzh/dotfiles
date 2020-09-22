@@ -121,39 +121,36 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # E437: terminal capability "cm" required : export TERM=xterm
 
-export BROWSER="google-chrome-stable"
-export EDITOR="/bin/nvim"
+eval "$(starship init zsh)"
+
+export BROWSER='google-chrome-stable'
+export EDITOR='/bin/nvim'
 export PATH=$PATH:$GOPATH/bin
 # export GOPATH=$HOME
 
 alias mkdir='mkdir -pv'
-alias vi="nvim"
-alias vim="nvim"
-alias cat="bat"
-alias lockpass="gpg-connect-agent reloadagent /bye"
+alias vi='nvim'
+alias vim='nvim'
+alias cat='bat'
+alias lockpass='gpg-connect-agent reloadagent /bye'
 
 # proxy
-alias localip="curl myip.ipip.net"
-alias proxyip="curl ipinfo.io"
-alias setproxy="export HTTPS_PROXY=http://127.0.0.1:1081 HTTP_PROXY=http://127.0.0.1:1081 ALL_PROXY=socks5://127.0.0.1:1080"
-alias unsetproxy="unset HTTPS_PROXY HTTP_PROXY ALL_PROXY"
+alias localip='curl myip.ipip.net'
+alias proxyip='curl ipinfo.io'
+alias setproxy='export HTTPS_PROXY=http://127.0.0.1:1081 HTTP_PROXY=http://127.0.0.1:1081 ALL_PROXY=socks5://127.0.0.1:1080'
+alias unsetproxy='unset HTTPS_PROXY HTTP_PROXY ALL_PROXY'
 
 # xrandr
-alias xrandrone="xrandr --output eDP1 --primary --auto --output HDMI1 --off"
-alias xrandrtowl="xrandr --output eDP1 --primary --auto --output HDMI1 --auto --left-of eDP1"
-alias xrandrtowr="xrandr --output eDP1 --primary --auto --output HDMI1 --auto --right-of eDP1"
-
-# git
-alias gcf='git checkout $(git branch | fzf)'
-alias gcfa='git checkout $(git branch -a | fzf)'
-alias gdf='git branch -D $(git branch | fzf)'
+alias xrandrone='xrandr --output eDP1 --primary --auto --output HDMI1 --off'
+alias xrandrtowl='xrandr --output eDP1 --primary --auto --output HDMI1 --auto --left-of eDP1'
+alias xrandrtowr='xrandr --output eDP1 --primary --auto --output HDMI1 --auto --right-of eDP1'
 
 # aria2
 alias aria2='aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=$HOME/.config/aria2/aria2.conf'
 
 # 删除改为移动
 alias rm=trash
-trash(){mv $@ ~/.trash/}
+trash(){mv -f $@ ~/.trash/}
 cleartrash(){/usr/bin/rm -rf ~/.trash/*}
 
 # 解压
@@ -179,6 +176,11 @@ extract() {
     fi
 }
 
-eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias vimf='nvim $(fzf)'
+alias catf='bat $(fzf)'
+alias gcf='git checkout $(git branch | fzf)'
+alias gcfa='git checkout $(git branch -a | fzf)'
+alias gdf='git branch -D $(git branch | fzf)'
+
 [ -f ~/.local.zsh ] && source ~/.local.zsh
