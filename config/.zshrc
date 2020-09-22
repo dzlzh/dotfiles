@@ -176,6 +176,7 @@ extract() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 alias vimf='nvim $(fzf)'
 alias catf='bat $(fzf)'
 alias gcf='git checkout $(git branch | fzf)'
