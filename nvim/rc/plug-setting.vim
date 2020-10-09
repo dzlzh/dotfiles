@@ -20,7 +20,7 @@ let g:lightline = {
   \ }
 colorscheme onedark
 
-" hi Normal ctermbg=NONE guibg=NONE
+hi Normal ctermbg=NONE guibg=NONE
 
 " ------------------------------------------------------------------------------
 "  < airline setting >
