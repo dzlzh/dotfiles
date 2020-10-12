@@ -123,9 +123,9 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 
-export BROWSER='google-chrome-stable'
-export EDITOR='/bin/nvim'
-export PATH=$PATH:$GOPATH/bin
+# export BROWSER='google-chrome-stable'
+# export EDITOR='/bin/nvim'
+# export PATH=$PATH:$GOPATH/bin
 # export GOPATH=$HOME
 
 alias mkdir='mkdir -pv'

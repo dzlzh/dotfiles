@@ -29,7 +29,8 @@ ln -s `pwd`/polybar ~/.config/polybar
 # dunst
 ln -s `pwd`/dunst ~/.config/dunst
 
-# .xprofile
+# .xprofile .profile
+ln -s `pwd`/config/.profile ~/.profile
 ln -s `pwd`/config/.xprofile ~/.xprofile
 
 # URxvt
