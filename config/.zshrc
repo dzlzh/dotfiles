@@ -125,8 +125,8 @@ eval "$(starship init zsh)"
 
 # export BROWSER='google-chrome-stable'
 # export EDITOR='/bin/nvim'
-# export PATH=$PATH:$GOPATH/bin
 # export GOPATH=$HOME
+# export PATH=$PATH:$GOPATH/bin
 
 alias mkdir='mkdir -pv'
 alias vi='nvim'
