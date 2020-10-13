@@ -29,7 +29,7 @@ nnoremap <c-p> :bp<CR>
 nnoremap <silent><space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 常规模式下文件格式转成 Unix
-nnoremap <Leader>U :set fileformat=unix<CR>
+nnoremap <Leader>U :set fileformat=unix<CR> :set fileencoding=utf-8<CR>
 
 " terminal emulation
 func! OpenTerminal()
