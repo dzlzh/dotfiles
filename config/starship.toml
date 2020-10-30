@@ -4,3 +4,13 @@ add_newline = false
 # 将提示符标志由“❯”换成“➜”
 [character]      # 正在配置的组件名称是“character”
 symbol = "➜"     # “symbol”字段被设置为 "➜"
+# disabled = true
+# format = "$symbol "
+# success_symbol = "[➜](bold green) "
+# error_symbol = "[✗](bold red) "
+# vicmd_symbol = "⚡︎"
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
