@@ -121,7 +121,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # E437: terminal capability "cm" required : export TERM=xterm
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # export BROWSER='google-chrome-stable'
 # export EDITOR='/bin/nvim'
