@@ -203,9 +203,11 @@ let g:gutentags_plus_nomap = 1
 " ------------------------------------------------------------------------------
 "  < Coc setting >
 " ------------------------------------------------------------------------------
-" CocInstall coc-post
-" CocInstall coc-markmap
 " CocInstall coc-marketplace
+" CocInstall coc-yaml
+" CocInstall coc-post
+" CocInstall coc-rime
+" CocInstall coc-markmap
 let g:coc_global_extensions = [
             \ 'coc-json',
             \ 'coc-lists',
@@ -215,6 +217,7 @@ let g:coc_global_extensions = [
             \ 'coc-phpls',
             \ 'coc-go',
             \ 'coc-docker',
+            \ 'coc-sql',
             \ 'coc-translator',
             \ 'coc-tabnine']
 
