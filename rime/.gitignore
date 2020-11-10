@@ -1,6 +1,9 @@
+/build
+/trash
+/sync
 /.place_holder
-/build/
+/*.userdb
+
 /installation.yaml
 /user.yaml
-/wubi86.userdb/
-/sync
+/rime.rime-cli.*
