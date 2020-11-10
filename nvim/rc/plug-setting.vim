@@ -204,18 +204,20 @@ let g:gutentags_plus_nomap = 1
 "  < Coc setting >
 " ------------------------------------------------------------------------------
 " CocInstall coc-marketplace
+" CocInstall coc-phpactor
 " CocInstall coc-yaml
 " CocInstall coc-post
 " CocInstall coc-rime
 " CocInstall coc-markmap
+
 let g:coc_global_extensions = [
             \ 'coc-json',
             \ 'coc-lists',
             \ 'coc-highlight',
             \ 'coc-snippets',
             \ 'coc-vimlsp',
-            \ 'coc-phpls',
             \ 'coc-go',
+            \ 'coc-phpls',
             \ 'coc-docker',
             \ 'coc-sql',
             \ 'coc-translator',
@@ -253,7 +255,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-nmap <silent>  <leader>rn <Plug>(coc-rename)
+nmap <leader>rn <Plug>(coc-rename)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
