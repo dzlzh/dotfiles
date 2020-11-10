@@ -5,11 +5,13 @@ set nocompatible                                      " 禁用 vi 兼容模式
 set mouse=a                                           " 在任何模式下启用鼠标
 set winaltkeys=no                                     " Windows 禁用 ALT 操作菜单
 set nowrap                                            " 关闭自动换行
-set ttimeout                                          " 打开功能键超时检测
-set ttimeoutlen=50                                    " 功能键超时检测 50 毫秒
 set autoread                                          " 当文件在外部被修改，自动更新该文件
 set wildmenu                                          " 增强模式中的命令行自动完成操作
+set hidden
 set completeopt=longest,menu                          " 自动补全配置
+set ttimeout                                          " 打开功能键超时检测
+set ttimeoutlen=50                                    " 功能键超时检测 50 毫秒
+set updatetime=100
 
 set autoindent                                        " 自动缩进
 set cindent                                           " 打开 C/C++ 语言缩进优化
@@ -19,6 +21,7 @@ set shiftwidth=4                                      " 换行时自动缩进4�
 set smarttab                                          " 指定按一次backspace就删除shiftwidth宽度的空格
 set backspace=2                                       " 设置 Backspace 键模式 backspace=indent,eol,start
 set smartindent                                       " 启用智能对齐方式
+
 filetype on                                           " 启用文件类型侦测
 filetype indent on                                    " 针对不同的文件类型采用不同的缩进格式
 filetype plugin on                                    " 针对不同的文件类型加载对应的插件

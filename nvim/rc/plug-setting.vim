@@ -83,7 +83,6 @@ noremap <Leader>gb :Gblame<CR>
 " ------------------------------------------------------------------------------
 "  < vim-gitgutter setting >
 " ------------------------------------------------------------------------------
-set updatetime=100
 
 " ------------------------------------------------------------------------------
 "  < LeaderF setting >
@@ -204,22 +203,20 @@ let g:gutentags_plus_nomap = 1
 " ------------------------------------------------------------------------------
 "  < Coc setting >
 " ------------------------------------------------------------------------------
-" CocInstall coc-lists
-" CocInstall coc-highlight
-" CocInstall coc-json
-" CocInstall coc-snippets
-"
-" CocInstall coc-vimlsp
-" CocInstall coc-phpls
-" CocInstall coc-go
-" CocInstall coc-docker
-"
 " CocInstall coc-post
-" CocInstall coc-translator
-"
 " CocInstall coc-markmap
-"
-" CocInstall coc-tabnine
+" CocInstall coc-marketplace
+let g:coc_global_extensions = [
+            \ 'coc-json',
+            \ 'coc-lists',
+            \ 'coc-highlight',
+            \ 'coc-snippets',
+            \ 'coc-vimlsp',
+            \ 'coc-phpls',
+            \ 'coc-go',
+            \ 'coc-docker',
+            \ 'coc-translator',
+            \ 'coc-tabnine']
 
 " 开启vim-airline集成
 let g:airline#extensions#coc#enabled = 1
@@ -229,32 +226,40 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " 使用 <tab> 触发补全并导航到下一个补全项
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1] =~# '\s'
-endfunction
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
 nmap <silent>  <leader>rn <Plug>(coc-rename)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
   else
-    call CocAction('doHover')
+    execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
 
