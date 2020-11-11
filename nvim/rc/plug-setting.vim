@@ -42,33 +42,33 @@ let g:indentLine_color_term=239
 " ------------------------------------------------------------------------------
 "  < nerdtree setting >
 " ------------------------------------------------------------------------------
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeDirArrows=1
-let g:NERDTreeHijackNetrw=0
-let g:NERDTreeChDirMode=2
-let g:NERDTreeShowBookmarks=1
-let g:NERDTreeWinSize=30
-let g:NERDTreeShowHidden=1
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-nmap <Leader>ee :NERDTreeToggle<CR>
-nmap <Leader>ef :NERDTreeFind<CR>
+" let g:NERDTreeMinimalUI=1
+" let g:NERDTreeDirArrows=1
+" let g:NERDTreeHijackNetrw=0
+" let g:NERDTreeChDirMode=2
+" let g:NERDTreeShowBookmarks=1
+" let g:NERDTreeWinSize=30
+" let g:NERDTreeShowHidden=1
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+" nmap <Leader>ee :NERDTreeToggle<CR>
+" nmap <Leader>ef :NERDTreeFind<CR>
 
 " ------------------------------------------------------------------------------
 "  < nerdtree-git-plugin setting >
 " ------------------------------------------------------------------------------
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
-let g:NERDTreeGitStatusShowIgnored = 1
+" let g:NERDTreeIndicatorMapCustom = {
+"     \ 'Modified'  : '✹',
+"     \ 'Staged'    : '✚',
+"     \ 'Untracked' : '✭',
+"     \ 'Renamed'   : '➜',
+"     \ 'Unmerged'  : '═',
+"     \ 'Deleted'   : '✖',
+"     \ 'Dirty'     : '✗',
+"     \ 'Clean'     : '✔︎',
+"     \ 'Ignored'   : '☒',
+"     \ 'Unknown'   : '?'
+"     \ }
+" let g:NERDTreeGitStatusShowIgnored = 1
 
 " ------------------------------------------------------------------------------
 "  < Git fugitive setting >
@@ -214,6 +214,7 @@ let g:coc_global_extensions = [
             \ 'coc-marketplace',
             \ 'coc-lists',
             \ 'coc-highlight',
+            \ 'coc-explorer',
             \ 'coc-snippets',
             \ 'coc-tabnine',
             \ 'coc-json',
@@ -267,6 +268,8 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+nmap <Leader>ee :CocCommand explorer<CR>
 
 " coc-translator
 " popup

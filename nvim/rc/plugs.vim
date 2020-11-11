@@ -29,8 +29,8 @@ Plug 'vim-airline/vim-airline-themes'                 " 美化状态栏主题
 Plug 'Yggdroot/indentLine'                            " 缩进提示线
 
 " Plugins for file
-Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind']}
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind']}
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'jistr/vim-nerdtree-tabs'
 Plug 'pbrisbin/vim-mkdir'                             " 自动创建目录
 

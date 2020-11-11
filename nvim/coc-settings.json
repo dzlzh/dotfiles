@@ -3,6 +3,9 @@
   "coc.preferences.hoverTarget": "preview",
   "coc.preferences.enableFloatHighlight": true,
   "coc.preferences.messageLevel": "error",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json"
+  ],
   "suggest.noselect": true,
   "suggest.enablePreselect": false,
   "suggest.timeout": 5000,
@@ -50,8 +53,21 @@
   "diagnostic.virtualTextPrefix": " ❯❯❯ ",
   "diagnostic.virtualText": true,
   "codeLens.enable": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "json"
+  "explorer.width": 38,
+  "explorer.quitOnOpen": true,
+  "explorer.sources": [
+    {
+      "name": "buffer",
+      "expand": false
+    },
+    {
+      "name": "file",
+      "expand": true
+    }
   ],
+  "explorer.file.column.indent.indentLine": true,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.buffer.showHiddenBuffers": false,
   "phpls.path": "/usr/lib/node_modules/intelephense"
 }
