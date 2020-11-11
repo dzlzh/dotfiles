@@ -43,8 +43,8 @@ Plug 'tpope/vim-fugitive'                             " Git
 Plug 'airblade/vim-gitgutter'                         " Git Diff
 
 " Plugins for Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-session'
 
 " Plugins for Tmux
 Plug 'christoomey/vim-tmux-navigator'                 " Tmux

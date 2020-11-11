@@ -116,18 +116,18 @@ let g:Lf_WildIgnore = {
 " ------------------------------------------------------------------------------
 "  < vim-session setting >
 " ------------------------------------------------------------------------------
-let g:session_directory=g:config . 'session'
-let g:session_autoload="no"
-let g:session_autosave="yes"
-let g:session_autosave_periodic = 60
-" let g:session_autosave_periodic = 0
-let g:session_autosave_sil = 1
-let g:session_command_aliases=1
-nnoremap <Leader>so :OpenSession<Space>
-nnoremap <Leader>ss :SaveSession<Space>
-nnoremap <Leader>sd :DeleteSession<CR>
-nnoremap <Leader>sc :CloseSession<CR>
-nnoremap <Leader>sv :ViewSession<CR>
+" let g:session_directory=g:config . 'session'
+" let g:session_autoload="no"
+" let g:session_autosave="yes"
+" let g:session_autosave_periodic = 60
+" " let g:session_autosave_periodic = 0
+" let g:session_autosave_sil = 1
+" let g:session_command_aliases=1
+" nnoremap <Leader>so :OpenSession<Space>
+" nnoremap <Leader>ss :SaveSession<Space>
+" nnoremap <Leader>sd :DeleteSession<CR>
+" nnoremap <Leader>sc :CloseSession<CR>
+" nnoremap <Leader>sv :ViewSession<CR>
 
 " ------------------------------------------------------------------------------
 "  < auto-pairs setting >
@@ -203,25 +203,25 @@ let g:gutentags_plus_nomap = 1
 " ------------------------------------------------------------------------------
 "  < Coc setting >
 " ------------------------------------------------------------------------------
-" CocInstall coc-marketplace
 " CocInstall coc-phpactor
 " CocInstall coc-yaml
 " CocInstall coc-post
 " CocInstall coc-rime
 " CocInstall coc-markmap
+" CocInstall coc-docker
 
 let g:coc_global_extensions = [
-            \ 'coc-json',
+            \ 'coc-marketplace',
             \ 'coc-lists',
             \ 'coc-highlight',
             \ 'coc-snippets',
+            \ 'coc-tabnine',
+            \ 'coc-json',
             \ 'coc-vimlsp',
             \ 'coc-go',
             \ 'coc-phpls',
-            \ 'coc-docker',
             \ 'coc-sql',
-            \ 'coc-translator',
-            \ 'coc-tabnine']
+            \ 'coc-translator']
 
 " 开启vim-airline集成
 let g:airline#extensions#coc#enabled = 1
