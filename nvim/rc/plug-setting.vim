@@ -42,9 +42,9 @@ let g:indentLine_color_term=239
 " ------------------------------------------------------------------------------
 "  < nerdtree setting >
 " ------------------------------------------------------------------------------
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeHijackNetrw = 0
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeDirArrows=1
+let g:NERDTreeHijackNetrw=0
 let g:NERDTreeChDirMode=2
 let g:NERDTreeShowBookmarks=1
 let g:NERDTreeWinSize=30

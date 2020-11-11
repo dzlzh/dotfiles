@@ -30,8 +30,8 @@ Plug 'Yggdroot/indentLine'                            " 缩进提示线
 
 " Plugins for file
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind']}
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'jistr/vim-nerdtree-tabs'
 Plug 'pbrisbin/vim-mkdir'                             " 自动创建目录
 
 " Plugins for search
@@ -71,7 +71,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries'}
 
 " Plugins for nginx
-Plug 'chr4/nginx.vim', {'for': 'nginx'}
+" Plug 'chr4/nginx.vim'
 
 " Plugins for wiki
 if exists("g:vimwiki_path")
