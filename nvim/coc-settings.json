@@ -52,5 +52,6 @@
   "codeLens.enable": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "json"
-  ]
+  ],
+  "phpls.path": "/usr/lib/node_modules/intelephense"
 }
