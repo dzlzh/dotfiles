@@ -184,4 +184,4 @@ alias gdf='git branch -D $(git branch | fzf)'
 
 [ -f ~/.local.zsh ] && source ~/.local.zsh
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
