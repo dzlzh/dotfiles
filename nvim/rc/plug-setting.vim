@@ -314,8 +314,8 @@ au FileType go nmap <leader>r <Plug>(go-run)
 "  < vim-visual-multi setting >
 " ------------------------------------------------------------------------------
 let g:VM_maps = {}
-let g:VM_maps['Find Under']         = '<C-k>'           " replace C-n
-let g:VM_maps['Find Subword Under'] = '<C-k>'           " replace visual C-n
+let g:VM_maps['Find Under']         = '<C-i>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<C-i>'           " replace visual C-n
 
 " ------------------------------------------------------------------------------
 "  < vimwiki setting >
