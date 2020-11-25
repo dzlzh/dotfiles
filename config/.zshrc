@@ -79,12 +79,13 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 plugins=(
+    z
     git
     vi-mode
-    autojump
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
+# autojump
 
 # git clone git://github.com/joelthelion/autojump.git
 # cd autojump
