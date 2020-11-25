@@ -269,6 +269,11 @@ function! s:show_documentation()
   endif
 endfunction
 
+" session
+nmap <Leader>so :CocCommand session.load<CR>
+nmap <Leader>ss :CocCommand session.save<CR>
+
+" coc-explorer
 nmap <Leader>ee :CocCommand explorer<CR>
 
 " coc-translator
@@ -304,6 +309,13 @@ let g:go_highlight_extra_types    = 1 " Highlight commonly used library types
 let g:go_highlight_generate_tags  = 1 " Highlight go:generate directives
 
 au FileType go nmap <leader>r <Plug>(go-run)
+
+" ------------------------------------------------------------------------------
+"  < vim-visual-multi setting >
+" ------------------------------------------------------------------------------
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-k>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<C-k>'           " replace visual C-n
 
 " ------------------------------------------------------------------------------
 "  < vimwiki setting >
