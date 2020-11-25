@@ -59,6 +59,7 @@ Plug 'matze/vim-move'                                 " 向上和向下移动代
 Plug 'junegunn/vim-easy-align'                        " 快速对齐
 Plug 'skywind3000/asyncrun.vim'                       " 异步构建和测试调度程序
 Plug 'honza/vim-snippets'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Plug 'ludovicchabant/vim-gutentags'                   " ctags/gtags 自动更新
 " Plug 'skywind3000/gutentags_plus'                     " 自动处理好 gtags 数据库切换
 " Plug 'sheerun/vim-polyglot'
