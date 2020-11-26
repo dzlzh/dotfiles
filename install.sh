@@ -2,7 +2,8 @@
 ln -s `pwd`/i3wm/.i3 ~/.i3
 
 # zsh
-ln -s `pwd`/config/.zshrc ~/.zshrc
+ln -s `pwd`/zsh/.zshrc ~/.zshrc
+ln -s `pwd`/zsh/.p10k.zsh ~/.p10k.zsh
 
 # nvim
 ln -s `pwd`/nvim ~/.config/nvim
