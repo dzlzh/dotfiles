@@ -1,6 +1,6 @@
 tilda_config_version="1.4.1"
-# command=""
-font="DejaVu Sans Mono for Powerline 12"
+command=""
+font="DejaVuSansMono Nerd Font Mono 12"
 key="F1"
 addtab_key="<Shift><Control>t"
 fullscreen_key="F11"
@@ -34,7 +34,7 @@ normalize_font_size_key="<Control>0"
 show_on_monitor="eDP1"
 word_chars="-A-Za-z0-9,./?%&#:_"
 lines=5000
-x_pos=0
+x_pos=1920
 y_pos=0
 tab_pos=0
 expand_tabs=false
