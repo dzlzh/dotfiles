@@ -10,10 +10,6 @@
   "suggest.enablePreselect": false,
   "suggest.timeout": 5000,
   "suggest.snippetIndicator": "*",
-  "snippets.ultisnips.directories": [
-    "$HOME/.config/nvim/Ultisnips/",
-    "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
-  ],
   "suggest.completionItemKindLabels": {
     "class": "\uf0e8",
     "color": "\ue22b",
@@ -41,6 +37,7 @@
     "value": "\uf89f",
     "variable": "\ue71b"
   },
+  "diagnostic.messageTarget": "echo",
   "diagnostic.errorSign": "\uf467",
   "diagnostic.warningSign": "\uf071",
   "diagnostic.infoSign": "\uf129",
@@ -52,6 +49,10 @@
   "diagnostic.virtualTextPrefix": " ❯❯❯ ",
   "diagnostic.virtualText": true,
   "codeLens.enable": true,
+  "snippets.ultisnips.directories": [
+    "$HOME/.config/nvim/Ultisnips/",
+    "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
+  ],
   "explorer.width": 38,
   "explorer.quitOnOpen": true,
   "explorer.sources": [
