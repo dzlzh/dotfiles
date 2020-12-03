@@ -385,17 +385,15 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 bindsym $mod+F1 exec --no-startup-id /opt/deepinwine/apps/Deepin-WeChat/run.sh
-bindsym $mod+Shift+F1 exec --no-startup-id /opt/deepinwine/apps/Deepin-DingTalk/run.sh
 bindsym $mod+F2 exec google-chrome-stable
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
-bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+F12 exec --no-startup-id ~/workspace/frp/frpc -c ~/workspace/frp/frpc.ini
+# bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+F12 exec --no-startup-id ~/.config/frp/frpc -c ~/.config/frp/frpc.ini
 
 bindsym Ctrl+Mod1+a exec --no-startup-id flameshot gui
 
-bindsym Ctrl+Mod1+w [class="(?!dingtalk)"] scratchpad show
-# bindsym Ctrl+w [class="dingtalk"] scratchpad show
+bindsym Ctrl+Mod1+w scratchpad show
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -412,8 +410,4 @@ exec --no-startup-id dunst
 exec --no-startup-id tilda
 exec --no-startup-id redshift
 exec --no-startup-id clash
-# exec --no-startup-id anydesk
-# exec --no-startup-id v2ray -config ~/.config/v2ray/config.json
 # exec --no-startup-id aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=$HOME/.config/aria2/aria2.conf
-# exec --no-startup-id sslocal -c ~/.config/shadowsocks/shadowsocks.json --log-file ~/.logs/ss.log -d start --pid-file ~/.run/ss.pid
-# exec --no-startup-id xrandr --output eDP1 --primary --auto --output HDMI1 --auto --left-of eDP1
