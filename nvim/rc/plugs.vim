@@ -36,7 +36,7 @@ Plug 'pbrisbin/vim-mkdir'                             " 自动创建目录
 
 " Plugins for search
 " Plug 'junegunn/fzf', {'do': './install --all'}        " FZF
-Plug 'Yggdroot/LeaderF'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
 " Plugins for Git
 Plug 'tpope/vim-fugitive'                             " Git
