@@ -69,5 +69,6 @@
   "explorer.file.showHiddenFiles": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.buffer.showHiddenBuffers": false,
+  "tabnine.priority": 99,
   "phpls.path": "/usr/lib/node_modules/intelephense"
 }
