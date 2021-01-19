@@ -1,0 +1,16 @@
+[Unit]
+Description=frpc server daemon
+Documentation=https://github.com/fatedier/frp
+After=network-online.target
+
+[Service]
+ExecStart=~/.config/frp/frpc -c ~/.config/frp/frpc.ini
+Type=simple
+User=nobody
+Group=nogroup
+WorkingDirectory=/tmp
+Restart=on-failure
+RestartSec=60s
+
+[Install]
+WantedBy=multi-user.target
