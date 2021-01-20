@@ -99,7 +99,7 @@ plugins=(
 # cd autojump
 # ./install.py
 # rm -rf autojump
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+# [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
 source $ZSH/oh-my-zsh.sh
 
