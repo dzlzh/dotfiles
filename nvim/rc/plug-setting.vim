@@ -73,12 +73,9 @@ let g:indentLine_color_term=239
 " ------------------------------------------------------------------------------
 "  < Git fugitive setting >
 " ------------------------------------------------------------------------------
-noremap <Leader>ga :Gwrite<CR>
-noremap <Leader>gc :Gcommit<CR>
-noremap <Leader>gsh :Gpush<CR>
-noremap <Leader>gll :Gpull<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
+noremap <Leader>gsh :Git push<CR>
+noremap <Leader>gll :Git pull<CR>
+noremap <Leader>gs  :Gstatus<CR>
 
 " ------------------------------------------------------------------------------
 "  < vim-gitgutter setting >
