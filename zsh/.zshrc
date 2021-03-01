@@ -143,6 +143,7 @@ alias lockpass='gpg-connect-agent reloadagent /bye'
 
 # proxy
 alias IP='curl ipinfo.io' # myip.ipip.net cip.cc
+alias T='wget -qO- bench.sh | bash'
 alias setproxy='export HTTPS_PROXY=http://127.0.0.1:7890 HTTP_PROXY=http://127.0.0.1:7890 ALL_PROXY=socks5://127.0.0.1:7890'
 alias unsetproxy='unset HTTPS_PROXY HTTP_PROXY ALL_PROXY'
 
