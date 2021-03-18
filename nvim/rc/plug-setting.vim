@@ -1,17 +1,6 @@
 " ------------------------------------------------------------------------------
 "  < colorschemes >
 " ------------------------------------------------------------------------------
-" set background=dark
-
-" colorscheme gruvbox
-
-" let g:equinusocio_material_style='darker'
-" let g:equinusocio_material_vertsplit='visible'
-" let g:lightline = {
-"     \ 'colorscheme': 'equinusocio_material',
-"     \ }
-" colorscheme equinusocio_material
-
 let g:onedark_hide_endofbuffer = 1
 let g:onedark_terminal_italics = 1
 let g:onedark_termcolors       = 256
@@ -40,46 +29,11 @@ let g:indentLine_first_char="┊"
 let g:indentLine_color_term=239
 
 " ------------------------------------------------------------------------------
-"  < nerdtree setting >
-" ------------------------------------------------------------------------------
-" let g:NERDTreeMinimalUI=1
-" let g:NERDTreeDirArrows=1
-" let g:NERDTreeHijackNetrw=0
-" let g:NERDTreeChDirMode=2
-" let g:NERDTreeShowBookmarks=1
-" let g:NERDTreeWinSize=30
-" let g:NERDTreeShowHidden=1
-" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-" nmap <Leader>ee :NERDTreeToggle<CR>
-" nmap <Leader>ef :NERDTreeFind<CR>
-
-" ------------------------------------------------------------------------------
-"  < nerdtree-git-plugin setting >
-" ------------------------------------------------------------------------------
-" let g:NERDTreeIndicatorMapCustom = {
-"     \ 'Modified'  : '✹',
-"     \ 'Staged'    : '✚',
-"     \ 'Untracked' : '✭',
-"     \ 'Renamed'   : '➜',
-"     \ 'Unmerged'  : '═',
-"     \ 'Deleted'   : '✖',
-"     \ 'Dirty'     : '✗',
-"     \ 'Clean'     : '✔︎',
-"     \ 'Ignored'   : '☒',
-"     \ 'Unknown'   : '?'
-"     \ }
-" let g:NERDTreeGitStatusShowIgnored = 1
-
-" ------------------------------------------------------------------------------
 "  < Git fugitive setting >
 " ------------------------------------------------------------------------------
 noremap <Leader>gsh :Git push<CR>
 noremap <Leader>gll :Git pull<CR>
 noremap <Leader>gs  :Gstatus<CR>
-
-" ------------------------------------------------------------------------------
-"  < vim-gitgutter setting >
-" ------------------------------------------------------------------------------
 
 " ------------------------------------------------------------------------------
 "  < LeaderF setting >
@@ -109,22 +63,6 @@ let g:Lf_WildIgnore = {
 \ 'dir': ['.svn','.git','.hg'],
 \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
 \ }
-
-" ------------------------------------------------------------------------------
-"  < vim-session setting >
-" ------------------------------------------------------------------------------
-" let g:session_directory=g:config . 'session'
-" let g:session_autoload="no"
-" let g:session_autosave="yes"
-" let g:session_autosave_periodic = 60
-" " let g:session_autosave_periodic = 0
-" let g:session_autosave_sil = 1
-" let g:session_command_aliases=1
-" nnoremap <Leader>so :OpenSession<Space>
-" nnoremap <Leader>ss :SaveSession<Space>
-" nnoremap <Leader>sd :DeleteSession<CR>
-" nnoremap <Leader>sc :CloseSession<CR>
-" nnoremap <Leader>sv :ViewSession<CR>
 
 " ------------------------------------------------------------------------------
 "  < auto-pairs setting >
@@ -174,30 +112,6 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 map <Leader>vz :VimuxZoomRunner<CR>
 
 " ------------------------------------------------------------------------------
-"  < tags setting >
-" ------------------------------------------------------------------------------
-" gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
-" let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
-
-" 所生成的数据文件的名称 "
-" let g:gutentags_ctags_tagfile = '.tags'
-
-" 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录 "
-" let s:vim_tags = expand('~/.cache/tags')
-" let g:gutentags_cache_dir = s:vim_tags
-" 检测 ~/.cache/tags 不存在就新建 "
-" if !isdirectory(s:vim_tags)
-"    silent! call mkdir(s:vim_tags, 'p')
-" endif
-
-" let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-" let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-" let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-
-" 禁用gutentags_plus默认键盘映射
-" let g:gutentags_plus_nomap = 1
-
-" ------------------------------------------------------------------------------
 "  < Coc setting >
 " ------------------------------------------------------------------------------
 " CocInstall coc-phpactor
@@ -206,15 +120,15 @@ map <Leader>vz :VimuxZoomRunner<CR>
 " CocInstall coc-rime
 " CocInstall coc-markmap
 " CocInstall coc-docker
+" CocInstall coc-tabnine
 
 let g:coc_global_extensions = [
+            \ 'coc-json',
             \ 'coc-marketplace',
             \ 'coc-lists',
             \ 'coc-highlight',
             \ 'coc-explorer',
             \ 'coc-snippets',
-            \ 'coc-tabnine',
-            \ 'coc-json',
             \ 'coc-vimlsp',
             \ 'coc-go',
             \ 'coc-phpls',

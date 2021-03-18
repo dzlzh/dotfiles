@@ -29,22 +29,14 @@ Plug 'vim-airline/vim-airline-themes'                 " 美化状态栏主题
 Plug 'Yggdroot/indentLine'                            " 缩进提示线
 
 " Plugins for file
-" Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind']}
-" Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'jistr/vim-nerdtree-tabs'
 Plug 'pbrisbin/vim-mkdir'                             " 自动创建目录
 
 " Plugins for search
-" Plug 'junegunn/fzf', {'do': './install --all'}        " FZF
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
 " Plugins for Git
 Plug 'tpope/vim-fugitive'                             " Git
 Plug 'airblade/vim-gitgutter'                         " Git Diff
-
-" Plugins for Session
-" Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-session'
 
 " Plugins for Tmux
 Plug 'christoomey/vim-tmux-navigator'                 " Tmux
@@ -60,12 +52,8 @@ Plug 'junegunn/vim-easy-align'                        " 快速对齐
 Plug 'skywind3000/asyncrun.vim'                       " 异步构建和测试调度程序
 Plug 'honza/vim-snippets'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-" Plug 'ludovicchabant/vim-gutentags'                   " ctags/gtags 自动更新
-" Plug 'skywind3000/gutentags_plus'                     " 自动处理好 gtags 数据库切换
-" Plug 'sheerun/vim-polyglot'
 
 " Plugins for autocomplete
-" Plug 'zxqfl/tabnine-vim'                              " AI自动补全
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Plugins for golang
