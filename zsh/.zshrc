@@ -191,9 +191,7 @@ alias gcf='git checkout $(git branch | fzf)'
 alias gcfa='git checkout $(git branch -a | fzf)'
 alias gdf='git branch -D $(git branch | fzf)'
 
-[ -f ~/.local.zsh ] && source ~/.local.zsh
-
-# eval "$(starship init zsh)"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.local.zsh ] && source ~/.local.zsh
