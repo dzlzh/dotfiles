@@ -86,7 +86,7 @@ xmap ga <Plug>(EasyAlign)
 " ------------------------------------------------------------------------------
 "  < AsyncRun setting >
 " ------------------------------------------------------------------------------
-nmap <Leader>; :AsyncRun<space>
+nmap <Leader>r :AsyncRun<space>
 " 常规模式下打开 quickfix
 nnoremap <Leader>q :call asyncrun#quickfix_toggle(6)<cr>
 
@@ -219,7 +219,7 @@ let g:go_highlight_operators      = 1 " Highlight operators such
 let g:go_highlight_extra_types    = 1 " Highlight commonly used library types
 let g:go_highlight_generate_tags  = 1 " Highlight go:generate directives
 
-au FileType go nmap <leader>r <Plug>(go-run)
+" au FileType go nmap <leader>r <Plug>(go-run)
 
 " ------------------------------------------------------------------------------
 "  < vim-visual-multi setting >
@@ -258,3 +258,20 @@ endif
 "  『盘古之白』中文排版自动规范化的 Vim 插件
 
 autocmd BufWritePre *.md call PanGuSpacing()
+
+" ------------------------------------------------------------------------------
+"  < ZFVimIM >
+" ------------------------------------------------------------------------------
+function! s:myLocalDb()
+    let db = ZFVimIM_dbInit({
+                \   'name' : 'wubi',
+                \ })
+    call ZFVimIM_cloudRegister({
+                \   'mode' : 'local',
+                \   'dbId' : db['dbId'],
+                \   'repoPath' : g:config . 'db',
+                \   'dbFile' : 'wubi',
+                \   'dbCountFile' : 'wubi_count',
+                \ })
+endfunction
+autocmd User ZFVimIM_event_OnDbInit call s:myLocalDb()

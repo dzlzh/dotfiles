@@ -68,4 +68,8 @@ if exists("g:vimwiki_path")
     Plug 'vimwiki/vimwiki'
 endif
 
+" 输入法
+Plug 'ZSaberLv0/ZFVimIM'
+Plug 'ZSaberLv0/ZFVimJob'
+
 call plug#end()
