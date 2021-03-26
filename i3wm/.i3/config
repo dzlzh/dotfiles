@@ -182,6 +182,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 assign [class="Google-chrome"] $ws2
 assign [title="AnyDesk"] $ws8
 assign [class="TelegramDesktop"] $ws4
+assign [class="dontstarve_steam"] $ws5
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"]                    floating   enable border pixel  1
