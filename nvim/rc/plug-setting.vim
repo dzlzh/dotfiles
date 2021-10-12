@@ -133,6 +133,7 @@ let g:coc_global_extensions = [
             \ 'coc-go',
             \ 'coc-phpls',
             \ 'coc-sql',
+            \ 'coc-vetur',
             \ 'coc-translator']
 
 " 开启vim-airline集成
