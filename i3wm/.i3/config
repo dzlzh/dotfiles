@@ -406,7 +406,7 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id pamac-tray
 # exec --no-startup-id volumeicon
 # exec --no-startup-id clipit
-exec --no-startup-id feh --bg-scale "$HOME/.i3/wallpaper/M42_orion_nebula_modified.png"
+exec --no-startup-id feh --bg-scale "$HOME/.i3/wallpaper/2.png"
 exec --no-startup-id dunst
 exec --no-startup-id tilda
 exec --no-startup-id redshift
