@@ -148,7 +148,7 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -201,6 +201,18 @@ nmap <Leader>tr <Plug>(coc-translator-r)
 nmap <Leader>m <Plug>(coc-markmap-create)
 " Create markmap from the selected lines
 vmap <Leader>m <Plug>(coc-markmap-create-v)
+
+" ------------------------------------------------------------------------------
+"  < Copilot >
+" ------------------------------------------------------------------------------
+let g:copilot_filetypes = {
+            \ 'xml': v:false,
+            \ }
+
+" imap <silent><script><expr> <C-y> copilot#Accept("\<CR>")
+" let g:copilot_no_tab_map = v:true
+highlight CopilotSuggestion guifg=#555555 ctermfg=8
+
 
 " ------------------------------------------------------------------------------
 "  < Go setting >
