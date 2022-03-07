@@ -30,7 +30,8 @@ floating_modifier $mod
 # start a terminal
 # bindsym $mod+Return exec terminal
 # bindsym $mod+Return exec urxvt -fg lightgray -bg black -bc -tr -tint lightgray -sh 20 -sr
-bindsym $mod+Return exec termite
+# bindsym $mod+Return exec termite
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
