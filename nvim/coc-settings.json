@@ -1,6 +1,5 @@
 {
   "coc.preferences.extensionUpdateCheck": "daily",
-  "coc.preferences.hoverTarget": "preview",
   "coc.preferences.enableFloatHighlight": true,
   "coc.preferences.messageLevel": "error",
   "coc.preferences.formatOnSaveFiletypes": [
@@ -37,6 +36,8 @@
     "value": "\uf89f",
     "variable": "\ue71b"
   },
+  "diagnostic.enable": true,
+  "diagnostic.autoRefresh": true,
   "diagnostic.messageTarget": "echo",
   "diagnostic.errorSign": "\uf467",
   "diagnostic.warningSign": "\uf071",
@@ -47,6 +48,7 @@
   "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualTextPrefix": " ❯❯❯ ",
   "diagnostic.virtualText": true,
+  "diagnostic.messageDelay": 200,
   "codeLens.enable": true,
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/Ultisnips/",
@@ -68,6 +70,5 @@
   "explorer.file.showHiddenFiles": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.buffer.showHiddenBuffers": false,
-  "tabnine.priority": 99,
   "phpls.path": "/usr/lib/node_modules/intelephense"
 }

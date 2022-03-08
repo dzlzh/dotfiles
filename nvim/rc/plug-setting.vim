@@ -217,12 +217,11 @@ highlight CopilotSuggestion guifg=#555555 ctermfg=8
 " ------------------------------------------------------------------------------
 "  < Go setting >
 " ------------------------------------------------------------------------------
-let g:go_def_mode                 = "gopls"
-let g:go_info_mode                = "gopls"
-let g:go_fmt_command              = "goimports" " 格式化将默认的 gofmt 替换
-let g:go_autodetect_gopath        = 1
-let g:go_list_type                = "quickfix"
+" let g:go_def_mode                 ='godef'
 let g:go_term_mode                = "split"
+
+" let g:go_fmt_command              = "goimports" " 格式化将默认的 gofmt 替换
+let g:go_list_type                = "quickfix"
 
 let g:go_highlight_types          = 1 " Highlight struct and interface names
 let g:go_highlight_fields         = 1 " Highlight struct field names.
