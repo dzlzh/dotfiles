@@ -13,6 +13,6 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
-export WINEDLLPATH=/usr/lib/i386-linux-gnu/deepin-wine5
-export WINELOADER=/usr/lib/i386-linux-gnu/deepin-wine5/wine
-export WINESERVER=/usr/lib/i386-linux-gnu/deepin-wine5/wineserver
+# export WINEDLLPATH=/usr/lib/i386-linux-gnu/deepin-wine5
+# export WINELOADER=/usr/lib/i386-linux-gnu/deepin-wine5/wine
+# export WINESERVER=/usr/lib/i386-linux-gnu/deepin-wine5/wineserver
