@@ -193,5 +193,5 @@ alias gdf='git branch -D $(git branch | fzf)'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+[ -f ~/.go/env ] && source ~/.go/env
 [ -f ~/.local.zsh ] && source ~/.local.zsh
