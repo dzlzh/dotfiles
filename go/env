@@ -1,0 +1,3 @@
+GO111MODULE=on
+GOPATH=/home/dzlzh/.go/GOPATH
+GOPROXY=https://goproxy.cn,https://goproxy,direct
