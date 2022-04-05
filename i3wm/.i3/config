@@ -22,7 +22,8 @@ bindsym $mod+n border normal
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:DejaVu Sans Mono for Powerline, pango:Noto Sans Mono CJK SC 12
-font pango:DejaVuSansMono Nerd Font Mono, pango:Noto Sans Mono CJK SC, pango:Font Awesome 6 Free Solid 12
+# font pango:DejaVuSansMono Nerd Font Mono, pango:Noto Sans Mono CJK SC, pango:Font Awesome 6 Free Solid 12
+font pango:DejaVuSansMono Nerd Font Mono, pango:LXGW WenKai Mono, pango:Font Awesome 6 Free Solid 12
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -31,7 +32,8 @@ floating_modifier $mod
 # bindsym $mod+Return exec terminal
 # bindsym $mod+Return exec urxvt -fg lightgray -bg black -bc -tr -tint lightgray -sh 20 -sr
 # bindsym $mod+Return exec termite
-bindsym $mod+Return exec urxvt
+# bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
