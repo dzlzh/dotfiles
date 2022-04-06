@@ -33,7 +33,7 @@ let g:indentLine_color_term=239
 " ------------------------------------------------------------------------------
 noremap <Leader>gsh :Git push<CR>
 noremap <Leader>gll :Git pull<CR>
-noremap <Leader>gs  :Gstatus<CR>
+noremap <Leader>g   :Git<CR>
 
 " ------------------------------------------------------------------------------
 "  < LeaderF setting >
@@ -213,7 +213,6 @@ let g:copilot_filetypes = {
 " let g:copilot_no_tab_map = v:true
 highlight CopilotSuggestion guifg=#555555 ctermfg=8
 
-
 " ------------------------------------------------------------------------------
 "  < Go setting >
 " ------------------------------------------------------------------------------
@@ -268,7 +267,6 @@ endif
 "  < Pangu setting >
 " ------------------------------------------------------------------------------
 "  『盘古之白』中文排版自动规范化的 Vim 插件
-
 autocmd BufWritePre *.md call PanGuSpacing()
 
 " ------------------------------------------------------------------------------
