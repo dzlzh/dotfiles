@@ -45,7 +45,7 @@ noremap <Leader>h :LeaderfMru<cr>
 noremap <A-t> :LeaderfFunction!<cr>
 
 " ALT+f 打开RG搜索
-noremap <A-f> :Leaderf rg -i <space>
+noremap <A-f> :Leaderf rg -i<cr>
 
 " 最大历史文件保存 2048 个
 let g:Lf_MruMaxFiles = 2048
