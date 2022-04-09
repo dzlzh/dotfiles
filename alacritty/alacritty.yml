@@ -103,24 +103,27 @@ scrolling:
 font:
   # 常规字体
   normal:
-    family: "DejaVuSansMono Nerd Font Mono"  #目前的版本不支持连字
+    # family: "DejaVuSansMono Nerd Font Mono"  #目前的版本不支持连字
+    family: "LXGW WenKai Mono"  #目前的版本不支持连字
     # 字体风格
-    style: Book
+    style: Regular
 
   # 粗体
   bold:
-    family: "DejaVuSansMono Nerd Font Mono"
+    family: "LXGW WenKai Mono"
     style: Bold
 
   # 斜体
   italic:
-    family: "DejaVuSansMono Nerd Font Mono"
-    style: Oblique
+    family: "LXGW WenKai Mono"
+    # style: Oblique
+    style: Italic
 
   # 斜粗体
   bold_italic:
-    family: "DejaVuSansMono Nerd Font Mono"
-    style: Bold Oblique
+    family: "LXGW WenKai Mono"
+    # style: Bold Oblique
+    style: Bold Italic
 
   # 字体大小
   size: 16
@@ -148,44 +151,73 @@ draw_bold_text_with_bright_colors: false
 
 # 颜色配置，建议不要自己折腾，直接 https://github.com/eendroroy/alacritty-theme
 
-  # Colors (One Dark)
+  # Colors (Snazzy)
 colors:
   # Default colors
   primary:
-    background: '0x1e2127'
-    foreground: '0xabb2bf'
+    background: '0x282a36'
+    foreground: '0xeff0eb'
 
   # Normal colors
   normal:
-    black:   '0x1e2127'
-    red:     '0xe06c75'
-    green:   '0x98c379'
-    yellow:  '0xd19a66'
-    blue:    '0x61afef'
-    magenta: '0xc678dd'
-    cyan:    '0x56b6c2'
-    white:   '0xabb2bf'
+    black:   '0x282a36'
+    red:     '0xff5c57'
+    green:   '0x5af78e'
+    yellow:  '0xf3f99d'
+    blue:    '0x57c7ff'
+    magenta: '0xff6ac1'
+    cyan:    '0x9aedfe'
+    white:   '0xf1f1f0'
 
   # Bright colors
   bright:
-    black:   '0x5c6370'
-    red:     '0xe06c75'
-    green:   '0x98c379'
-    yellow:  '0xd19a66'
-    blue:    '0x61afef'
-    magenta: '0xc678dd'
-    cyan:    '0x56b6c2'
-    white:   '0xffffff'
+    black:   '0x686868'
+    red:     '0xff5c57'
+    green:   '0x5af78e'
+    yellow:  '0xf3f99d'
+    blue:    '0x57c7ff'
+    magenta: '0xff6ac1'
+    cyan:    '0x9aedfe'
+    white:   '0xf1f1f0'
 
-## Colors (Gruvbox dark)
-#colors:
+#   # Colors (One Dark)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x1e2127'
+#     foreground: '0xabb2bf'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x1e2127'
+#     red:     '0xe06c75'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0xabb2bf'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x5c6370'
+#     red:     '0xe06c75'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0xffffff'
+
+# # Colors (Gruvbox dark)
+# colors:
 #  # Default colors
 #  primary:
 #    # hard contrast: background = '0x1d2021'
 #    background: '0x282828'
 #    # soft contrast: background = '0x32302f'
 #    foreground: '0xebdbb2'
-#
+
 #  # Normal colors
 #  normal:
 #    black:   '0x282828'
@@ -196,7 +228,7 @@ colors:
 #    magenta: '0xb16286'
 #    cyan:    '0x689d6a'
 #    white:   '0xa89984'
-#
+
 #  # Bright colors
 #  bright:
 #    black:   '0x928374'
