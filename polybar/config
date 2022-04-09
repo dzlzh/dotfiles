@@ -22,8 +22,11 @@ padding-right = 0
 
 module-margin = 1
 
-font-0 = Font Awesome 6 Free Solid:pixelsize=12
-font-1 = Noto Sans Mono CJK SC
+font-0 = LXGW WenKai Screen R:pixelsize=16
+font-1 = Font Awesome 6 Free Solid:pixelsize=12
+
+;font-0 = Font Awesome 6 Free Solid:pixelsize=12
+;font-1 = Noto Sans Mono CJK SC
 
 modules-left   = i3 workspace-name
 ;modules-center = weather
