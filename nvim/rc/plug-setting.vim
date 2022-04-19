@@ -133,6 +133,10 @@ let g:coc_global_extensions = [
             \ 'coc-go',
             \ 'coc-phpls',
             \ 'coc-sql',
+            \ 'coc-sh',
+            \ 'coc-html',
+            \ 'coc-css',
+            \ 'coc-tsserver',
             \ 'coc-vetur',
             \ 'coc-translator']
 
