@@ -138,7 +138,7 @@ aug InitFileTypesGroup
     au!
     " 设置Tab键的宽度
     " 换行时自动缩进2个空格
-    au FileType yaml,json,proto,tmpl setlocal shiftwidth=2 tabstop=2
+    au FileType yaml,json,proto,tmpl,html setlocal shiftwidth=2 tabstop=2
     au FileType json syntax match Comment +\/\/.\+$+
 
     " PHP w 认为 $ 为单词的一部分
