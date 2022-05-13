@@ -187,6 +187,7 @@ assign [class="Google-chrome"] $ws2
 assign [title="AnyDesk"] $ws8
 assign [class="TelegramDesktop"] $ws4
 assign [class="dontstarve_steam"] $ws5
+assign [class="(?i)virtualbox"] $ws8
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"]                    floating   enable border pixel  1
@@ -400,7 +401,7 @@ bindsym $mod+F12 exec --no-startup-id ~/.config/frp/frpc -c ~/.config/frp/frpc.i
 
 bindsym Ctrl+Mod1+a exec --no-startup-id flameshot gui
 
-bindsym Ctrl+Mod1+w scratchpad show
+bindsym Ctrl+Mod1+w [title="微信"] scratchpad show
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
