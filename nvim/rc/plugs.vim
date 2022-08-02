@@ -55,7 +55,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " Plugins for autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 
 " Plugins for golang
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries'}

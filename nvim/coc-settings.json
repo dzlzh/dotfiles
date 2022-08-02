@@ -1,6 +1,5 @@
 {
   "coc.preferences.extensionUpdateCheck": "daily",
-  "coc.preferences.enableFloatHighlight": true,
   "coc.preferences.messageLevel": "error",
   "coc.preferences.formatOnSaveFiletypes": [
     "json"

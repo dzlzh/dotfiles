@@ -124,6 +124,7 @@ map <Leader>vz :VimuxZoomRunner<CR>
 
 let g:coc_global_extensions = [
             \ 'coc-json',
+            \ 'coc-tsserver',
             \ 'coc-marketplace',
             \ 'coc-lists',
             \ 'coc-highlight',
@@ -136,7 +137,6 @@ let g:coc_global_extensions = [
             \ 'coc-sh',
             \ 'coc-html',
             \ 'coc-css',
-            \ 'coc-tsserver',
             \ 'coc-vetur',
             \ 'coc-translator']
 
@@ -148,19 +148,18 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " 使用 <tab> 触发补全并导航到下一个补全项
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
 
 inoremap <silent><expr> <c-space> coc#refresh()
-
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
