@@ -24,7 +24,8 @@ bindsym $mod+n border normal
 # font pango:DejaVu Sans Mono for Powerline, pango:Noto Sans Mono CJK SC 12
 # font pango:DejaVuSansMono Nerd Font Mono, pango:Noto Sans Mono CJK SC, pango:Font Awesome 6 Free Solid 12
 # font pango:DejaVuSansMono Nerd Font Mono, pango:LXGW WenKai Mono, pango:Font Awesome 6 Free Solid 12
-font  pango:LXGW WenKai Mono, pango:DejaVuSansMono Nerd Font Mono, pango:Font Awesome 6 Free Solid 16
+# font  pango:LXGW WenKai Mono, pango:DejaVuSansMono Nerd Font Mono, pango:Font Awesome 6 Free Solid 16
+font  pango:LXGW WenKai Mono, pango:Font Awesome 6 Free Solid 16
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
