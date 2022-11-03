@@ -22,3 +22,5 @@
     template          = ~/.gitmessage
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
