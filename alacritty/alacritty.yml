@@ -90,7 +90,7 @@ window:
   # 背景不透明度
   #
   # 窗口不透明度，区间为从0.0到1.0的浮点数。0.0 完全头名，1.0 则完全不透明
-  opacity: 0.8
+  opacity: 1.0
 
 scrolling:
   # 回滚缓冲区中的最大行数。 设置为 0 会禁用滚动
@@ -126,7 +126,7 @@ font:
     style: Bold Italic
 
   # 字体大小
-  size: 16
+  size: 18
 
   # 每个字符的间的字间距。"offset.y" 可以控制行距，"offset.x" 可以改变字符间距。
   offset:
