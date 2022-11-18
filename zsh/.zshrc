@@ -142,28 +142,24 @@ alias cat='bat'
 alias lockpass='gpg-connect-agent reloadagent /bye'
 
 # proxy
-alias IP='curl ipinfo.io' # myip.ipip.net cip.cc ip-api.com
-alias T='wget -qO- bench.sh | bash'
 alias setproxy='export HTTPS_PROXY=http://127.0.0.1:7890 HTTP_PROXY=http://127.0.0.1:7890 ALL_PROXY=socks5://127.0.0.1:7890'
 alias unsetproxy='unset HTTPS_PROXY HTTP_PROXY ALL_PROXY'
 
-# xrandr
-alias xrandrone='xrandr --output eDP1 --primary --auto --output HDMI1 --off'
-alias xrandrtowl='xrandr --output eDP1 --primary --auto --output HDMI1 --auto --left-of eDP1'
-alias xrandrtowr='xrandr --output eDP1 --primary --auto --output HDMI1 --auto --right-of eDP1'
-
-# aria2
-alias aria2='aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=$HOME/.config/aria2/aria2.conf'
+# curl
+alias IP='curl ipinfo.io' # myip.ipip.net cip.cc ip-api.com
+alias T='wget -qO- bench.sh | bash'
 
 # 删除改为移动
-alias rm=trash
-trash(){mv -f $@ ~/.trash/}
-cleartrash(){/usr/bin/rm -rf ~/.trash/*}
+if [[ -d $HOME/.trash/ ]]; then
+    alias rm=trash
+    trash(){mv -f $@ $HOME/.trash/}
+    cleartrash(){/usr/bin/rm -rf $HOME/.trash/*}
+fi
 
 # 解压
 alias Z=extract
 extract() {
-    if [ -f $1 ] ; then
+    if [[ -f $1 ]]; then
         case $1 in
             *.tar.bz2)   tar xjf $1     ;;
             *.tar.gz)    tar xzf $1     ;;
@@ -183,15 +179,42 @@ extract() {
     fi
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
-alias vimf='nvim $(fzf)'
-alias catf='bat $(fzf)'
-alias gcf='git checkout $(git branch | fzf)'
-alias gcfa='git checkout $(git branch -a | fzf)'
-alias gdf='git branch -D $(git branch | fzf)'
+# cht.sh
+alias H=cht
+cht() {
+    if [[ $1 ]]; then
+        curl cht.sh/$1
+    fi
+}
+
+# FZF
+if [[ -f $HOME/.fzf.zsh ]]; then
+    source $HOME/.fzf.zsh
+    export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
+    alias vimf='nvim $(fzf)'
+    alias catf='bat $(fzf)'
+    alias gcf='git checkout $(git branch | fzf)'
+    alias gcfa='git checkout $(git branch -a | fzf)'
+    alias gdf='git branch -D $(git branch | fzf)'
+fi
+
+# xrandr
+if [[ -x "/usr/bin/xrandr" ]]; then
+    alias xrandrone='xrandr --output eDP1 --primary --auto --output HDMI1 --off'
+    alias xrandrtowl='xrandr --output eDP1 --primary --auto --output HDMI1 --auto --left-of eDP1'
+    alias xrandrtowr='xrandr --output eDP1 --primary --auto --output HDMI1 --auto --right-of eDP1'
+fi
+
+# aria2
+if [[ -x "/usr/bin/aria2c" ]]; then
+    alias aria2='aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --conf-path=$HOME/.config/aria2/aria2.conf'
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[ -f ~/.go/env ] && source ~/.go/env
-[ -f ~/.local.zsh ] && source ~/.local.zsh
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+
+# Golang
+[[ -f $HOME/.go/env ]] && source $HOME/.go/env
+
+# Local
+[[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
