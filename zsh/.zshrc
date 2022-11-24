@@ -138,7 +138,12 @@ source $ZSH/oh-my-zsh.sh
 alias mkdir='mkdir -pv'
 alias vi='nvim'
 alias vim='nvim'
-alias cat='bat'
+
+alias ls='exa --icons' # https://github.com/ogham/exa
+alias ll='exa --icons -lhG'
+alias la='exa --icons -lhGa'
+alias cat='bat' # https://github.com/sharkdp/bat
+
 alias lockpass='gpg-connect-agent reloadagent /bye'
 
 # proxy
