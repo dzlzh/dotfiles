@@ -19,7 +19,7 @@ set expandtab                                         " 将Tab键转换为空格
 set tabstop=4                                         " 设置Tab键的宽度
 set shiftwidth=4                                      " 换行时自动缩进4个空格
 set smarttab                                          " 指定按一次backspace就删除shiftwidth宽度的空格
-set backspace=2                                       " 设置 Backspace 键模式 backspace=indent,eol,start
+set bs=indent,eol,start                               " 设置 Backspace 键模式 backspace=indent,eol,start
 set smartindent                                       " 启用智能对齐方式
 
 filetype on                                           " 启用文件类型侦测
