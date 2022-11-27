@@ -142,7 +142,7 @@ alias vim='nvim'
 alias ls='exa --icons' # https://github.com/ogham/exa
 alias ll='exa --icons -lhG'
 alias la='exa --icons -lhGa'
-alias cat='bat' # https://github.com/sharkdp/bat
+alias cat='bat --paging=never' # https://github.com/sharkdp/bat
 
 alias lockpass='gpg-connect-agent reloadagent /bye'
 
