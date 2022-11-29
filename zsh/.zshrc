@@ -139,10 +139,10 @@ alias mkdir='mkdir -pv'
 alias vi='nvim'
 alias vim='nvim'
 
-alias ls='exa --icons' # https://github.com/ogham/exa
-alias l='exa --icons -lh'
-alias ll='exa --icons -lh'
-alias la='exa --icons -lha'
+alias ls='exa' # https://github.com/ogham/exa
+alias l='exa -lh'
+alias ll='exa -lh'
+alias la='exa -lha'
 alias cat='bat --paging=never' # https://github.com/sharkdp/bat
 
 alias lockpass='gpg-connect-agent reloadagent /bye'
