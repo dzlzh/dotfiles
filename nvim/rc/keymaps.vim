@@ -33,7 +33,7 @@ nnoremap <Leader>U :set fileformat=unix<CR> :set fileencoding=utf-8<CR>
 
 " terminal emulation
 func! OpenTerminal()
-    if g:iswindows
+    if g:isWindows
         exec "botright split term://bash"
     else
         exec "botright split term://zsh"

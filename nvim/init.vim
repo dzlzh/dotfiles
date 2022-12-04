@@ -1,18 +1,19 @@
 " -----------------------------------------------------------------------------
 "  初始化
 " -----------------------------------------------------------------------------
+" 判断是终端还是 GUI
+let g:isGUI     = has("gui_running")
+
 " Linux ~/.config/nvim
 " Windows ~/AppData/Local/nvim
-" 判断是终端还是 GUI
-let g:isGUI=has("gui_running")
-let g:iswindows=0
-let g:islinux=0
+let g:isWindows = 0
+let g:isLinux   = 0
 if (has("win32")|| has("win64"))
-    let g:iswindows= 1
-    let g:config=expand('~/AppData/Local/nvim/')
+    let g:isWindows = 1
+    let g:config    = expand('~/AppData/Local/nvim/')
 else
-    let g:islinux=1
-    let g:config=expand('~/.config/nvim/')
+    let g:isLinux = 1
+    let g:config  = expand('~/.config/nvim/')
 endif
 
 " -----------------------------------------------------------------------------
