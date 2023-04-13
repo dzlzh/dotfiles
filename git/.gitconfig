@@ -8,20 +8,20 @@
     ignorecase        = false
     autocrlf          = input
     safecrlf          = true
-	editor            = /bin/nvim
+    editor            = /bin/nvim
 [init]
-	defaultBranch     = main
+    defaultBranch     = main
 [commit]
     template          = ~/.gitmessage
 [push]
     default           = current
 [pull]
-	rebase            = false
+    rebase            = false
 [submodule]
     recurse           = true
 [user]
     name              = dzlzh
-	email             = 8456085+dzlzh@users.noreply.github.com
+    email             = 8456085+dzlzh@users.noreply.github.com
 [alias]
     lg                = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     mr                = merge --no-edit
