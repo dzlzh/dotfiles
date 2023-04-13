@@ -8,7 +8,7 @@
     ignorecase        = false
     autocrlf          = input
     safecrlf          = true
-    editor            = /bin/nvim
+    editor            = /usr/bin/nvim
 [init]
     defaultBranch     = main
 [commit]
