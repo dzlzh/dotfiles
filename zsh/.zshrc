@@ -144,24 +144,44 @@ alias lockpass='gpg-connect-agent reloadagent /bye'
 alias setproxy='export HTTPS_PROXY=http://127.0.0.1:7890 HTTP_PROXY=http://127.0.0.1:7890 ALL_PROXY=socks5://127.0.0.1:7890'
 alias unsetproxy='unset HTTPS_PROXY HTTP_PROXY ALL_PROXY'
 
+# 压缩
+alias C=q-compress
+funciton q-compress() {
+    if [ -n "$1" ]; then
+        FILE=$1
+        case $FILE in
+            *.tar) shift && tar -cf $FILE $* ;;
+            *.tar.bz2) shift && tar -cjf $FILE $* ;;
+            *.tar.xz) shift && tar -cJf $FILE $* ;;
+            *.tar.gz) shift && tar -czf $FILE $* ;;
+            *.taz) shift && tar -czf $FILE $* ;;
+            *.zip) shift && zip $FILE $* ;;
+            *.rar) shift && rar $FILE $* ;;
+            *.7z) shift && 7z a $FILE $* ;;
+        esac
+    else
+        echo "usage: C <file.tar.gz> ./file ./file2"
+    fi
+}
 
 # 解压
-alias Z=extract
-extract() {
+alias Z=q-extract
+function q-extract() {
     if [[ -f $1 ]]; then
         case $1 in
-            *.tar.bz2)   tar xjf $1     ;;
-            *.tar.gz)    tar xzf $1     ;;
-            *.bz2)       bunzip2 $1     ;;
-            *.rar)       unrar e $1     ;;
-            *.gz)        gunzip $1      ;;
-            *.tar)       tar xf $1      ;;
-            *.tbz2)      tar xjf $1     ;;
-            *.tgz)       tar xzf $1     ;;
-            *.zip)       unzip $1       ;;
-            *.Z)         uncompress $1  ;;
-            *.7z)        7z x $1        ;;
-            *)     echo "'$1' cannot be extracted via extract()" ;;
+            *.tar) tar -xvf $1 ;;
+            *.taz) tar -xvzf $1 ;;
+            *.taz2) tar -xvjf $1 ;;
+            *.tar.xz) tar -xvJf $1 ;;
+            *.tar.gz) tar -xvzf $1 ;;
+            *.tar.bz2) tar -xvjf $1 ;;
+            *.bz2) bunzip2 $1 ;;
+            *.rar) rar x $1 ;;
+            *.gz) gunzip $1 ;;
+            *.zip) unzip $1 ;;
+            *.Z) uncompress $1 ;;
+            *.7x) 7z x $1 ;;
+            *) echo "'$1' cannot be extracted via extract()" ;;
         esac
     else
         echo "'$1' is not a valid file"
@@ -176,7 +196,7 @@ alias T='wget -qO- bench.sh | bash'
 
 # cht.sh
 alias H=cht
-cht() {
+function cht() {
     if [[ $1 ]]; then
         curl cht.sh/$1
     fi
@@ -185,8 +205,8 @@ cht() {
 # 删除改为移动
 if [[ -d "$HOME/.trash/" ]]; then
     alias rm=trash
-    trash(){mv -f $@ $HOME/.trash/}
-    cleartrash(){/usr/bin/rm -rf $HOME/.trash/*}
+    function trash(){mv -f $@ $HOME/.trash/}
+    function cleartrash(){/usr/bin/rm -rf $HOME/.trash/*}
 fi
 
 # FZF
