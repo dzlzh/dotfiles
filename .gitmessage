@@ -1,0 +1,14 @@
+
+# <type>(<scope>): <subject>
+#
+# <body>
+#
+# <footer>
+#
+# - feat     : 特性
+# - fix      : bug 修复
+# - docs     : 文档
+# - style    : 代码格式，例如丢了个分号，格式化代码，修改了缩进之类的
+# - refactor : 没有修改功能的情况下重写、优化、整理了代码
+# - test     : 添加之前遗漏的测试
+# - chore    : 维护，零星的工作

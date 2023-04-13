@@ -1,0 +1,28 @@
+[gui]
+    encoding          = utf-8
+[i18n]
+    commitencoding    = utf-8
+    logoutputencoding = utf-8
+[core]
+    quotepath         = false
+    ignorecase        = false
+    autocrlf          = input
+    safecrlf          = true
+    editor            = /usr/bin/nvim
+[init]
+    defaultBranch     = main
+[commit]
+    template          = ~/.gitmessage
+[push]
+    default           = current
+[pull]
+    rebase            = false
+[submodule]
+    recurse           = true
+[user]
+    name              = dzlzh
+    email             = 8456085+dzlzh@users.noreply.github.com
+[alias]
+    lg                = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    mr                = merge --no-edit
+    st                = status
