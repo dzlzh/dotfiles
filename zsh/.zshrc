@@ -21,10 +21,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 #
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+if [[ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]]; then
+    echo 111
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# git clone https://github.com/dracula/zsh.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/dracula
-# ZSH_THEME="dracula/dracula"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -84,8 +85,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+if [[ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]]; then
+    git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+if [[ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]]; then
+    git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
 plugins=(
     z
     git
@@ -93,13 +100,6 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
-# autojump
-
-# git clone git://github.com/joelthelion/autojump.git
-# cd autojump
-# ./install.py
-# rm -rf autojump
-# [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
 source $ZSH/oh-my-zsh.sh
 
@@ -138,29 +138,12 @@ source $ZSH/oh-my-zsh.sh
 alias mkdir='mkdir -pv'
 alias vi='nvim'
 alias vim='nvim'
-
-alias ls='exa' # https://github.com/ogham/exa
-alias l='exa -lh'
-alias ll='exa -lh'
-alias la='exa -lha'
-alias cat='bat --paging=never' # https://github.com/sharkdp/bat
-
 alias lockpass='gpg-connect-agent reloadagent /bye'
 
 # proxy
 alias setproxy='export HTTPS_PROXY=http://127.0.0.1:7890 HTTP_PROXY=http://127.0.0.1:7890 ALL_PROXY=socks5://127.0.0.1:7890'
 alias unsetproxy='unset HTTPS_PROXY HTTP_PROXY ALL_PROXY'
 
-# curl
-alias IP='curl ipinfo.io' # myip.ipip.net cip.cc ip-api.com
-alias T='wget -qO- bench.sh | bash'
-
-# 删除改为移动
-if [[ -d $HOME/.trash/ ]]; then
-    alias rm=trash
-    trash(){mv -f $@ $HOME/.trash/}
-    cleartrash(){/usr/bin/rm -rf $HOME/.trash/*}
-fi
 
 # 解压
 alias Z=extract
@@ -185,6 +168,12 @@ extract() {
     fi
 }
 
+# ipinfo.io
+alias IP='curl ipinfo.io' # myip.ipip.net cip.cc ip-api.com
+
+# bench.sh
+alias T='wget -qO- bench.sh | bash'
+
 # cht.sh
 alias H=cht
 cht() {
@@ -193,15 +182,41 @@ cht() {
     fi
 }
 
+# 删除改为移动
+if [[ -d "$HOME/.trash/" ]]; then
+    alias rm=trash
+    trash(){mv -f $@ $HOME/.trash/}
+    cleartrash(){/usr/bin/rm -rf $HOME/.trash/*}
+fi
+
 # FZF
-if [[ -f $HOME/.fzf.zsh ]]; then
+if [[ -f "$HOME/.fzf.zsh" ]]; then
     source $HOME/.fzf.zsh
-    export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
+fi
+if [[ -x "/usr/bin/fzf" ]]; then
     alias vimf='nvim $(fzf)'
     alias catf='bat $(fzf)'
     alias gcf='git checkout $(git branch | fzf)'
     alias gcfa='git checkout $(git branch -a | fzf)'
     alias gdf='git branch -D $(git branch | fzf)'
+fi
+
+# ag
+if [[ -x "/usr/bin/ag" ]]; then
+    export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
+fi
+
+# bat
+if [[ -x "/usr/bin/bat" ]]; then
+    alias cat='bat --paging=never' # https://github.com/sharkdp/bat
+fi
+
+# exa
+if [[ -x "/usr/bin/exa" ]]; then
+    alias ls='exa' # https://github.com/ogham/exa
+    alias l='exa -lh'
+    alias ll='exa -lh'
+    alias la='exa -lha'
 fi
 
 # xrandr
@@ -220,7 +235,7 @@ fi
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 
 # Golang
-[[ -f $HOME/.go/env ]] && source $HOME/.go/env
+[[ ! -f $HOME/.go/env ]] || source $HOME/.go/env
 
 # Local
-[[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
+[[ ! -f $HOME/.zshrc.local ]] || source $HOME/.zshrc.local
