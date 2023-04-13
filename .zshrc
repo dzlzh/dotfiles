@@ -144,6 +144,11 @@ alias lockpass='gpg-connect-agent reloadagent /bye'
 alias setproxy='export HTTPS_PROXY=http://127.0.0.1:7890 HTTP_PROXY=http://127.0.0.1:7890 ALL_PROXY=socks5://127.0.0.1:7890'
 alias unsetproxy='unset HTTPS_PROXY HTTP_PROXY ALL_PROXY'
 
+# Dotfiles
+if [[ -d "$HOME/.dotfiles.git" ]]; then
+    alias dfm="/usr/bin/git --git-dir .dotfiles.git --work-tree=$HOME"
+fi
+
 # 压缩
 alias C=q-compress
 funciton q-compress() {
@@ -252,10 +257,13 @@ if [[ -x "/usr/bin/aria2c" ]]; then
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+[[ ! -f "$HOME/.p10k.zsh" ]] || source $HOME/.p10k.zsh
 
 # Golang
-[[ ! -f $HOME/.go/env ]] || source $HOME/.go/env
+if [[ ! -f "$HOME/.go/bin/goup" ]]; then
+    curl -sSf https://raw.githubusercontent.com/owenthereal/goup/master/install.sh | sh -s -- '--skip-prompt'
+fi
+[[ ! -f "$HOME/.go/env" ]] || source $HOME/.go/env
 
 # Local
-[[ ! -f $HOME/.zshrc.local ]] || source $HOME/.zshrc.local
+[[ ! -f "$HOME/.zshrc.local" ]] || source $HOME/.zshrc.local
