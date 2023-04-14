@@ -13,7 +13,7 @@ git clone --depth=1 https://github.com/dzlzh/dotfiles.git
 
 ```sh
 git clone -b linux --bare --depth=1 https://github.com/dzlzh/dotfiles.git $HOME/.dotfiles.git
-git clone -b i3wm --bare --depth=1 https://github.com/dzlzh/dotfiles.git $HOME/.dotfiles.git
+git clone -b i3wm  --bare --depth=1 https://github.com/dzlzh/dotfiles.git $HOME/.dotfiles.git
 
 alias dfm="/usr/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME"
 
