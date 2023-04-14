@@ -1,0 +1,9 @@
+/build
+/trash
+/sync
+/.place_holder
+/*.userdb
+
+/installation.yaml
+/user.yaml
+/rime.rime-cli.*
