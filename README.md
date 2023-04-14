@@ -12,8 +12,8 @@ git clone --depth=1 https://github.com/dzlzh/dotfiles.git
 假设要迁移 `linux` 和 `i3wm` 两个分支，分别将它们克隆到 `$HOME/.dotfiles.git` 目录下，并使用 `--bare` 选项创建裸仓库。然后定义一个 `dfm` 别名，方便后续操作。
 
 ```sh
-git clone -b=linux --bare --depth=1 https://github.com/dzlzh/dotfiles.git $HOME/.dotfiles.git
-git clone -b=i3wm --bare --depth=1 https://github.com/dzlzh/dotfiles.git $HOME/.dotfiles.git
+git clone -b linux --bare --depth=1 https://github.com/dzlzh/dotfiles.git $HOME/.dotfiles.git
+git clone -b i3wm --bare --depth=1 https://github.com/dzlzh/dotfiles.git $HOME/.dotfiles.git
 
 alias dfm="/usr/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME"
 
