@@ -21,7 +21,7 @@ dfm checkout
 
 mkdir -p dotfiles_backup && \
 dfm checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-xargs -I{} mv {} dotfiles_backup/{}
+xargs -I{} sh -c 'mkdir -p dotfiles_backup/$(dirname "{}") && mv "{}" dotfiles_backup/{}'
 
 dfm config --local status.showUntrackedFiles no
 ```
