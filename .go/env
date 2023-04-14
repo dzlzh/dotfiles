@@ -2,3 +2,5 @@ export GO111MODULE="on"
 export GOPATH="$HOME/.go/GOPATH"
 export GOPROXY="https://goproxy.cn,https://goproxy,direct"
 export PATH="$HOME/.go/bin:$HOME/.go/current/bin:$HOME/.go/GOPATH/bin:$PATH"
+
+alias gobuild='CGO_ENABLED=0 GOOS=linux GOPROXY=https://goproxy.cn,direct go build -ldflags="-s -w" -o '
