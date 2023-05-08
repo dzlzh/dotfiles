@@ -121,6 +121,7 @@ map <Leader>vz :VimuxZoomRunner<CR>
 " CocInstall coc-markmap
 " CocInstall coc-docker
 " CocInstall coc-tabnine
+" CocInstall coc-go
 
 let g:coc_global_extensions = [
             \ 'coc-json',
@@ -131,7 +132,6 @@ let g:coc_global_extensions = [
             \ 'coc-explorer',
             \ 'coc-snippets',
             \ 'coc-vimlsp',
-            \ 'coc-go',
             \ 'coc-phpls',
             \ 'coc-sql',
             \ 'coc-sh',
