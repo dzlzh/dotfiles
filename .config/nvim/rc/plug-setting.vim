@@ -122,6 +122,11 @@ map <Leader>vz :VimuxZoomRunner<CR>
 " CocInstall coc-docker
 " CocInstall coc-tabnine
 " CocInstall coc-go
+" CocInstall coc-lue
+" CocInstall coc-html
+" CocInstall coc-css
+" CocInstall coc-vetur
+" CocInstall coc-eslint
 
 let g:coc_global_extensions = [
             \ 'coc-json',
@@ -135,9 +140,6 @@ let g:coc_global_extensions = [
             \ 'coc-phpls',
             \ 'coc-sql',
             \ 'coc-sh',
-            \ 'coc-html',
-            \ 'coc-css',
-            \ 'coc-vetur',
             \ 'coc-translator']
 
 " 开启vim-airline集成
