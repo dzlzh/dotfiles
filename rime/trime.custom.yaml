@@ -1,20 +1,19 @@
 # 同文输入法(Android)
 customization:
   distribution_code_name: "trime"
-  distribution_version: ""
-  generator: "Rime-JNI"
-  modified_time: "Wed Apr  3 12:19:14 2019"
-  rime_version: 1.2.9
+  modified_time: "2023.06.02"
 patch:
   "style/color_scheme": starcraft_ii
   "style/keyboards":
-    - default
-    - symbols
+    - wubi
     - number
-  "preset_keyboards/default":
-    ascii_mode: 0
-    author: "dzlzh <dzlzh@null.net>"
+    - symbols
+  "preset_keyboards/wubi":
+    name: "五笔"
+    author: "dzlzh <dzlzh@live.com>"
+    width: 10
     height: 55
+    ascii_mode: 0
     key_hint_offset_x: 0
     key_hint_offset_y: 0
     key_symbol_offset_x: 0
@@ -22,6 +21,7 @@ patch:
     key_text_offset_x: 0
     key_text_offset_y: 0
     keys:
+      # row1
       - {click: q, long_click: 1, swipe_up: "!"}
       - {click: w, long_click: 2, swipe_up: "@"}
       - {click: e, long_click: 3, swipe_up: "#"}
@@ -32,6 +32,7 @@ patch:
       - {click: i, long_click: 8, swipe_up: "*"}
       - {click: o, long_click: 9, swipe_up: "(){Left}"}
       - {click: p, long_click: 0, swipe_up: Hide}
+      # row2
       - {width: 5}
       - {click: a, long_click: select_all, swipe_down: Down, swipe_left: Left, swipe_right: Right, swipe_up: Up}
       - {click: s, long_click: "~", swipe_down: Page_Down, swipe_left: Home, swipe_right: End, swipe_up: Page_Up}
@@ -43,6 +44,7 @@ patch:
       - {click: k, long_click: ":"}
       - {click: l, long_click: ";"}
       - {width: 5}
+      # row3
       - {click: Shift_L, send_bindings: false, width: 15}
       - {click: z, long_click: "`"}
       - {click: x, long_click: cut}
@@ -52,12 +54,106 @@ patch:
       - {click: n, long_click: "\""}
       - {click: m, long_click: "'"}
       - {click: BackSpace, width: 15}
+      # row4
       - {click: Mode_switch, long_click: Menu, width: 15}
       - {click: Keyboard_number, long_click: Keyboard_symbols}
       - {click: ",", long_click: "<"}
       - {click: space, swipe_right: Schema_switch, width: 30}
-      - {click: ., long_click: ">"}
+      - {click: ".", long_click: ">"}
       - {click: "/", long_click: "?"}
-      - {click: Return, long_click:Hide , width: 15}
-    name: "五笔拼音"
+      - {click: Return, width: 15}
+  "preset_keyboards/number":
+    name: "数字"
+    author: "dzlzh <dzlzh@live.com>"
+    width: 20
+    height: 44
+    keys:
+      # row1
+      - {click: "+"}
+      - {click: KP_1}
+      - {click: KP_2}
+      - {click: KP_3}
+      - {click: "#"}
+      # row2
+      - {click: "-"}
+      - {click: KP_4}
+      - {click: KP_5}
+      - {click: KP_6}
+      - {click: "%"}
+      # row3
+      - {click: "*"}
+      - {click: KP_7}
+      - {click: KP_8}
+      - {click: KP_9}
+      - {click: ":"}
+      # row4
+      - {click: "/"}
+      - {click: "±"}
+      - {click: KP_0}
+      - {click: "."}
+      - {click: ","}
+      # row5
+      - {click: "="}
+      - {click: Keyboard_default, long_click: Keyboard_symbols}
+      - {click: space}
+      - {click: BackSpace}
+      - {click: Return}
+  "preset_keyboards/symbols":
+    name: "符号"
+    author: "dzlzh <dzlzh@live.com>"
     width: 10
+    height: 44
+    ascii_mode: 1
+    keys:
+      # row1
+      - {click: 1}
+      - {click: 2}
+      - {click: 3}
+      - {click: 4}
+      - {click: 5}
+      - {click: 6}
+      - {click: 7}
+      - {click: 8}
+      - {click: 9}
+      - {click: 0}
+      # row2
+      - {click: "~", long_click: "`"}
+      - {click: "!"}
+      - {click: "@"}
+      - {click: "#"}
+      - {click: "$"}
+      - {click: "￥"}
+      - {click: "%"}
+      - {click: "^"}
+      - {click: "&"}
+      - {click: "*"}
+      # row3
+      - {click: "(", long_click: "{"}
+      - {click: ")", long_click: "}"}
+      - {click: "[", long_click: "【"}
+      - {click: "]", long_click: "】"}
+      - {click: "「", long_click: "『"}
+      - {click: "」", long_click: "』"}
+      - {ascii: "\\", click: "、", long_click: "|"}
+      - {click: "/", long_click: "√"}
+      - {click: ":"}
+      - {click: ";"}
+      # row4
+      - {click: "+"}
+      - {click: "-", long_click: "_"}
+      - {click: "="}
+      - {ascii: "<", click: "〈", long_click: "《"}
+      - {ascii: ">", click: "〉", long_click: "》"}
+      - {ascii: "\"", click: "“", long_click: "‘"}
+      - {ascii: "'", click: "”", long_click: "’"}
+      - {ascii: ",", click: "，"}
+      - {ascii: "?", click: "？"}
+      - {click: BackSpace, long_click: Escape}
+      # row5
+      - {click: Keyboard_default, long_click: Menu, width: 15}
+      - {click: Keyboard_number}
+      - {click: Keyboard_mini}
+      - {click: space, width: 30}
+      - {ascii: ., click: "。"}
+      - {click: liquid_keyboard_switch, long_click: Delete}
+      - {click: Return, long_click: select_all, width: 15}
