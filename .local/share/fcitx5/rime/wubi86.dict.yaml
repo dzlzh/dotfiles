@@ -19,7 +19,7 @@
 
 ---
 name: wubi86
-version: "0.6"
+version: "0.7"
 sort: by_weight
 columns:
   - text
@@ -99,7 +99,7 @@ encoder:
 功	al	43409374
 贡	am	5024683
 世	an	101370505
-苂	ao	0
+蒌	ao	407000
 芝	ap	2872609
 区	aq	237307628
 匠	ar	3543583
@@ -110,7 +110,6 @@ encoder:
 共	aw	53411086
 药	ax	15440035
 芳	ay	7495088
-陳	ba	224928
 陈	ba	27058185
 子	bb	497527507
 取	bc	49329960
@@ -119,7 +118,6 @@ encoder:
 际	bf	41436480
 卫	bg	23024714
 耻	bh	5091399
-孫	bi	34311
 孙	bi	20161636
 阳	bj	38481905
 职	bk	19189486
@@ -143,24 +141,20 @@ encoder:
 参	cd	41055245
 能	ce	306980312
 对	cf	344234640
-驪	cg	0
-驉	ch	0
-駣	ci	0
-騍	cj	0
+骊	cg	5420000
+骒	cj	67800
 台	ck	75648549
 劝	cl	7565617
 观	cm	49333772
 马	cn	77600475
-驎	co	0
 驼	cp	1726996
 允	cq	10058897
 牟	cr	1130363
-驃	cs	0
+骠	cs	1140000
 矣	ct	2245476
-駢	cu	0
+骈	cu	585000
 艰	cv	4757818
 难	cw	82068554
-騄	cx	1906
 驻	cy	8493925
 左	da	21888633
 顾	db	21259594
@@ -185,23 +179,23 @@ encoder:
 磁	du	9073403
 肆	dv	2666741
 春	dw	26030756
-舂	dw	66716
 龙	dx	23259174
 太	dy	121440645
 肛	ea	215398
 服	eb	56554372
 肥	ec	5099024
-須	ed	263052
+须	ed	76400000
 朋	ee	34234943
 肝	ef	1917614
 且	eg	66296844
-覓	eh	24780
+鼐	eh	643000
 膛	ei	1553534
 胆	ej	7979257
 肿	ek	1969081
 肋	el	632850
 肌	em	2912638
 甩	en	3027009
+膦	eo	891000
 爱	ep	115802173
 胸	eq	11888827
 遥	er	6930860
@@ -235,6 +229,7 @@ encoder:
 增	fu	20146387
 雪	fv	25632365
 夫	fw	51289510
+坳	fx	1480000
 坟	fy	3110881
 开	ga	226775999
 屯	gb	979775
@@ -251,7 +246,6 @@ encoder:
 现	gm	204265952
 与	gn	152930693
 来	go	778808738
-琿	gp	0
 列	gq	39187191
 珠	gr	10844242
 末	gs	10724153
@@ -262,7 +256,7 @@ encoder:
 互	gx	16600897
 玉	gy	25537056
 虎	ha	10407727
-眲	hb	0
+齰	hb	37700
 皮	hc	29498092
 睚	hd	24780
 肯	he	24908017
@@ -278,7 +272,7 @@ encoder:
 眯	ho	2255007
 瞎	hp	3678922
 餐	hq	10771807
-盺	hr	0
+睥	hr	424000
 盯	hs	7127196
 睡	ht	35899035
 瞳	hu	966431
@@ -350,6 +344,7 @@ encoder:
 另	kl	41810091
 员	km	72604384
 叫	kn	86769187
+咪	ko	61900000
 喧	kp	3309123
 史	kq	37082771
 听	kr	111263565
@@ -360,7 +355,7 @@ encoder:
 只	kw	246289535
 哟	kx	2466593
 嘛	ky	14046620
-異	la	383141
+轼	la	3420000
 囝	lb	47654
 轻	lc	65768833
 因	ld	160416251
@@ -368,13 +363,12 @@ encoder:
 轩	lf	1481099
 车	lg	87138986
 四	lh	91283015
-遝	li	0
 辊	lj	9530
 加	lk	98137628
 男	ll	64104740
 轴	lm	1534472
 思	ln	77792999
-轔	lo	0
+辚	lo	212000
 边	lp	115436187
 罗	lq	37538348
 斩	lr	1797525
@@ -395,18 +389,17 @@ encoder:
 由	mh	99107872
 峭	mi	569946
 则	mj	50307829
-過	mk	3364402
+迥	mk	7980000
 崭	ml	840624
 册	mm	4957966
 岂	mn	4668228
-嶸	mo	0
+嶙	mo	260000
 迪	mp	7815326
 风	mq	75311156
 贩	mr	2392252
 朵	ms	12155692
 几	mt	127652876
 赠	mu	1707934
-屻	mv	0
 内	mw	94887596
 嶷	mx	1906
 凡	my	16301627
@@ -414,7 +407,6 @@ encoder:
 敢	nb	28642219
 怪	nc	30104257
 居	nd	24010208
-忣	ne	0
 导	nf	49625418
 怀	ng	30542677
 收	nh	41226801
@@ -428,6 +420,7 @@ encoder:
 忱	np	377423
 懈	nq	1120832
 怕	nr	47025392
+怵	ns	1350000
 必	nt	62955315
 习	nu	27755846
 恨	nv	13581512
@@ -457,7 +450,7 @@ encoder:
 料	ou	29684898
 娄	ov	293551
 粉	ow	8461520
-粌	ox	0
+糨	ox	84100
 米	oy	30727577
 宽	pa	10718434
 字	pb	85556858
@@ -506,11 +499,10 @@ encoder:
 匀	qu	1957644
 争	qv	43157758
 欠	qw	4763536
-錄	qx	148681
+镪	qx	269000
 久	qy	40319460
 找	ra	67741726
 报	rb	75762920
-報	rb	657631
 反	rc	78784211
 拓	rd	2617181
 扔	re	7317814
@@ -567,7 +559,7 @@ encoder:
 行	tf	199140241
 生	tg	326194579
 处	th	95682472
-″	ti	0
+#″	ti	0
 秒	ti	4982747
 得	tj	395733830
 各	tk	57023291
@@ -617,7 +609,7 @@ encoder:
 奶	ve	14324921
 寻	vf	20760176
 姨	vg	5581286
-盡	vh	255427
+叟	vh	3610000
 录	vi	96528815
 旭	vj	2275975
 如	vk	248016532
@@ -627,11 +619,12 @@ encoder:
 灵	vo	26615952
 巡	vp	5526007
 婚	vq	22104031
-嫵	vr	1906
+姝	vr	3030000
 杂	vs	21379683
 九	vt	39539834
 嫌	vu	5672783
 妇	vv	21555052
+臾	vw	911000
 姆	vx	12451149
 妨	vy	4161184
 代	wa	88013921
@@ -649,13 +642,13 @@ encoder:
 仙	wm	9456545
 亿	wn	9197305
 伙	wo	18476575
-佇	wp	11437
+侬	wp	5030000
 你	wq	597727619
 伯	wr	18442264
 休	ws	13470954
 作	wt	246213288
 们	wu	521225102
-′	wv	0
+#′	wv	0
 分	wv	170080569
 从	ww	197123506
 化	wx	80964878
@@ -678,7 +671,7 @@ encoder:
 综	xp	3983910
 约	xq	45561448
 绵	xr	4149747
-糽	xs	0
+缥	xs	3150000
 张	xt	86881652
 弱	xu	14620379
 绿	xv	14412606
@@ -686,7 +679,7 @@ encoder:
 比	xx	102344561
 纺	xy	840624
 度	ya	82396417
-°	ya	0
+#°	ya	0
 离	yb	58851315
 充	yc	21985848
 庆	yd	21013697
@@ -1221,7 +1214,6 @@ encoder:
 孔	bnn	63300000
 巜	bnn	124000
 耴	bnn	52800
-	bnn	0
 孞	bnu	50200
 𡳾	bnv	0
 𦔮	bnv	0
@@ -1388,7 +1380,7 @@ encoder:
 𠫖	cnn	0
 𢟀	cnu	0
 厶	cny	3690000
-	cny	0
+龴	cny	0
 𥸿	coi	0
 𤆃	cou	0
 𤆆	cou	0
@@ -1542,7 +1534,6 @@ encoder:
 戌	dgn	7930000
 丆	dgt	82800
 厂	dgt	178000000
-	dgt	0
 𠂇	dgt	0
 砰	dgu	7610000
 威	dgv	114000000
@@ -1724,9 +1715,8 @@ encoder:
 奉	dwf	23400000
 奏	dwg	18400000
 仄	dwi	1510000
-	dwi	0
-𡗕	dwi	0
 𡗗	dwi	0
+𡗕	dwi	0
 春	dwj	150000000
 秦	dwt	89600000
 舂	dwv	1130000
@@ -1976,7 +1966,6 @@ encoder:
 臃	eyx	281000
 堪	fad	28600000
 霰	fae	1340000
-	fae	0
 𢦏	fae	0
 卋	faf	500000
 霸	faf	92000000
@@ -2101,7 +2090,7 @@ encoder:
 刌	fjh	30500
 𠚧	fjh	0
 亓	fjj	1420000
-	fjj	0
+龺	fjj	0
 𠦝	fjj	0
 井	fjk	45100000
 墁	fjl	143000
@@ -2901,7 +2890,7 @@ encoder:
 𣲧	ioy	0
 黉	ipa	183000
 学	ipb	406000000
-	ipb	0
+龸	ipb	0
 浓	ipe	87300000
 尝	ipf	40000000
 演	ipg	49400000
@@ -3428,7 +3417,6 @@ encoder:
 跨	khd	63800000
 啃	khe	10300000
 趺	khf	1130000
-	khf	0
 𧾷	khf	0
 践	khg	4790000
 𠮵	khg	0
@@ -4266,7 +4254,6 @@ encoder:
 怦	ngu	5120000
 愫	ngx	604000
 眉	nhd	118000000
-	nhd	0
 𤴔	nhd	0
 胥	nhe	2550000
 遐	nhf	2470000
@@ -4726,7 +4713,7 @@ encoder:
 之	ppp	1580000000
 㝎	ppu	6670
 宛	pqb	14000000
-	pqb	0
+㓁	pqb	0
 𡦾	pqb	0
 冤	pqk	9370000
 鸩	pqq	479000
@@ -5122,7 +5109,7 @@ encoder:
 猾	qtm	878000
 儿	qtn	242000000
 勹	qtn	2900000
-	qtn	0
+𠂊	qtn	0
 锹	qto	1340000
 狞	qtp	5360000
 狗	qtq	181000000
@@ -5491,7 +5478,6 @@ encoder:
 擤	rth	730000
 揪	rto	20800000
 斤	rtt	27700000
-	rtt	0
 𠂆	rtt	0
 敀	rty	59500
 𢪛	rty	0
@@ -5955,7 +5941,6 @@ encoder:
 𢓻	tey	0
 丢	tfc	46500000
 壬	tfd	4970000
-	tfd	0
 𠂒	tfd	0
 𡈼	tfd	0
 玍	tff	295000
@@ -6165,7 +6150,6 @@ encoder:
 笑	ttd	568000000
 笔	ttf	97400000
 竹	ttg	95200000
-	ttg	0
 𠂉	ttg	0
 笮	tth	288000
 丿	ttl	5180000
@@ -6285,7 +6269,7 @@ encoder:
 𥩪	udg	0
 着	udh	726000000
 头	udi	340000000
-	udi	0
+龹	udi	0
 𤴻	udi	0
 𨳓	udi	0
 羊	udj	81500000
@@ -6295,7 +6279,7 @@ encoder:
 送	udp	456000000
 羝	udq	197000
 拳	udr	51000000
-	udr	0
+⺶	udr	0
 𦍍	udr	0
 桊	uds	73500
 关	udu	93600000
@@ -6343,7 +6327,6 @@ encoder:
 闩	ugd	499000
 闰	ugd	1530000
 靖	uge	25300000
-	ugf	0
 𦍌	ugf	0
 症	ugh	95100000
 痞	ugi	4170000
@@ -7268,7 +7251,6 @@ encoder:
 绸	xmf	3510000
 䌷	xmg	31000
 紬	xmg	1350000
-	xmg	0
 㢫	xmh	3440
 缨	xmm	1820000
 𢎪	xmn	0
@@ -7634,7 +7616,6 @@ encoder:
 诟	yrg	457000
 䜣	yrh	76600
 訢	yrh	397000
-	yrh	0
 𧦌	yrh	0
 诛	yri	13700000
 庍	yrk	68800
@@ -9788,7 +9769,7 @@ AA制	aarm	985000
 𦭒	aghf	0
 𦴀	aghf	0
 廿	aghg	11100000
-	aghg	0
+龷	aghg	0
 𦭢	aghg	0
 卄	aghh	70700
 艹	aghh	395000
@@ -12340,7 +12321,6 @@ AA制	aarm	985000
 蓉	apwk	17300000
 𧅓	apwk	0
 䓖	apwl	16500
-	apwl	0
 𦳾	apwq	0
 𦼑	apwr	0
 劳作	apwt	2460000
@@ -22656,7 +22636,6 @@ AA制	aarm	985000
 非池中物	dikt	183000
 耬	dikv	76900
 䎬	dilc	17700
-	dilc	0
 𦔥	dilf	0
 耞	dilk	108000
 耕田	dill	702000
@@ -22668,7 +22647,6 @@ AA制	aarm	985000
 砂轮	dilw	1320000
 𦔜	dilw	0
 䎱	dilx	22400
-	dilx	0
 砂岩	dimd	1360000
 𥓡	dimk	0
 厰	dimt	273000
@@ -25703,7 +25681,6 @@ AA制	aarm	985000
 故纸堆	dxfw	110000
 䶭	dxgd	3800
 䶮	dxgd	31100
-	dxgd	0
 龙王	dxgg	4510000
 三纲五常	dxgi	349000
 袭来	dxgo	5380000
@@ -26871,7 +26848,6 @@ AA制	aarm	985000
 䏝	efny	16600
 䏯	efny	3440
 脚心	efny	539000
-	efny	0
 𡬰	efny	0
 𣂭	efny	0
 肝火	efoo	555000
@@ -28474,7 +28450,6 @@ AA制	aarm	985000
 塍	eudf	808000
 𦟤	eudf	0
 䲢	eudg	21300
-	eudg	0
 𪓺	eudg	0
 㬺	eudh	4510
 幐	eudh	459000
@@ -37249,7 +37224,6 @@ AA制	aarm	985000
 靘	geqc	58000
 表针	geqf	180000
 䴖	geqg	19800
-	geqg	0
 静	geqh	98400000
 表象	geqj	2900000
 表链	geql	175000
@@ -37622,7 +37596,7 @@ AA制	aarm	985000
 五一	gggg	22000000
 王	gggg	827000000
 琵琶	gggg	5360000
-	gggg	0
+龶	gggg	0
 𤣩	gggg	0
 一下	gggh	346000000
 不死不活	gggi	60300
@@ -39786,7 +39760,6 @@ AA制	aarm	985000
 䪣	gmhg	3340
 䴓	gmhg	17800
 靑	gmhg	2920000
-	gmhg	0
 𠀣	gmhg	0
 𩐊	gmhg	0
 刺目	gmhh	524000
@@ -40776,7 +40749,6 @@ AA制	aarm	985000
 𤩪	gqje	0
 䴕	gqjg	18600
 珣	gqjg	1180000
-	gqjg	0
 𣨾	gqjg	0
 㡂	gqjh	5760
 列	gqjh	952000000
@@ -40824,7 +40796,6 @@ AA制	aarm	985000
 殒	gqkm	2080000
 殞	gqkm	731000
 殨	gqkm	70900
-	gqkm	0
 㻊	gqkq	3940
 𣨨	gqlc	0
 𤩆	gqlc	0
@@ -42789,8 +42760,6 @@ AA制	aarm	985000
 䱷	haqt	21800
 䲣	haqt	19600
 虎狼	haqt	954000
-	haqt	0
-	haqt	0
 𧇫	haqw	0
 䖏	haqy	6040
 眍	haqy	183000
@@ -43311,7 +43280,6 @@ AA制	aarm	985000
 𥊱	hdnl	0
 𥆏	hdnt	0
 䴗	hdqg	14900
-	hdqg	0
 𠧣	hdrk	0
 𥇚	hdsk	0
 𥎼	hdtd	0
@@ -44757,7 +44725,6 @@ AA制	aarm	985000
 彪炳千古	hotd	19700
 𥉤	hove	0
 䁖	hovg	20700
-	hovg	0
 𡚋	howd	0
 眯缝	hoxt	248000
 𥍆	hoyc	0
@@ -46583,7 +46550,6 @@ AA制	aarm	985000
 𣵩	idoy	0
 演奏家	idpe	2760000
 㳠	idpy	18500
-	idpy	0
 𣶐	idqb	0
 湖色	idqc	111000
 尖角	idqe	1730000
@@ -47841,7 +47807,7 @@ AA制	aarm	985000
 小床	ihys	1340000
 小旗	ihyt	392000
 泸州	ihyt	5370000
-	ihyt	0
+⺌	ihyt	0
 小说	ihyu	112000000
 小康	ihyv	14700000
 小卒	ihyw	1020000
@@ -59221,7 +59187,6 @@ AA制	aarm	985000
 口风	kkmq	770000
 㖞	kkmw	29200
 口内	kkmw	3080000
-	kkmw	0
 𠽝	kkmw	0
 𠹚	kkmy	0
 𠵭	kkne	0
@@ -60759,8 +60724,6 @@ AA制	aarm	985000
 𡆏	kunr	0
 㘎	kunt	15700
 㘚	kunt	20700
-	kunt	0
-	kunt	0
 𠵔	kuog	0
 𠽾	kuoj	0
 𤑽	kuoo	0
@@ -66084,8 +66047,6 @@ AA制	aarm	985000
 䝼	mgeg	17300
 䞍	mgeg	15500
 崝	mgeg	1160000
-	mgeg	0
-	mgeg	0
 由表及里	mgej	406000
 𨔲	mgep	0
 同胞	mgeq	20200000
@@ -71050,7 +71011,7 @@ AA制	aarm	985000
 收税	nhtu	624000
 收	nhty	459000000
 收入	nhty	102000000
-	nhty	0
+㣺	nhty	0
 收养	nhud	3660000
 眉头	nhud	7910000
 𦎨	nhud	0
@@ -71418,7 +71379,6 @@ AA制	aarm	985000
 𧲜	nkue	0
 壁	nkuf	63500000
 䴙	nkug	47600
-	nkug	0
 𤩹	nkug	0
 幦	nkuh	69400
 躄	nkuh	131000
@@ -71778,11 +71738,10 @@ AA制	aarm	985000
 乙	nnll	82300000
 乚	nnll	67600
 乛	nnll	175000
-	nnll	0
-	nnll	0
+𠃌	nnll	0
+⺄	nnll	0
 𠃊	nnll	0
 𠃋	nnll	0
-𠃌	nnll	0
 𠃑	nnll	0
 𠄌	nnll	0
 𠄎	nnll	0
@@ -72096,7 +72055,6 @@ AA制	aarm	985000
 㥮	nqbt	13700
 惾	nqbt	25700
 翪	nqbt	27800
-	nqbt	0
 懈怠	nqck	1780000
 𢙚	nqcn	0
 𢗕	nqcy	0
@@ -72185,7 +72143,6 @@ AA制	aarm	985000
 𢣩	nqve	0
 㤘	nqvg	17600
 惂	nqvg	279000
-	nqvg	0
 𢛵	nqvh	0
 心急如火	nqvo	75300
 𢢴	nqvo	0
@@ -75271,9 +75228,8 @@ AA制	aarm	985000
 火炉	oooy	1690000
 𤑚	oooy	0
 𤐻	oopa	0
-	oopb	0
-𡦃	oopb	0
 𤇾	oopb	0
+𡦃	oopb	0
 𦖽	oopb	0
 䃕	oopd	4320
 𤌡	oopd	0
@@ -78982,8 +78938,6 @@ AA制	aarm	985000
 䙌	pukm	15700
 䙡	pukm	23400
 审判员	pukm	585000
-	pukm	0
-	pukm	0
 𧜘	pukm	0
 𧞸	pukp	0
 初吻	pukq	4390000
@@ -81125,7 +81079,6 @@ AA制	aarm	985000
 䦃	qafj	15200
 氒	qafj	20400
 鐯	qafj	38500
-	qafj	0
 鑉	qafl	22200
 𠤅	qafl	0
 负薪救火	qafo	3550
@@ -81166,7 +81119,6 @@ AA制	aarm	985000
 䥺	qaht	14400
 昏睡	qaht	3160000
 釾	qaht	50900
-	qaht	0
 昏眩	qahy	390000
 镜花水月	qaie	828000
 鑮	qaif	36500
@@ -82522,7 +82474,6 @@ AA制	aarm	985000
 鲜艳	qgdh	7740000
 䲠	qgdj	27800
 鲕	qgdj	89200
-	qgdj	0
 铺面	qgdm	1110000
 鱿	qgdn	2960000
 鳡	qgdn	201000
@@ -82743,7 +82694,6 @@ AA制	aarm	985000
 𩽾	qgpv	0
 𨭂	qgpw	0
 䲟	qgqb	17100
-	qgqb	0
 印色	qgqc	158000
 兔死狐悲	qgqd	286000
 钝角	qgqe	120000
@@ -82828,7 +82778,6 @@ AA制	aarm	985000
 䲡	qgug	21000
 铺盖	qgug	461000
 鲜美	qgug	3130000
-	qgug	0
 匉	qguh	28500
 𨥾	qguh	0
 印章	qguj	9400000
@@ -83004,7 +82953,6 @@ AA制	aarm	985000
 䦆	qhhc	26000
 外皮	qhhc	2940000
 钁	qhhc	226000
-	qhhc	0
 䀤	qhhf	7170
 外频	qhhi	1170000
 鉲	qhhy	172000
@@ -84265,7 +84213,6 @@ AA制	aarm	985000
 饿	qntt	31800000
 包乘	qntu	26600
 䥽	qnty	18500
-	qnty	0
 𠓨	qnty	0
 饼	qnua	18700000
 𩠉	qnub	0
@@ -87234,7 +87181,6 @@ AA制	aarm	985000
 𨧘	qudj	0
 䦅	qudk	645
 鐥	qudk	333000
-	qudk	0
 镜面	qudm	3940000
 錓	qudn	24100
 鎹	qudp	887000
@@ -88075,8 +88021,6 @@ AA制	aarm	985000
 䦂	qynn	15600
 久已	qynn	845000
 釯	qynn	24200
-	qynn	0
-	qynn	0
 鑣	qyno	1090000
 镳	qyno	449000
 𨯄	qyno	0
@@ -88763,7 +88707,6 @@ AA制	aarm	985000
 反驳	rccq	5080000
 搡	rccs	1160000
 㧐	rccy	17200
-	rccy	0
 反顾	rcdb	215000
 白马非马	rcdc	105000
 掺	rcde	7820000
@@ -90205,7 +90148,6 @@ AA制	aarm	985000
 𢰵	rhaf	0
 䴘	rhag	24700
 摣	rhag	53600
-	rhag	0
 𢳛	rhag	0
 𢴮	rhag	0
 𢸉	rhag	0
@@ -90571,7 +90513,6 @@ AA制	aarm	985000
 𢬥	riag	0
 𣙸	riam	0
 㧟	rian	18800
-	rian	0
 𢵺	rian	0
 㦵	riat	3670
 挑花	riaw	448000
@@ -91485,7 +91426,6 @@ AA制	aarm	985000
 𦉉	rmql	0
 缼	rmqw	27500
 㧏	rmqy	25900
-	rmqy	0
 𦉜	rmqy	0
 揣摸	rmra	228000
 𢴔	rmrc	0
@@ -93505,7 +93445,7 @@ AA制	aarm	985000
 𢷠	rtgo	0
 㩶	rtgq	4610
 年复一年	rtgr	1770000
-	rtgt	0
+龵	rtgt	0
 𢹀	rtgw	0
 抗生素	rtgx	6500000
 摇身一变	rtgy	1550000
@@ -94734,7 +94674,6 @@ AA制	aarm	985000
 拎	rwyc	16400000
 擒	rwyc	8680000
 皊	rwyc	119000
-	rwyc	0
 𡙱	rwyd	0
 搇	rwye	75600
 携	rwye	37500000
@@ -98023,7 +97962,6 @@ AA制	aarm	985000
 机锋	smqt	222000
 㭎	smqy	26900
 枫	smqy	75500000
-	smqy	0
 机制	smrm	65000000
 机械	smsa	116000000
 枫树	smsc	804000
@@ -100869,7 +100807,6 @@ AA制	aarm	985000
 千难万难	tcdc	174000
 䅟	tcde	18900
 私有	tcde	6470000
-	tcde	0
 𥮾	tcde	0
 知难而进	tcdf	277000
 私奔	tcdf	2760000
@@ -107944,7 +107881,6 @@ T型台	tgck	383000
 㘒	ttgx	4100
 生长素	ttgx	360000
 攵	ttgy	2920000
-	ttgy	0
 𥫗	ttgy	0
 𥡋	tthc	0
 秨	tthf	217000
@@ -113650,7 +113586,6 @@ T恤	ttnt	30300000
 交角	uqqe	169000
 䴔	uqqg	22000
 交钱	uqqg	5340000
-	uqqg	0
 郊外	uqqh	9730000
 痑	uqqi	68900
 𨴢	uqqi	0
@@ -113734,8 +113669,6 @@ T恤	ttnt	30300000
 䦶	uqvh	14900
 净	uqvh	60100000
 竫	uqvh	62800
-	uqvh	0
-	uqvh	0
 次女	uqvv	2140000
 交代	uqwa	21300000
 交公	uqwc	105000
@@ -115154,8 +115087,6 @@ U盘	uute	31900000
 䦷	uwwf	16200
 痤	uwwf	5350000
 阀值	uwwf	213000
-	uwwf	0
-	uwwf	0
 痊愈	uwwg	3990000
 𤸰	uwwg	0
 𤼋	uwwg	0
@@ -116888,7 +116819,7 @@ U盘	uute	31900000
 𤲯	vhfg	0
 鼠目寸光	vhfi	219000
 𡬲	vhfy	0
-	vhgd	0
+⺻	vhgd	0
 𡎀	vhgf	0
 䀆	vhgl	6310
 盡	vhgl	38100000
@@ -122564,7 +122495,6 @@ U盘	uute	31900000
 𠚁	wqbk	0
 𠏈	wqbm	0
 㑳	wqbt	19900
-	wqbt	0
 低限	wqbv	249000
 低阶	wqbw	408000
 爸	wqcb	78000000
@@ -122769,7 +122699,6 @@ U盘	uute	31900000
 𤕗	wqvc	0
 依然如故	wqvd	336000
 㑇	wqvg	26300
-	wqvg	0
 𠋎	wqvn	0
 父女	wqvv	2730000
 爹娘	wqvy	2170000
@@ -129759,7 +129688,7 @@ U盘	uute	31900000
 弦	xyxy	87900000
 絃	xyxy	2960000
 统统	xyxy	5240000
-	xyxy	0
+龻	xyxy	0
 𠨫	xyxy	0
 𤫜	xyxy	0
 𦇥	xyxy	0
@@ -130034,7 +129963,6 @@ U盘	uute	31900000
 说黄道黑	yaul	5740
 䜩	yauo	17300
 讌	yauo	229000
-	yauo	0
 𧮃	yauo	0
 席次	yauq	630000
 说东道西	yaus	133000
