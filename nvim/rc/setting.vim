@@ -146,5 +146,8 @@ aug InitFileTypesGroup
 
     au FileType qf setlocal nonumber
 
+    au FileType xs setlocal wrap nonumber noruler norelativenumber nocursorline nocursorcolumn laststatus=0 cmdheight=0 colorcolumn=200
+
+
     au BufNewFile,BufRead *.conf setf dosini
 aug END
