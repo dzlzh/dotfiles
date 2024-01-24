@@ -8,6 +8,9 @@ function Server.setup(opts)
     local lspconfig = opts.lspconfig
     lspconfig.intelephense.setup({
         capabilities = opts.capabilities,
+        init_options = {
+            globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense',
+        },
     })
 end
 
