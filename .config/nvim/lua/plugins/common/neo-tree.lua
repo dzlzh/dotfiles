@@ -9,7 +9,7 @@ return {
     },
     keys = {
         {"<Leader>ee", function()
-            vim.cmd([[Neotree last toggle]])
+            vim.cmd([[Neotree last toggle reveal]])
         end , desc = "Open NeoTree"},
     },
     deactivate = function()
