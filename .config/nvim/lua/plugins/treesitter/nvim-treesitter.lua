@@ -32,9 +32,9 @@ return {
             incremental_selection = {
                 enable = true,
                 keymaps = {
-                    init_selection    = "<A-i>",
-                    node_incremental  = "<A-j>",
-                    node_decremental  = "<A-k>",
+                    init_selection    = "<A-I>",
+                    node_incremental  = "<A-J>",
+                    node_decremental  = "<A-K>",
                 },
             },
             context_commentstring = {
