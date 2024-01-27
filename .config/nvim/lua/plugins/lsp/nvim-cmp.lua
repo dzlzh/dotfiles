@@ -8,6 +8,7 @@ return {
         "hrsh7th/cmp-cmdline",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
+        "rafamadriz/friendly-snippets",
         "onsails/lspkind-nvim",
         "windwp/nvim-autopairs",
     },
@@ -50,6 +51,7 @@ return {
             return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
         end
 
+        require("luasnip.loaders.from_vscode").lazy_load()
         autopairs.setup()
         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
