@@ -52,9 +52,9 @@ opt.list           = true
 opt.listchars      = "space:·,tab:>-,eol:↵"
 opt.pumblend       = 10
 opt.pumheight      = 10
-opt.scrolloff      = 4
-opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
+opt.scrolloff      = 8
 opt.sidescrolloff  = 8
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 opt.signcolumn     = "yes"
 
 opt.hlsearch   = true
