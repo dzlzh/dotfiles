@@ -20,7 +20,7 @@ require("lazy").setup({
     { import = "plugins.lsp" },
 },{
     defaults = {
-        lazy = false,
+        lazy = true,
         version = false,
     },
     checker = {

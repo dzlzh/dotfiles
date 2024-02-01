@@ -1,6 +1,6 @@
 return {
     "hotoo/pangu.vim",
-    event = "BufEnter *.md",
+    ft = "markdown",
     config = function()
         vim.api.nvim_create_autocmd("BufWritePre", {
             pattern = "md",
