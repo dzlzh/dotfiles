@@ -8,6 +8,12 @@ return {
     },
     init = function()
         vim.api.nvim_set_keymap('n', '<Leader>t', '<Plug>VimwikiToggleListItem', {noremap = true})
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern  = "vimwiki",
+            callback = function()
+                vim.bo.filetype = "markdown.vimwiki"
+            end,
+        })
         vim.cmd([[
             hi VimwikiHeader1 guifg=#FF0000
             hi VimwikiHeader2 guifg=#00FF00
