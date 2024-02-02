@@ -139,6 +139,10 @@ alias vi='nvim'
 alias vim='nvim'
 alias lockpass='gpg-connect-agent reloadagent /bye'
 
+# zsh-autosuggestions
+bindkey '^Y' autosuggest-accept
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
 # proxy
 alias setproxy='export HTTPS_PROXY=http://127.0.0.1:7890 HTTP_PROXY=http://127.0.0.1:7890 ALL_PROXY=socks5://127.0.0.1:7890'
 alias unsetproxy='unset HTTPS_PROXY HTTP_PROXY ALL_PROXY'
