@@ -5,26 +5,9 @@ return {
         "aznhe21/actions-preview.nvim",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+        "mhartington/formatter.nvim",
     },
     config = function()
-        require("mason").setup()
-        require("mason-lspconfig").setup({
-            ensure_installed = {
-                "gopls",
-                "intelephense",
-                "lua_ls",
-                "marksman",
-            },
-        })
-
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
-        local lspconfig = require("lspconfig")
-        local telescope = require("telescope.builtin")
-        local actions_preview = require("actions-preview")
-        local win = require("lspconfig.ui.windows")
-
-        win.default_options.border = "rounded"
-
         local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
@@ -41,6 +24,36 @@ return {
             end
         end
 
+        require("lspconfig.ui.windows").default_options.border = "rounded"
+
+        require("mason").setup()
+        require("mason-lspconfig").setup({
+            ensure_installed = {
+                "gopls",
+                "intelephense",
+                "lua_ls",
+                "marksman",
+            },
+        })
+
+        require("formatter").setup({
+            filetype = {
+                go = {
+                    require("formatter.filetypes.go").gofumpt,
+                    require("formatter.filetypes.go").goimports,
+                },
+                php = {
+                    require("formatter.filetypes.php").pint,
+                },
+            },
+        })
+        vim.api.nvim_create_autocmd("BufWritePost", {
+            group = vim.api.nvim_create_augroup("__formatter__", { clear = true }),
+            command = ":FormatWrite",
+        })
+
+        local telescope = require("telescope.builtin")
+        local actions_preview = require("actions-preview")
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),
             callback = function(env)
@@ -91,23 +104,22 @@ return {
             end,
         })
 
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        local lspconfig = require("lspconfig")
         capabilities.textDocument.foldingRange = {
             dynamicRegistration = false,
             lineFoldingOnly = true,
         }
-
         local lspOpts = {
             capabilities = capabilities,
             lspconfig = lspconfig,
         }
-
         local servers = {
             "go",
             "php",
             "lua",
             "markdown",
         }
-
         for _, server in ipairs(servers) do
             local serverModule = require("plugins.lsp.server." .. server)
             serverModule.setup(lspOpts)
