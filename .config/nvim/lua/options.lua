@@ -73,3 +73,6 @@ opt.undofile   = true
 opt.undolevels = 10000
 
 opt.formatoptions = "jBcroqlnt"
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
