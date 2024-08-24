@@ -1,7 +1,9 @@
 return {
     "akinsho/toggleterm.nvim",
     version = "*",
-    event = "VeryLazy",
+    keys = {
+        { "<Leader>sh", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+    },
     opts = {
         open_mapping = [[<Leader>sh]],
         start_in_insert = true,

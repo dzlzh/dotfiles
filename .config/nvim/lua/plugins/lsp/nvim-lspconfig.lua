@@ -26,36 +26,10 @@ return {
 
         require("lspconfig.ui.windows").default_options.border = "rounded"
 
-        require("mason").setup()
-        require("mason-lspconfig").setup({
-            ensure_installed = {
-                "gopls",
-                "intelephense",
-                "lua_ls",
-                "marksman",
-            },
-        })
-
-        require("formatter").setup({
-            filetype = {
-                go = {
-                    require("formatter.filetypes.go").gofumpt,
-                    require("formatter.filetypes.go").goimports,
-                },
-                php = {
-                    require("formatter.filetypes.php").pint,
-                },
-            },
-        })
-        vim.api.nvim_create_autocmd("BufWritePost", {
-            group = vim.api.nvim_create_augroup("__formatter__", { clear = true }),
-            command = ":FormatWrite",
-        })
-
         local telescope = require("telescope.builtin")
         local actions_preview = require("actions-preview")
         vim.api.nvim_create_autocmd("LspAttach", {
-            group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+            group = vim.api.nvim_create_augroup("__lsp__", { clear = true }),
             callback = function(env)
                 local buffer = env.buf
                 vim.api.nvim_buf_set_keymap(buffer, "n", "gr", "", {
@@ -104,12 +78,39 @@ return {
             end,
         })
 
+        require("formatter").setup({
+            filetype = {
+                go = {
+                    require("formatter.filetypes.go").gofumpt,
+                    require("formatter.filetypes.go").goimports,
+                },
+                php = {
+                    require("formatter.filetypes.php").pint,
+                },
+            },
+        })
+        vim.api.nvim_create_autocmd("BufWritePost", {
+            group = vim.api.nvim_create_augroup("__formatter__", { clear = true }),
+            command = ":FormatWrite",
+        })
+
+
+        require("mason").setup()
+        require("mason-lspconfig").setup({
+            ensure_installed = {
+                "gopls",
+                "intelephense",
+                "lua_ls",
+                "marksman",
+            },
+        })
+
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
-        local lspconfig = require("lspconfig")
         capabilities.textDocument.foldingRange = {
             dynamicRegistration = false,
             lineFoldingOnly = true,
         }
+        local lspconfig = require("lspconfig")
         local lspOpts = {
             capabilities = capabilities,
             lspconfig = lspconfig,
