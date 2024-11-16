@@ -99,9 +99,12 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "gopls",
+                "gofumpt",
+                "goimports",
                 "intelephense",
                 "lua_ls",
                 "marksman",
+                "volar",
             },
         })
 
@@ -118,12 +121,12 @@ return {
         local servers = {
             "go",
             "php",
+            "vue",
             "lua",
             "markdown",
         }
         for _, server in ipairs(servers) do
             local serverModule = require("plugins.lsp.server." .. server)
-            serverModule.setup(lspOpts)
             if serverModule and serverModule.checkOK() then
                 serverModule.setup(lspOpts)
             else
