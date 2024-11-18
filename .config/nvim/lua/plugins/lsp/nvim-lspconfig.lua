@@ -99,8 +99,6 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "gopls",
-                "gofumpt",
-                "goimports",
                 "intelephense",
                 "lua_ls",
                 "marksman",
