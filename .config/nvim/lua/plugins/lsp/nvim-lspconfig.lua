@@ -9,10 +9,20 @@ return {
     },
     config = function()
         local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
-        for type, icon in pairs(signs) do
-            local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-        end
+        vim.diagnostic.config({
+            signs = {
+                text = {
+                    [vim.diagnostic.severity.ERROR] = signs.Error,
+                    [vim.diagnostic.severity.WARN]  = signs.Warn,
+                    [vim.diagnostic.severity.HINT]  = signs.Hint,
+                    [vim.diagnostic.severity.INFO]  = signs.Info,
+                },
+            },
+            virtual_text = true,
+            underline = true,
+            update_in_insert = false,
+            severity_sort = true,
+        })
 
         local lspUtilOpenFloatingPreview = vim.lsp.util.open_floating_preview
         function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
