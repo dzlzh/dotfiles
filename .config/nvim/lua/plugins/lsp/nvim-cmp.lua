@@ -20,17 +20,14 @@ return {
         local luasnip = require("luasnip")
         local lspkind = require("lspkind")
         local autopairs = require("nvim-autopairs")
-
         local cmp_autopairs = require("nvim-autopairs.completion.cmp")
         local cmp = require("cmp")
 
         local cmpHighlight = {
             CmpNormal = { bg = "#2e3440" },
-
             CmpItemAbbrDeprecated = { bg = nil, strikethrough = true, fg = "#434c5e" },
             CmpItemAbbrMatch = { bg = nil, fg = "#81a1c1" },
             CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" },
-
             CmpItemKindVariable = { bg = nil, fg = "#88c0d0" },
             CmpItemKindInterface = { link = "CmpItemKindVariable" },
             CmpItemKindText = { link = "CmpItemKindVariable" },
@@ -40,7 +37,6 @@ return {
             CmpItemKindProperty = { link = "CmpItemKindKeyword" },
             CmpItemKindUnit = { link = "CmpItemKindKeyword" },
         }
-
         for group, opts in pairs(cmpHighlight) do
             vim.api.nvim_set_hl(0, group, opts)
         end
@@ -103,6 +99,17 @@ return {
                         fallback()
                     end
                 end, { "i", "s" }),
+                ["<CR>"] = cmp.mapping({
+                    i = function(fallback)
+                        if cmp.visible() and cmp.get_active_entry() then
+                            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                        else
+                            fallback()
+                        end
+                    end,
+                    s = cmp.mapping.confirm({ select = true }),
+                    c = cmp.mapping.confirm({ select = false }),
+                }),
                 ["<C-y>"] = cmp.mapping({
                     i = function(fallback)
                         if cmp.visible() then
