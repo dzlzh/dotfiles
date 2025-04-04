@@ -1,3 +1,3 @@
-require('options')
-require('autocmds')
-require('keymaps')
+require('core.options')
+require('core.autocmds')
+require('core.keymaps')
