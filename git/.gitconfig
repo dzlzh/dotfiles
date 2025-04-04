@@ -21,8 +21,11 @@
     recurse           = true
 [user]
     name              = dzlzh
-    email             = 8456085+dzlzh@users.noreply.github.com
+    email             = dzlzh@duck.com
 [alias]
     lg                = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     mr                = merge --no-edit
     st                = status
+[includeIf "gitdir:~/local/"]
+    path = ~/.gitconfig.local
+
