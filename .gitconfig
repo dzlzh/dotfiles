@@ -26,3 +26,6 @@
     lg                = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     mr                = merge --no-edit
     st                = status
+[includeIf "gitdir:~/local/"]
+    path = ~/.gitconfig.local
+
