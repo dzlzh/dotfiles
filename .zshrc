@@ -246,7 +246,7 @@ if [[ -x "/usr/bin/eza" ]]; then
     alias la='eza --icons --git --long --header --all'
     alias tree="eza --icons --tree"
 elif [[ -x "/usr/bin/exa" ]]; then
-     alias ls='exa' # https://github.com/ogham/exa
+    alias ls='exa' # https://github.com/ogham/exa
     alias ll='exa --git --long --header'
     alias la='exa --git --long --header --all'
     alias tree="exa --tree"
