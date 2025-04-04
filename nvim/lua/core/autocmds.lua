@@ -33,11 +33,12 @@ autocmd("BufReadPost", {
     end,
 })
 
+--打开大文件时
 autocmd("BufReadPre", {
     group = augroup("large_file"),
     pattern = "*",
     callback = function()
-        local threshold = 1024 * 1024
+        local threshold = 5 * 1024 * 1024
         local file_size = vim.fn.getfsize(vim.fn.expand("%:p"))
         if file_size > threshold then
             vim.opt_local.syntax = "off"
