@@ -1,31 +1,38 @@
 [gui]
-    encoding          = utf-8
+    encoding = utf-8
+[color]
+    ui = auto
 [i18n]
     commitencoding    = utf-8
     logoutputencoding = utf-8
 [core]
-    quotepath         = false
-    ignorecase        = false
-    autocrlf          = input
-    safecrlf          = true
-    editor            = /usr/bin/nvim
+    quotepath  = false
+    ignorecase = false
+    autocrlf   = input
+    safecrlf   = true
+    editor     = nvim
 [init]
-    defaultBranch     = main
+    defaultBranch = main
 [commit]
-    template          = ~/.gitmessage
+    template = ~/.gitmessage
 [push]
-    default           = current
+    default = current
+    autoSetupRemote = true
 [pull]
-    rebase            = false
+    rebase = false
 [submodule]
-    recurse           = true
+    recurse = true
 [user]
-    name              = dzlzh
-    email             = dzlzh@duck.com
+    name  = git
+    email = git@git-scm.com
 [alias]
-    lg                = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    mr                = merge --no-edit
-    st                = status
+    st = status
+    mr = merge --no-edit
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[filter "lfs"]
+    required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 [includeIf "gitdir:~/local/"]
     path = ~/.gitconfig.local
-
