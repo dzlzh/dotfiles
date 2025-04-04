@@ -240,12 +240,17 @@ if [[ -x "/usr/bin/bat" ]]; then
 fi
 
 # exa
-if [[ -x "/usr/bin/exa" ]]; then
+if [[ -x "/usr/bin/eza" ]]; then
+    alias ls='eza --icons' # https://github.com/eza-community/eza
+    alias ll='eza --icons --git --long --header'
+    alias la='eza --icons --git --long --header --all'
+    alias tree="eza --icons --tree"
+elif [[ -x "/usr/bin/exa" ]]; then
     alias ls='exa' # https://github.com/ogham/exa
-    alias l='exa -lh'
-    alias ll='exa -lh'
-    alias la='exa -lha'
-fi
+    alias ll='exa --git --long --header'
+    alias la='exa --git --long --header --all'
+    alias tree="exa --tree"
+ fi
 
 # xrandr
 if [[ -x "/usr/bin/xrandr" ]]; then
