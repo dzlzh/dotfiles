@@ -1,7 +1,9 @@
-/autoload/
+/autoload/*
+!/autoload/plug.vim
+/db/*
+!/db/wubi
 /plugged/
-/preload.vim
-/afterload.vim
 /session/
 /tmp/
-/db/wubi_count
+preload.vim
+afterload.vim

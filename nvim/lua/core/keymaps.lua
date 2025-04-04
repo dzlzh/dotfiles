@@ -38,8 +38,8 @@ map("n", "<space>", function()
 end, opts)
 
 -- 打开终端
-map("n", "<Leader>sh", function()
-    vim.cmd("botright split term://zsh")
-    vim.cmd("resize 10")
-end, opts)
-map("t", "<Esc>", "<c-\\><c-n>", opts)
+-- map("n", "<Leader>sh", function()
+--     vim.cmd("botright split term://zsh")
+--     vim.cmd("resize 10")
+-- end, opts)
+-- map("t", "<Esc>", "<c-\\><c-n>", opts)

@@ -65,9 +65,9 @@ Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoUpdateBinaries'}
 " Plugins for nginx
 " Plug 'chr4/nginx.vim'
 
+Plug 'hotoo/pangu.vim'
 " Plugins for wiki
 if exists("g:vimwiki_path")
-    Plug 'hotoo/pangu.vim'
     Plug 'vimwiki/vimwiki'
 endif
 

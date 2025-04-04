@@ -2,13 +2,13 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- 离开当前 Buf 区时自动保存
 autocmd("BufLeave", {
-    pattern = "*",
+    pattern = {"*"},
     command = "silent! wall",
 })
 
 -- 保存时自动删除行尾空格
 autocmd("BufWrite", {
-    pattern = "*",
+    pattern = {"*"},
     callback = function()
         vim.cmd("normal mz")
         vim.cmd([[%s/\s\+$//ge]])
@@ -16,22 +16,23 @@ autocmd("BufWrite", {
     end,
 })
 
--- 启用每行超过80列的字符提示
-autocmd("BufWinEnter", {
-    pattern = "*",
-    callback = function()
-        vim.w.m = vim.fn.matchadd("Underlined", "\\%>" .. 80 .. "v.\\+", -1)
-    end,
-})
-
 --打开文件时恢复上一次光标所在位置
 autocmd("BufReadPost", {
-    pattern = "*",
+    pattern = {"*"},
     callback = function()
         local line = vim.fn.line
         if line("'\"") > 1 and line("'\"") <= line("$") then
             vim.cmd("normal g`\"")
         end
+    end,
+})
+
+-- 启用每行超过80列的字符提示
+autocmd("BufWinEnter", {
+    -- pattern = {"*"},
+    pattern = {"*.php", "*.go"},
+    callback = function()
+        vim.w.m = vim.fn.matchadd("Underlined", "\\%>" .. 80 .. "v.\\+", -1)
     end,
 })
 
@@ -41,7 +42,7 @@ local InitFileTypesGroup = vim.api.nvim_create_augroup("InitFileTypesGroup", {
 
 autocmd("FileType", {
     group    = InitFileTypesGroup,
-    pattern  = "yaml,json,proto,tmpl,html",
+    pattern  = {"yaml","json","proto","tmpl","html"},
     callback = function()
         vim.bo.shiftwidth = 2
         vim.bo.tabstop    = 2
@@ -50,7 +51,7 @@ autocmd("FileType", {
 
 autocmd("FileType", {
     group   = InitFileTypesGroup,
-    pattern = "go",
+    pattern = {"go"},
     callback = function()
         vim.opt.expandtab = false
     end,
@@ -58,13 +59,15 @@ autocmd("FileType", {
 
 autocmd("FileType", {
     group   = InitFileTypesGroup,
-    pattern = "php",
-    command = "setlocal iskeyword+=$",
+    pattern = {"php"},
+    callback = function()
+        vim.cmd("setlocal iskeyword+=$")
+    end,
 })
 
 autocmd("FileType", {
     group   = InitFileTypesGroup,
-    pattern = "xs",
+    pattern = {"xs"},
     callback = function()
         vim.o.wrap           = true
         vim.o.number         = false
