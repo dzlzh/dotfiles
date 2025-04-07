@@ -1,5 +1,6 @@
 return {
     "neovim/nvim-lspconfig",
+    event = "VeryLazy",
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "aznhe21/actions-preview.nvim",
@@ -85,7 +86,7 @@ return {
             "vue",
         }
         for _, server in ipairs(servers) do
-            local ok, serverModule = pcall(require, "plugins.lsp.server." .. server)
+            local ok, serverModule = pcall(require, "plugins.coding.server." .. server)
             if ok and serverModule.checkOK and serverModule.checkOK() then
                 serverModule.setup(lspOpts)
             elseif not os.getenv("NVIM_NOT_NOTIFY_LSP_ERROR") then
