@@ -59,18 +59,27 @@ return {
                 vim.keymap.set("n", "]d", goto_next_diagnostic, vim.tbl_extend("force", opts, { desc = "Next Diagnostic" }))
             end,
         })
-
+        
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
+                "lua_ls",
                 "gopls",
                 "intelephense",
-                "lua_ls",
                 "marksman",
-                "volar",
+                "vue_ls",
+            },
+            automatic_enable = {
+                exclude = {
+                    "lua_ls",
+                    "gopls",
+                    "intelephense",
+                    "marksman",
+                    "vue_ls",
+                }
             },
         })
-
+        
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
         capabilities.textDocument.foldingRange = {
             dynamicRegistration = false,
