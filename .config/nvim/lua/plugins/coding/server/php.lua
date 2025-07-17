@@ -9,7 +9,7 @@ function Server.setup(opts)
     lspconfig.intelephense.setup({
         capabilities = opts.capabilities,
         init_options = {
-            globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense',
+            globalStoragePath = vim.fn.stdpath('data') .. '/intelephense',
         },
     })
 end
