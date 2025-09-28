@@ -5,10 +5,14 @@ function Server.checkOK()
 end
 
 function Server.setup(opts)
-    local lspconfig = opts.lspconfig
-    lspconfig.marksman.setup({
+    -- local lspconfig = opts.lspconfig
+    -- lspconfig.marksman.setup({
+    --     capabilities = opts.capabilities,
+    -- })
+    vim.lsp.config('marksman', {
         capabilities = opts.capabilities,
     })
+    vim.lsp.enable('marksman')
 end
 
 return Server

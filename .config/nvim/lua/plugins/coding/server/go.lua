@@ -5,9 +5,24 @@ function Server.checkOK()
 end
 
 function Server.setup(opts)
-    local lspconfig = opts.lspconfig
-
-    lspconfig.gopls.setup({
+    -- local lspconfig = opts.lspconfig
+    -- lspconfig.gopls.setup({
+    --     capabilities = opts.capabilities,
+    --     settings = {
+    --         gopls = {
+    --             experimentalPostfixCompletions = true,
+    --             analyses = {
+    --                 unusedparams = true,
+    --                 shadow = true,
+    --             },
+    --             staticcheck = true,
+    --         },
+    --     },
+    --     init_options = {
+    --         usePlaceholders = true,
+    --     },
+    -- })
+    vim.lsp.config('gopls', {
         capabilities = opts.capabilities,
         settings = {
             gopls = {
@@ -23,6 +38,7 @@ function Server.setup(opts)
             usePlaceholders = true,
         },
     })
+    vim.lsp.enable('gopls')
 end
 
 return Server
