@@ -10,6 +10,7 @@ config.send_composed_key_when_left_alt_is_pressed = false
 config.freetype_load_target = 'HorizontalLcd'
 config.freetype_render_target = 'HorizontalLcd'
 config.allow_square_glyphs_to_overflow_width = "WhenFollowedBySpace"
+config.color_scheme = 'Catppuccin Mocha' -- Catppuccin Mocha|Gruvbox Dark|Tokyo Night|One Dark (Gogh)
 
 config.font = wezterm.font_with_fallback {
   { family = 'Google Sans Code', weight = 'Medium' },
