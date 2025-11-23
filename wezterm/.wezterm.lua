@@ -13,8 +13,8 @@ config.allow_square_glyphs_to_overflow_width = "WhenFollowedBySpace"
 
 config.font = wezterm.font_with_fallback {
   { family = 'Google Sans Code', weight = 'Medium' },
-  { family = 'LXGW WenKai Mono', weight = 'Medium', scale = 1.15 },
   { family = 'Maple Mono Normal NF CN', weight = 'Regular', scale = 1.1 },
+  { family = 'LXGW WenKai Mono', weight = 'Medium', scale = 1.15 },
   { family = 'Symbols Nerd Font Mono', scale = 0.9 },
 }
 config.font_size = 12
@@ -23,19 +23,18 @@ config.font_rules = {
   {
     intensity = 'Normal',
     italic = true,
-    font = wezterm.font {
-      family = 'Google Sans Code',
-      style = 'Italic',
-      weight = 'Regular',
-    },
+    font = wezterm.font_with_fallback {
+        {family = 'Google Sans Code', style = 'Italic', weight = 'Medium'},
+        {family = 'Maple Mono Normal NF CN', style = 'Italic', weight = 'Regular'},
+    }
   },
   {
     intensity = 'Bold',
     italic = false,
-    font = wezterm.font {
-      family = 'Google Sans Code',
-      weight = 'Bold',
-    },
+    font = wezterm.font_with_fallback {
+        {family = 'Google Sans Code', weight = 'Bold'},
+        {family = 'Maple Mono Normal NF CN', weight = 'Bold'},
+    }
   },
 }
 
