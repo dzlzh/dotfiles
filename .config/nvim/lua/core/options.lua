@@ -51,12 +51,22 @@ opt.matchtime      = 2
 opt.display        = "lastline"
 opt.lazyredraw     = true
 opt.list           = true
-opt.listchars      = "space:·,tab:>-,eol:↵"
 opt.pumblend       = 10
 opt.pumheight      = 10
 opt.scrolloff      = 8
 opt.sidescrolloff  = 8
 opt.signcolumn     = "yes"
+
+-- opt.listchars      = "space:·,tab:>-,eol:↵"
+-- opt.ambiwidth      = "double"
+opt.listchars      = {
+    tab = '¦ ',
+    eol = '¬',
+    trail = '␣',
+    nbsp = '+',
+    extends = '>',
+    precedes = '<',
+}
 
 opt.hlsearch   = true
 opt.incsearch  = true
