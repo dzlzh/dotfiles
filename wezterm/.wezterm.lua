@@ -2,6 +2,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 config.front_end = "OpenGL" -- WebGpu|OpenGL
+config.unicode_version = 14
 config.default_domain = 'WSL:Arch'
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
