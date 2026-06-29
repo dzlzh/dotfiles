@@ -4,6 +4,10 @@ return {
     lazy = false,
     build = ":TSUpdate",
     config = function()
+        -- curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+        -- source $HOME/.cargo/env
+        -- cargo install tree-sitter-cli
+
         local parsers = {
             "lua", "sql", "vim", "bash",
             "go", "gomod", "gosum", "gowork",
