@@ -2,7 +2,6 @@ return {
     "junegunn/vim-easy-align",
     event = "VeryLazy",
     config = function()
-        vim.api.nvim_set_keymap('v', 'ga', '<Plug>(EasyAlign)', {})
-        vim.api.nvim_set_keymap('x', 'ga', '<Plug>(EasyAlign)', {})
+        vim.keymap.set("x", "ga", "<Plug>(EasyAlign)", { remap = true, desc = "Easy Align" })
     end,
 }

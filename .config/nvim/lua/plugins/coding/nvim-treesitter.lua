@@ -8,17 +8,8 @@ return {
         -- source $HOME/.cargo/env
         -- cargo install tree-sitter-cli
 
-        local parsers = {
-            "lua", "sql", "vim", "bash",
-            "go", "gomod", "gosum", "gowork",
-            "php", "rust", "python",
-            "json", "yaml", "toml", "ini",
-            "html", "javascript", "typescript", "vue",
-            "dockerfile", "markdown", "markdown_inline", "query", "regex",
-        }
-
         local ok_ts, ts = pcall(require, "nvim-treesitter")
-        if not ok_ts or type(ts.setup) ~= "function" or type(ts.install) ~= "function" then
+        if not ok_ts or type(ts.setup) ~= "function" then
             vim.notify("nvim-treesitter main API is not available; run :Lazy sync nvim-treesitter", vim.log.levels.WARN)
             return
         end
@@ -26,11 +17,6 @@ return {
         ts.setup({
             install_dir = vim.fn.stdpath("data") .. "/site",
         })
-
-        local ok_install, install_err = pcall(ts.install, parsers)
-        if not ok_install then
-            vim.notify("nvim-treesitter parser install failed: " .. install_err, vim.log.levels.WARN)
-        end
 
         vim.treesitter.language.register("bash", { "sh" })
         vim.treesitter.language.register("ini", { "dosini", "ini" })

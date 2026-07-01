@@ -3,21 +3,44 @@ local function augroup(name)
     return vim.api.nvim_create_augroup("l_" .. name, { clear = true })
 end
 
+local function is_normal_file_buffer(buf)
+    return vim.api.nvim_buf_is_valid(buf)
+        and vim.api.nvim_buf_get_name(buf) ~= ""
+        and vim.bo[buf].buftype == ""
+        and vim.bo[buf].modifiable
+        and not vim.bo[buf].readonly
+        and not vim.bo[buf].binary
+end
+
 -- 离开当前 Buf 区时自动保存
 autocmd("BufLeave", {
     group = augroup("autosave"),
     pattern = {"*"},
-    command = "silent! w",
+    callback = function(args)
+        if not is_normal_file_buffer(args.buf) then
+            return
+        end
+
+        vim.api.nvim_buf_call(args.buf, function()
+            vim.cmd("silent! write")
+        end)
+    end,
 })
 
 -- 保存时自动删除行尾空格
-autocmd("BufWrite", {
+autocmd("BufWritePre", {
     group = augroup("trim_whitespace"),
     pattern = {"*"},
-    callback = function()
-        local cursor_pos = vim.fn.getpos(".")
-        vim.cmd([[%s/\s\+$//ge]])
-        vim.fn.setpos(".", cursor_pos)
+    callback = function(args)
+        if not is_normal_file_buffer(args.buf) then
+            return
+        end
+
+        local view = vim.fn.winsaveview()
+        vim.api.nvim_buf_call(args.buf, function()
+            vim.cmd([[keeppatterns %s/\s\+$//e]])
+        end)
+        vim.fn.winrestview(view)
     end,
 })
 
@@ -60,25 +83,45 @@ autocmd("BufReadPre", {
 autocmd("FileType", {
     group    = augroup("indent_settings"),
     pattern  = {"yaml","json","proto","tmpl","html"},
-    callback = function()
-        vim.bo.shiftwidth = 2
-        vim.bo.tabstop    = 2
+    callback = function(args)
+        vim.bo[args.buf].shiftwidth = 2
+        vim.bo[args.buf].tabstop    = 2
     end,
 })
 
 autocmd("FileType", {
     group = augroup("go_settings"),
     pattern = {"go"},
-    callback = function()
-        vim.opt.expandtab = false
+    callback = function(args)
+        vim.bo[args.buf].expandtab = false
     end,
 })
 
 autocmd("FileType", {
     group = augroup("php_settings"),
     pattern = {"php"},
-    callback = function()
-        vim.cmd("setlocal iskeyword+=$")
+    callback = function(args)
+        vim.bo[args.buf].iskeyword = vim.bo[args.buf].iskeyword .. ",$"
+    end,
+})
+
+autocmd("FileType", {
+    group = augroup("line_comment_settings"),
+    pattern = {
+        "php",
+        "go",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "c",
+        "cpp",
+        "java",
+        "rust",
+    },
+    callback = function(args)
+        vim.bo[args.buf].commentstring = "// %s"
     end,
 })
 
@@ -86,14 +129,11 @@ autocmd("FileType", {
     group = augroup("xs_settings"),
     pattern = {"xs"},
     callback = function()
-        vim.o.wrap           = true
-        vim.o.number         = false
-        vim.o.relativenumber = false
-        vim.o.ruler          = false
-        vim.o.cursorline     = false
-        vim.o.cursorcolumn   = false
-        vim.o.colorcolumn    = ""
-        vim.o.laststatus     = 0
-        vim.o.cmdheight      = 0
+        vim.wo.wrap           = true
+        vim.wo.number         = false
+        vim.wo.relativenumber = false
+        vim.wo.cursorline     = false
+        vim.wo.cursorcolumn   = false
+        vim.wo.colorcolumn    = ""
     end,
 })

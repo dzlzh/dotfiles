@@ -7,7 +7,7 @@ return {
         { "<Leader>ww", "<Plug>VimwikiIndex" },
     },
     init = function()
-        vim.api.nvim_set_keymap('n', '<Leader>t', '<Plug>VimwikiToggleListItem', {noremap = true})
+        vim.keymap.set("n", "<Leader>t", "<Plug>VimwikiToggleListItem", { remap = true, desc = "Toggle Vimwiki List Item" })
         vim.api.nvim_create_autocmd("FileType", {
             pattern  = "vimwiki",
             callback = function()
