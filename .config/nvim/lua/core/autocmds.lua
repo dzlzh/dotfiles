@@ -129,6 +129,8 @@ autocmd("FileType", {
     group = augroup("xs_settings"),
     pattern = {"xs"},
     callback = function()
+        vim.o.laststatus      = 0
+        vim.o.cmdheight       = 0
         vim.wo.wrap           = true
         vim.wo.number         = false
         vim.wo.relativenumber = false
