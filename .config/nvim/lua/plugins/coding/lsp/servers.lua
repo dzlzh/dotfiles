@@ -1,124 +1,82 @@
 local M = {}
+local vue = require("plugins.coding.lsp.vue")
 
-local registry = {
-    {
-        name = "lua_ls",
-        mason = "lua_ls",
-        config = function(opts)
-            return {
-                capabilities = opts.capabilities,
-                on_init = function(client)
-                    local path = client.workspace_folders
-                        and client.workspace_folders[1]
-                        and client.workspace_folders[1].name
-
-                    if not path or (not vim.uv.fs_stat(path .. "/.luarc.json") and not vim.uv.fs_stat(path .. "/.luarc.jsonc")) then
-                        client.config.settings = vim.tbl_deep_extend("force", client.config.settings, {
-                            Lua = {
-                                runtime = {
-                                    version = "LuaJIT",
-                                },
-                                workspace = {
-                                    checkThirdParty = false,
-                                    library = { vim.env.VIMRUNTIME },
-                                },
-                                diagnostics = {
-                                    globals = { "vim" },
-                                },
-                                hint = {
-                                    enable = true,
-                                },
-                            }
-                        })
-
-                        client:notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-                    end
-
-                    return true
-                end,
-            }
-        end,
-    },
-    {
-        name = "gopls",
-        mason = "gopls",
-        config = function(opts)
-            return {
-                capabilities = opts.capabilities,
-                settings = {
-                    gopls = {
-                        experimentalPostfixCompletions = true,
-                        analyses = {
-                            unusedparams = true,
-                            shadow = true,
-                        },
-                        staticcheck = true,
-                    },
-                },
-                init_options = {
-                    usePlaceholders = true,
-                },
-            }
-        end,
-    },
-    {
-        name = "intelephense",
-        mason = "intelephense",
-        config = function(opts)
-            return {
-                capabilities = opts.capabilities,
-                init_options = {
-                    globalStoragePath = vim.fn.stdpath("data") .. "/intelephense",
-                },
-            }
-        end,
-    },
-    {
-        name = "marksman",
-        mason = "marksman",
-        config = function(opts)
-            return {
-                capabilities = opts.capabilities,
-            }
-        end,
-    },
-    {
-        name = "vue_ls",
-        mason = "vue_ls",
-        config = function(opts)
-            return {
-                capabilities = opts.capabilities,
-                filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-                init_options = {
-                    vue = {
-                        hybridMode = false,
-                    },
-                },
-            }
-        end,
-    },
+local server_order = {
+    "lua_ls",
+    "gopls",
+    "intelephense",
+    "marksman",
+    "vue_ls",
+    "vtsls",
 }
 
-local function collect(field)
-    local values = {}
-    for _, server in ipairs(registry) do
-        table.insert(values, server[field])
-    end
-    return values
-end
+local configs = {
+    lua_ls = {
+        on_init = function(client)
+            local path = client.workspace_folders and client.workspace_folders[1] and client.workspace_folders[1].name
 
-function M.ensure_installed()
-    return collect("mason")
-end
+            if path and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc")) then
+                return true
+            end
 
-function M.lsp_names()
-    return collect("name")
+            client.config.settings = vim.tbl_deep_extend("force", client.config.settings or {}, {
+                Lua = {
+                    runtime = {
+                        version = "LuaJIT",
+                    },
+                    workspace = {
+                        checkThirdParty = false,
+                        library = { vim.env.VIMRUNTIME },
+                    },
+                    diagnostics = {
+                        globals = { "vim" },
+                    },
+                    hint = {
+                        enable = true,
+                    },
+                },
+            })
+
+            client:notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+            return true
+        end,
+    },
+    gopls = {
+        settings = {
+            gopls = {
+                experimentalPostfixCompletions = true,
+                analyses = {
+                    unusedparams = true,
+                    shadow = true,
+                },
+                staticcheck = true,
+            },
+        },
+        init_options = {
+            usePlaceholders = true,
+        },
+    },
+    intelephense = {
+        init_options = {
+            globalStoragePath = vim.fn.stdpath("data") .. "/intelephense",
+        },
+    },
+    marksman = {},
+    vue_ls = vue.vue_ls(),
+    vtsls = vue.vtsls(),
+}
+
+function M.names()
+    return vim.deepcopy(server_order)
 end
 
 function M.setup(opts)
-    for _, server in ipairs(registry) do
-        vim.lsp.config(server.name, server.config(opts))
-        vim.lsp.enable(server.name)
+    vim.lsp.config("*", {
+        capabilities = opts.capabilities,
+    })
+
+    for _, name in ipairs(server_order) do
+        vim.lsp.config(name, configs[name])
     end
 end
 

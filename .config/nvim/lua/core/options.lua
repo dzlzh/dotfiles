@@ -3,13 +3,10 @@ vim.g.loaded_netrwPlugin = 1
 
 local opt = vim.opt
 
-opt.autowrite = true
 opt.confirm   = true
 opt.mouse     = "a"
 opt.wrap      = false
 opt.autoread  = true
-opt.wildmenu  = true
-opt.hidden    = true
 
 opt.ttimeout    = true
 opt.ttimeoutlen = 50
@@ -34,11 +31,12 @@ opt.fileformat   = "unix"
 
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.termguicolors  = true
+opt.winborder      = "rounded"
 opt.number         = true
 opt.relativenumber = true
 opt.ruler          = true
 opt.showcmd        = true
-opt.showmode       = true
+opt.showmode       = false
 opt.laststatus     = 2
 opt.cmdheight      = 1
 opt.modelines      = 0
@@ -49,7 +47,6 @@ opt.showmatch      = true
 opt.matchtime      = 2
 
 opt.display        = "lastline"
-opt.lazyredraw     = true
 opt.list           = true
 opt.pumblend       = 10
 opt.pumheight      = 10
