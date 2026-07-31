@@ -2,6 +2,7 @@ return {
     "bash",
     "css",
     "dockerfile",
+    "gitcommit",
     "go",
     "gomod",
     "gosum",
