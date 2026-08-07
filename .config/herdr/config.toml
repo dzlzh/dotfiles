@@ -1,6 +1,8 @@
 onboarding = false
 
 [ui]
+tab_bar_position = "bottom"
+pane_scrollbars = false
 agent_panel_sort = "spaces"
 
 [ui.sound]
