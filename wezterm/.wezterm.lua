@@ -45,4 +45,12 @@ wezterm.on('gui-startup', function(cmd)
   window:gui_window():maximize()
 end)
 
+config.keys = {
+  {
+    key = "o",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.ShowLauncher,
+  },
+}
+
 return config
