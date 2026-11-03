@@ -3,36 +3,61 @@ onboarding = false
 [ui]
 tab_bar_position = "bottom"
 pane_scrollbars = false
-agent_panel_sort = "spaces"
 
-[ui.sound]
-enabled = true
-
+status_indicators = "dots"
+show_agent_labels_on_pane_borders = true
 [ui.toast]
-delivery = "herdr"
+delivery = "system"
 
 [theme]
 name = "catppuccin"
 auto_switch = false
 
+# Inkstone · 玄墨 Xuanmo
+# Source: https://github.com/Konata9/inkstone/blob/main/docs/palette.md
+[theme.custom]
+panel_bg = "#14131a"
+sidebar_bg = "#1a1922"
+surface_dim = "#1a1922"
+surface0 = "#22212c"
+surface1 = "#2b2a36"
+active_row_bg = "#302e3c"
+selection_bg = "#332f46"
+
+text = "#d4cec4"
+subtext0 = "#ada599"
+overlay0 = "#6f6979"
+overlay1 = "#8b8597"
+
+accent = "#619ac3"
+blue = "#619ac3"
+green = "#2bae85"
+red = "#e25737"
+yellow = "#f28e16"
+mauve = "#c08eaf"
+teal = "#57c3c2"
+peach = "#d6a01d"
+
 [keys]
+# Match the tmux prefix; keep H/J/K/L for workspace and agent navigation.
 prefix = "ctrl+b"
+
 # General controls, following tmux where an equivalent exists.
 help = "prefix+?"
 settings = "prefix+shift+s"
 detach = "prefix+d"
 reload_config = "prefix+r"
-open_notification_target = "prefix+o"
+open_notification_target = "prefix+shift+o"
 workspace_picker = "prefix+w"
 goto = "prefix+g"
 
 # Workspaces.
 new_workspace = "prefix+shift+n"
 new_worktree = "prefix+shift+g"
-rename_workspace = "prefix+shift+w"
+rename_workspace = ["prefix+$", "prefix+shift+w"]
 close_workspace = "prefix+shift+d"
-previous_workspace = "prefix+shift+h"
-next_workspace = "prefix+shift+l"
+previous_workspace = ["prefix+shift+h", "prefix+("]
+next_workspace = ["prefix+shift+l", "prefix+)"]
 
 # Agents.
 previous_agent = "prefix+shift+k"
@@ -41,21 +66,24 @@ focus_agent = "prefix+alt+1..9"
 
 # Tabs map to tmux windows.
 new_tab = "prefix+c"
-rename_tab = "prefix+shift+t"
+rename_tab = "prefix+comma"
 previous_tab = "prefix+ctrl+h"
-next_tab = "prefix+ctrl+l"
+next_tab = ["prefix+ctrl+l", "prefix+n"]
 switch_tab = "prefix+1..9"
-close_tab = "prefix+shift+x"
+close_tab = ["prefix+ampersand", "prefix+shift+x"]
 
 # Panes follow the tmux vi-style layout keys.
-rename_pane = "prefix+shift+p"
-edit_scrollback = "prefix+esc"
+rename_pane = "prefix+shift+t"
+edit_scrollback = "prefix+e"
+# Herdr 0.9.5 reserves Escape to cancel prefix mode.
+copy_mode = "prefix+["
 focus_pane_left = "prefix+h"
 focus_pane_down = "prefix+j"
 focus_pane_up = "prefix+k"
 focus_pane_right = "prefix+l"
-cycle_pane_next = "prefix+tab"
+cycle_pane_next = ["prefix+o", "prefix+tab"]
 cycle_pane_previous = "prefix+shift+tab"
+last_pane = "prefix+;"
 split_vertical = "prefix+v"
 split_horizontal = "prefix+s"
 close_pane = "prefix+x"
@@ -70,3 +98,15 @@ navigate_pane_left = "h"
 navigate_pane_down = "j"
 navigate_pane_up = "k"
 navigate_pane_right = "l"
+
+# tmux-style scratch terminal; exit the shell to close it.
+[[keys.command]]
+key = "prefix+shift+p"
+type = "popup"
+command = 'exec "${SHELL:-/bin/sh}"'
+description = "open scratch terminal"
+width = "80%"
+height = "80%"
+
+[experimental]
+kitty_graphics = true
