@@ -1,5 +1,43 @@
 local LARGE_FILE_SIZE = 5 * 1024 * 1024
 
+local function open_directory(args)
+    if args.file == "" or vim.fn.isdirectory(args.file) ~= 1 then
+        return
+    end
+
+    local cwd = vim.fs.normalize(vim.fn.fnamemodify(args.file, ":p"))
+    local picker = Snacks.picker.get({ source = "explorer" })[1]
+    -- Snacks.explorer() toggles an existing picker off; directory entries
+    -- should instead reuse it and display the requested directory.
+    if picker then
+        picker.input:set("", "")
+        picker.list:set_selected()
+        picker:set_cwd(cwd)
+        picker:find()
+        picker:focus()
+    else
+        picker = Snacks.explorer({ cwd = cwd })
+    end
+
+    if vim.v.vim_did_enter == 0 then
+        vim.api.nvim_buf_set_name(args.buf, "")
+        picker:show()
+        local ref = picker:ref()
+        vim.api.nvim_create_autocmd("UIEnter", {
+            group = args.group,
+            once = true,
+            callback = function()
+                local current = ref()
+                if current and not current.closed then
+                    current:focus()
+                end
+            end,
+        })
+    else
+        Snacks.bufdelete.delete(args.buf)
+    end
+end
+
 local function toggle_shell_terminal()
     -- Pin count so a stray count prefix does not open a second terminal.
     Snacks.terminal.toggle(nil, {
@@ -12,7 +50,27 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    init = function()
+        vim.api.nvim_create_autocmd("BufEnter", {
+            group = vim.api.nvim_create_augroup("l_explorer_directory", { clear = true }),
+            callback = open_directory,
+        })
+    end,
     keys = {
+        {
+            "<Leader>ee",
+            function()
+                Snacks.explorer({ cwd = vim.fn.getcwd() })
+            end,
+            desc = "Toggle File Explorer",
+        },
+        {
+            "<Leader>eg",
+            function()
+                Snacks.picker.git_status()
+            end,
+            desc = "Git Status",
+        },
         {
             "<Leader>ff",
             function()
@@ -48,7 +106,19 @@ return {
     },
     -- Only the modules listed here are enabled; everything else stays off.
     opts = {
-        picker = {},
+        explorer = { replace_netrw = false },
+        picker = {
+            sources = {
+                explorer = {
+                    layout = { preset = "sidebar", preview = false, layout = { position = "left", width = 40 } },
+                    auto_close = false,
+                    jump = { close = false },
+                    follow_file = true,
+                    hidden = false,
+                    ignored = false,
+                },
+            },
+        },
         terminal = {},
         indent = {
             indent = { char = "¦" },

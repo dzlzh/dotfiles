@@ -11,7 +11,7 @@ return {
                 clear_suggestion = "<M-]>",
                 accept_word = "<M-j>",
             },
-            ignore_filetypes = { "markdown", "text" },
+            ignore_filetypes = { "markdown", "text", "bigfile" },
             -- color = { suggestion_color = "#888888" },
             disable_inline_completion = false,
         })

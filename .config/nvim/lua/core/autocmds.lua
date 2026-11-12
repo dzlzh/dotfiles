@@ -53,6 +53,8 @@ autocmd("BufWritePre", {
     pattern = "*",
     callback = function(args)
         if not is_normal_file_buffer(args.buf)
+            or vim.b[args.buf].large_file
+            or vim.bo[args.buf].filetype == "bigfile"
             or preserve_trailing_whitespace[vim.bo[args.buf].filetype]
         then
             return
