@@ -2,6 +2,10 @@ local function open_codex()
     require("sidekick.cli").show({ name = "codex" })
 end
 
+local function toggle_codex()
+    require("sidekick.cli").toggle({ name = "codex", focus = true })
+end
+
 local function send_to_codex(opts)
     require("sidekick.cli").send(vim.tbl_extend("force", {
         name = "codex",
@@ -12,7 +16,9 @@ return {
     "folke/sidekick.nvim",
     version = "^2.0.0",
     keys = {
-        { "<Leader>sc", open_codex, mode = { "n", "t" }, desc = "Start/Attach Codex CLI" },
+        { "<Leader>sc", open_codex, mode = "n", desc = "Start/Attach Codex CLI" },
+        -- Terminal mode must not map the printable leader (";").
+        { "<M-a>", toggle_codex, mode = { "n", "t" }, desc = "Toggle Codex CLI" },
         {
             "<Leader>sf",
             function()
@@ -46,7 +52,7 @@ return {
             },
         },
         cli = {
-            picker = "telescope",
+            picker = "snacks",
             watch = true,
             win = {
                 layout = "float",

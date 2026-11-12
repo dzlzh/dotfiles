@@ -2,35 +2,18 @@ local supported_filetypes = {
     go = true,
     lua = true,
 }
-local conform_formatexpr = "v:lua.require'conform'.formatexpr()"
 
 return {
     "stevearc/conform.nvim",
-    ft = { "go", "lua" },
+    event = "BufWritePre",
     cmd = { "ConformInfo" },
     init = function()
         vim.api.nvim_create_autocmd("FileType", {
             group = vim.api.nvim_create_augroup("ConformFormatexpr", { clear = true }),
             pattern = "*",
             callback = function(args)
-                local buffer = vim.b[args.buf]
-                local options = vim.bo[args.buf]
-
-                if supported_filetypes[options.filetype] then
-                    if not buffer.conform_formatexpr_active then
-                        buffer.conform_formatexpr_previous = options.formatexpr
-                        buffer.conform_formatexpr_active = true
-                    end
-                    options.formatexpr = conform_formatexpr
-                    return
-                end
-
-                if buffer.conform_formatexpr_active then
-                    if options.formatexpr == conform_formatexpr then
-                        options.formatexpr = buffer.conform_formatexpr_previous or ""
-                    end
-                    buffer.conform_formatexpr_previous = nil
-                    buffer.conform_formatexpr_active = nil
+                if supported_filetypes[vim.bo[args.buf].filetype] then
+                    vim.bo[args.buf].formatexpr = "v:lua.require'conform'.formatexpr()"
                 end
             end,
         })

@@ -1,7 +1,3 @@
-if vim.uv == nil then
-    vim.uv = vim.loop
-end
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
     local output = vim.fn.system({
@@ -54,3 +50,5 @@ require("lazy").setup({
         },
     },
 })
+
+vim.cmd.colorscheme("inkstone-xuanmo")

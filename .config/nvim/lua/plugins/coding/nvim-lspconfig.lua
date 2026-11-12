@@ -10,13 +10,6 @@ return {
         "mason-org/mason-lspconfig.nvim",
         {
             "WhoIsSethDaniel/mason-tool-installer.nvim",
-            lazy = false,
-            cmd = {
-                "MasonToolsInstall",
-                "MasonToolsInstallSync",
-                "MasonToolsUpdate",
-                "MasonToolsUpdateSync",
-            },
             dependencies = { "mason-org/mason.nvim" },
             opts = {
                 ensure_installed = {
@@ -40,11 +33,6 @@ return {
 
         local servers = require("plugins.coding.lsp.servers")
         local capabilities = require("blink.cmp").get_lsp_capabilities()
-        capabilities.textDocument.foldingRange = {
-            dynamicRegistration = false,
-            lineFoldingOnly = true,
-        }
-
         servers.setup({ capabilities = capabilities })
 
         local names = servers.names()
@@ -56,5 +44,9 @@ return {
             automatic_enable = automatic_enable,
         })
         require("plugins.coding.lsp.vue_install_gate").setup()
+
+        -- The plugin hooks run_on_start to VimEnter, which has already fired
+        -- by the time this spec loads on VeryLazy.
+        require("mason-tool-installer").run_on_start()
     end,
 }

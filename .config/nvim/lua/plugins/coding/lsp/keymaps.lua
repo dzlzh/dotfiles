@@ -24,15 +24,15 @@ function M.setup()
                 return
             end
 
-            local telescope = require("telescope.builtin")
-            vim.keymap.set(
-                "n",
-                "gr",
-                telescope.lsp_references,
-                map_opts(env.buf, "References under cursor", { nowait = true })
-            )
-            vim.keymap.set("n", "gd", telescope.lsp_definitions, map_opts(env.buf, "Definitions under cursor"))
-            vim.keymap.set("n", "gi", telescope.lsp_implementations, map_opts(env.buf, "Implementations under cursor"))
+            vim.keymap.set("n", "gr", function()
+                Snacks.picker.lsp_references()
+            end, map_opts(env.buf, "References under cursor", { nowait = true }))
+            vim.keymap.set("n", "gd", function()
+                Snacks.picker.lsp_definitions()
+            end, map_opts(env.buf, "Definitions under cursor"))
+            vim.keymap.set("n", "gi", function()
+                Snacks.picker.lsp_implementations()
+            end, map_opts(env.buf, "Implementations under cursor"))
             vim.keymap.set("n", "H", vim.lsp.buf.hover, map_opts(env.buf, "LSP hover"))
             vim.keymap.set("n", "ga", vim.lsp.buf.code_action, map_opts(env.buf, "Code actions", { nowait = true }))
             vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, map_opts(env.buf, "Rename symbol"))

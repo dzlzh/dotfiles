@@ -30,8 +30,6 @@ map("n", "<Leader>cc", "gcc", { remap = true, silent = true, desc = "Toggle comm
 map("x", "<Leader>cc", "gc",  { remap = true, silent = true, desc = "Toggle comment selection" })
 map("n", "<Leader>cu", "gcc", { remap = true, silent = true, desc = "Toggle comment" })
 map("x", "<Leader>cu", "gc",  { remap = true, silent = true, desc = "Toggle comment selection" })
-map("n", "<Leader>cb", "gbc", { remap = true, silent = true, desc = "Toggle block comment" })
-map("x", "<Leader>cb", "gb",  { remap = true, silent = true, desc = "Toggle block comment selection" })
 
 -- 插入模式下光标向上移动
 map("i", "<c-h>", "<Left>",  opts)
