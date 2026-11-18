@@ -1,4 +1,5 @@
 local LARGE_FILE_SIZE = 5 * 1024 * 1024
+local GIT_DIFF_ARGS = { "-c", "core.bigFileThreshold=1m" }
 
 local function open_directory(args)
     if args.file == "" or vim.fn.isdirectory(args.file) ~= 1 then
@@ -108,7 +109,11 @@ return {
     opts = {
         explorer = { replace_netrw = false },
         picker = {
+            previewers = {
+                git = { args = GIT_DIFF_ARGS },
+            },
             sources = {
+                git_diff = { args = GIT_DIFF_ARGS },
                 explorer = {
                     layout = { preset = "sidebar", preview = false, layout = { position = "left", width = 40 } },
                     auto_close = false,
