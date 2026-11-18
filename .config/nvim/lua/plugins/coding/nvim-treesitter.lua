@@ -27,7 +27,7 @@ return {
     build = function()
         local ts = require("nvim-treesitter")
         assert(ts.install(parsers, { summary = true }):wait(300000), "Tree-sitter parser installation failed")
-        assert(ts.update(parsers, { summary = true }):wait(300000), "Tree-sitter parser update failed")
+        assert(ts.update(nil, { summary = true }):wait(300000), "Tree-sitter parser update failed")
     end,
     config = function()
         local ok_ts, ts = pcall(require, "nvim-treesitter")

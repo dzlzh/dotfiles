@@ -13,14 +13,7 @@ return {
     version = "1.*",
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
-        {
-            "L3MON4D3/LuaSnip",
-            version = "v2.*",
-            dependencies = { "rafamadriz/friendly-snippets" },
-            config = function()
-                require("luasnip.loaders.from_vscode").lazy_load()
-            end,
-        },
+        "rafamadriz/friendly-snippets",
     },
     opts = {
         keymap = {
@@ -64,7 +57,6 @@ return {
             ghost_text = { enabled = false },
         },
         signature = { enabled = true },
-        snippets = { preset = "luasnip" },
         sources = { default = { "lsp", "path", "snippets", "buffer" } },
         cmdline = { keymap = { preset = "cmdline" } },
         fuzzy = { implementation = "prefer_rust_with_warning" },

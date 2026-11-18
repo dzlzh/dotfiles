@@ -75,8 +75,8 @@ function M.setup(opts)
         capabilities = opts.capabilities,
     })
 
-    for _, name in ipairs(server_order) do
-        vim.lsp.config(name, configs[name])
+    for name, config in pairs(configs) do
+        vim.lsp.config(name, config)
     end
 end
 
