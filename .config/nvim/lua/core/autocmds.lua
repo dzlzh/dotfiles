@@ -27,6 +27,7 @@ end
 autocmd("BufLeave", {
     group = augroup("autosave"),
     pattern = "*",
+    nested = true, -- Let :update run the usual write hooks.
     callback = function(args)
         if not is_normal_file_buffer(args.buf) or not vim.bo[args.buf].modified then
             return

@@ -8,71 +8,20 @@ local function has_words_before()
     return line:sub(col, col):match("%s") == nil
 end
 
--- vim.snippet cannot parse a placeholder whose default mixes text with other
--- tabstops, e.g. `${3:=> \$${4:value}}` (friendly-snippets PHP `foreach`,
--- `fun`, `class`, ...). Keep the outermost placeholder and reduce everything
--- nested inside it to plain default text.
-local function flatten_nested_placeholders(snippet)
-    local out = {}
-    local stack = {}
-    local i = 1
-    local len = #snippet
-
-    while i <= len do
-        local char = snippet:sub(i, i)
-        local nested = #stack > 0
-
-        if char == "\\" then
-            out[#out + 1] = snippet:sub(i, i + 1)
-            i = i + 2
-        elseif char == "$" then
-            local rest = snippet:sub(i)
-            local placeholder = rest:match("^%${%d+:")
-            local braced_tabstop = rest:match("^%${%d+}")
-            local bare_tabstop = rest:match("^%$%d+")
-
-            if placeholder then
-                stack[#stack + 1] = not nested
-                if not nested then
-                    out[#out + 1] = placeholder
-                end
-                i = i + #placeholder
-            elseif nested and (braced_tabstop or bare_tabstop) then
-                i = i + #(braced_tabstop or bare_tabstop)
-            elseif rest:sub(2, 2) == "{" then
-                stack[#stack + 1] = true
-                out[#out + 1] = "${"
-                i = i + 2
-            else
-                out[#out + 1] = char
-                i = i + 1
-            end
-        elseif char == "}" and nested then
-            if table.remove(stack) then
-                out[#out + 1] = char
-            end
-            i = i + 1
-        else
-            out[#out + 1] = char
-            i = i + 1
-        end
-    end
-
-    return table.concat(out)
-end
-
-local function expand_snippet(snippet)
-    if pcall(vim.snippet.expand, snippet) then
-        return
-    end
-    vim.snippet.expand(flatten_nested_placeholders(snippet))
-end
-
 return {
     "saghen/blink.cmp",
     version = "1.*",
     event = { "InsertEnter", "CmdlineEnter" },
-    dependencies = { "rafamadriz/friendly-snippets" },
+    dependencies = {
+        {
+            "L3MON4D3/LuaSnip",
+            version = "v2.*",
+            dependencies = { "rafamadriz/friendly-snippets" },
+            config = function()
+                require("luasnip.loaders.from_vscode").lazy_load()
+            end,
+        },
+    },
     opts = {
         keymap = {
             preset = "none",
@@ -115,7 +64,7 @@ return {
             ghost_text = { enabled = false },
         },
         signature = { enabled = true },
-        snippets = { expand = expand_snippet },
+        snippets = { preset = "luasnip" },
         sources = { default = { "lsp", "path", "snippets", "buffer" } },
         cmdline = { keymap = { preset = "cmdline" } },
         fuzzy = { implementation = "prefer_rust_with_warning" },
